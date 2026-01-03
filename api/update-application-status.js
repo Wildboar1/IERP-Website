@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
-import { connectDB } from '../db/mongoose.js'; // Ensure path is correct (../db)
-import { Application } from '../models/Application.js';
-import { sendApplicationApprovalMessage, sendApplicationRejectionMessage } from '../services/discordBotService.js';
+import { connectDB } from './lib/mongoose.js';
+import { Application } from './lib/Application.js';
+import { sendApplicationApprovalMessage, sendApplicationRejectionMessage } from './lib/discordBotService.js';
 
 function verifyToken(token) {
   try {

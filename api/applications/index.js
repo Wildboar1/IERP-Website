@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
-import { connectDB } from '../../db/mongoose.js';
-import { Application } from '../../models/Application.js';
+import { connectDB } from '../_lib/mongoose.js';
+import { Application } from '../_lib/Application.js';
 
 function verifyToken(token) {
   try {
