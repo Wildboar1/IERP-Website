@@ -12,17 +12,10 @@
     "DISCORD_WEBHOOK_URL": "@discord_webhook_url",
     "ADMIN_EMAIL": "@admin_email"
   },
-  "routes": [
+  "rewrites": [
     {
-      "src":  "/api/(.*)",
-      "dest": "/api/$1"
-    },
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ],
   "functions": {
