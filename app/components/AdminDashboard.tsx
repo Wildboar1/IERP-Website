@@ -53,13 +53,13 @@ export function AdminDashboard() {
 
   const handleStatusChange = async (appId: string, newStatus: "approved" | "rejected", notes?: string) => {
     try {
-      const response = await fetch(`/api/update-application-status`, {
-        method: "POST",
+      const response = await fetch(`/api/applications/${appId}/status`, {
+        method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },
         credentials: "include",
-        body: JSON.stringify({ applicationId: appId, status: newStatus, notes }),
+        body: JSON.stringify({ status: newStatus, notes }),
       });
 
       if (!response.ok) {

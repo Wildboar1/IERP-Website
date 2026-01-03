@@ -4,8 +4,18 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
-      "source": "/(?!api/)(.*)",
+      "source": "/api/applications/:id/status",
+      "destination": "/api/applications/[id]/status"
+    },
+    {
+      "source": "/(?!api)(.*)",
       "destination": "/index.html"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/applications/([^/]+)/status",
+      "dest": "/api/applications/[id]/status"
     }
   ],
   "env": {

@@ -53,14 +53,12 @@ export function AdminDashboard() {
 
   const handleStatusChange = async (appId: string, newStatus: "approved" | "rejected", notes?: string) => {
     try {
-      // CHANGED: Use the dedicated POST endpoint instead of the dynamic PATCH route
       const response = await fetch(`/api/update-application-status`, {
-        method: "POST", // Changed from PATCH to POST
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         credentials: "include",
-        // CHANGED: Send applicationId in the body
         body: JSON.stringify({ 
           applicationId: appId, 
           status: newStatus, 
