@@ -1,7 +1,7 @@
-import fetch from 'node-fetch';
-import jwt from 'jsonwebtoken';
+const fetch = require('node-fetch');
+const jwt = require('jsonwebtoken');
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   // Handle CORS
   res.setHeader('Access-Control-Allow-Credentials', 'true');
   res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*');
@@ -82,4 +82,4 @@ export default async function handler(req, res) {
     console.error("Auth error:", error);
     res.status(500).json({ error: 'Auth failed', message: error.message });
   }
-}
+};

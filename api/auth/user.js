@@ -1,6 +1,6 @@
-import jwt from 'jsonwebtoken';
+const jwt = require('jsonwebtoken');
 
-export default function handler(req, res) {
+module.exports = function handler(req, res) {
   // Handle CORS
   res.setHeader('Access-Control-Allow-Credentials', 'true');
   res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*');
@@ -32,4 +32,4 @@ export default function handler(req, res) {
   } catch (error) {
     res.status(401).json({ error: 'Invalid token' });
   }
-}
+};
