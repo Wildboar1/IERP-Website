@@ -41,7 +41,7 @@ const API_BASE_URL = getApiBaseUrl();
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
-  const [isLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Initialize redirect URI on mount
   useEffect(() => {
