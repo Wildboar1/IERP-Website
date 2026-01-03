@@ -27,10 +27,11 @@ const DISCORD_SCOPES = "identify email";
 let DISCORD_REDIRECT_URI = "";
 
 // Backend API URL - uses current domain on Vercel, localhost for development
+// If VITE_API_URL is set, use it. Otherwise, use localhost for local dev, empty string (relative URLs) for production
 const API_BASE_URL = import.meta.env.VITE_API_URL || (
   typeof window !== "undefined" && window.location.hostname === "localhost"
     ? "http://localhost:3001"
-    : ""
+    : "" // Empty string = relative URLs, which work on Vercel
 );
 
 export function AuthProvider({ children }: { children: ReactNode }) {

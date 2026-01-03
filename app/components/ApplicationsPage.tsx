@@ -82,7 +82,7 @@ export function ApplicationsPage() {
     }
 
     try {
-      const response = await fetch("http://localhost:3001/api/applications/submit", {
+      const response = await fetch("/api/applications/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

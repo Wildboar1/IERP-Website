@@ -34,7 +34,7 @@ export function AdminDashboard() {
   const fetchApplications = async () => {
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:3001/api/applications", {
+      const response = await fetch("/api/applications", {
         credentials: "include",
       });
 
@@ -53,7 +53,7 @@ export function AdminDashboard() {
 
   const handleStatusChange = async (appId: string, newStatus: "approved" | "rejected", notes?: string) => {
     try {
-      const response = await fetch(`http://localhost:3001/api/applications/${appId}/status`, {
+      const response = await fetch(`/api/applications/${appId}/status`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
