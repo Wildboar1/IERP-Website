@@ -15,11 +15,11 @@ export async function connectDB() {
   try {
     // Set mongoose options for serverless environment
     mongoose.set('strictQuery', false);
-    mongoose.set('bufferCommands', false);
     
     const conn = await mongoose.connect(process.env.MONGODB_URI, {
-      serverSelectionTimeoutMS: 5000,
+      serverSelectionTimeoutMS: 10000,
       socketTimeoutMS: 45000,
+      maxPoolSize: 10,
     });
 
     isConnected = conn.connections[0].readyState === 1;
@@ -28,7 +28,7 @@ export async function connectDB() {
   } catch (error) {
     console.error('MongoDB connection error:', error.message);
     isConnected = false;
-    throw error;
+    throw new Error('MongoDB connection failed. Please ensure IP whitelist is configured in MongoDB Atlas.');
   }
 }
 
