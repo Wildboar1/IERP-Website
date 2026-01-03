@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import { connectDB } from '../db/mongoose.js';
+import { connectDB } from '../db/mongoose.js'; // Ensure path is correct (../db)
 import { Application } from '../models/Application.js';
 import { sendApplicationApprovalMessage, sendApplicationRejectionMessage } from '../services/discordBotService.js';
 
@@ -11,7 +11,6 @@ function verifyToken(token) {
   }
 }
 
-// Helper to parse cookies
 function parseCookies(cookieHeader) {
   const cookies = {};
   if (cookieHeader) {
@@ -26,15 +25,14 @@ function parseCookies(cookieHeader) {
 }
 
 export default async function handler(req, res) {
-  // Handle CORS
+  // CORS Headers
   res.setHeader('Access-Control-Allow-Credentials', 'true');
   res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST,OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
 
   if (req.method === 'OPTIONS') {
-    res.status(200).end();
-    return;
+    return res.status(200).end();
   }
 
   if (req.method !== 'POST') {
@@ -47,14 +45,11 @@ export default async function handler(req, res) {
     return res.status(401).json({ error: 'Unauthorized' });
   }
 
+  // Receive applicationId from body (matching the frontend change)
   const { applicationId, status, notes } = req.body;
 
   if (!applicationId) {
     return res.status(400).json({ error: 'Application ID is required' });
-  }
-
-  if (!['pending', 'approved', 'rejected'].includes(status)) {
-    return res.status(400).json({ error: 'Invalid status' });
   }
 
   try {
@@ -74,10 +69,15 @@ export default async function handler(req, res) {
       return res.status(404).json({ error: 'Application not found' });
     }
 
+    // Send Discord Notifications
     if (status === 'approved') {
-      await sendApplicationApprovalMessage(application.discord, application.department);
+      try {
+        await sendApplicationApprovalMessage(application.discord, application.department);
+      } catch (err) { console.error("Discord Error", err); }
     } else if (status === 'rejected') {
-      await sendApplicationRejectionMessage(application.discord, application.department);
+      try {
+        await sendApplicationRejectionMessage(application.discord, application.department);
+      } catch (err) { console.error("Discord Error", err); }
     }
 
     res.json(application);

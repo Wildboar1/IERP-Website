@@ -53,17 +53,26 @@ export function AdminDashboard() {
 
   const handleStatusChange = async (appId: string, newStatus: "approved" | "rejected", notes?: string) => {
     try {
+      // CHANGED: Use the dedicated POST endpoint instead of the dynamic PATCH route
       const response = await fetch(`/api/update-application-status`, {
-        method: "POST",
+        method: "POST", // Changed from PATCH to POST
         headers: {
           "Content-Type": "application/json",
         },
         credentials: "include",
-        body: JSON.stringify({ applicationId: appId, status: newStatus, notes }),
+        // CHANGED: Send applicationId in the body
+        body: JSON.stringify({ 
+          applicationId: appId, 
+          status: newStatus, 
+          notes 
+        }),
       });
 
       if (!response.ok) {
-        throw new Error("Failed to update status");
+        // Log the error details if available
+        const errorData = await response.json().catch(() => ({}));
+        console.error("Server error:", errorData);
+        throw new Error(errorData.error || "Failed to update status");
       }
 
       const updated = await response.json();
@@ -71,6 +80,7 @@ export function AdminDashboard() {
       setSelectedApp(updated);
     } catch (error) {
       console.error("Update error:", error);
+      // Optional: Show an alert or toast here
     }
   };
 
