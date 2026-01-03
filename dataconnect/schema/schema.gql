@@ -1,0 +1,43 @@
+type Page @table {
+  title: String!
+  slug: String!
+  content: String!
+  imageUrl: String
+  metaDescription: String
+}
+
+type Publication @table {
+  title: String!
+  publicationDate: Timestamp!
+  author: String!
+  fileUrl: String!
+  summary: String
+  categories: [String]
+}
+
+type Event @table {
+  title: String!
+  eventDate: Timestamp!
+  location: String!
+  description: String!
+  registrationLink: String
+  speakers: [String]
+  imageUrl: String
+}
+
+type LegalResource @table {
+  title: String!
+  resourceType: String!
+  url: String!
+  summary: String
+  tags: [String]
+}
+
+type StaffMember @table {
+  name: String!
+  role: String!
+  bio: String
+  photoUrl: String
+  email: String
+  linkedinUrl: String
+}

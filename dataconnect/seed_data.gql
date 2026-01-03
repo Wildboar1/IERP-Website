@@ -1,0 +1,94 @@
+mutation CreateDemoData @transaction @auth(level: PUBLIC, insecureReason: "This mutation is used to seed the database with sample data, it is safe to expose to the public.") {
+  page_insertMany(data: [
+    {
+      id: "550e8400-e29b-41d4-a716-446655440000",
+      title: "Sample Page 1",
+      slug: "sample-page-1",
+      content: "This is the content of sample page 1.",
+      metaDescription: "Meta description for sample page 1.",
+      imageUrl: "https://example.com/image1.jpg"
+    },
+    {
+      id: "550e8400-e29b-41d4-a716-446655440001",
+      title: "Sample Page 2",
+      slug: "sample-page-2",
+      content: "This is the content of sample page 2.",
+      metaDescription: "Meta description for sample page 2.",
+      imageUrl: "https://example.com/image2.jpg"
+    }
+  ])
+  staffMember_insertMany(data: [
+    {
+      id: "650e8400-e29b-41d4-a716-446655440000",
+      name: "John Doe",
+      role: "Software Engineer",
+      email: "john.doe@example.com",
+      bio: "Experienced software engineer.",
+      linkedinUrl: "https://linkedin.com/johndoe",
+      photoUrl: "https://example.com/john.jpg"
+    },
+    {
+      id: "650e8400-e29b-41d4-a716-446655440001",
+      name: "Jane Smith",
+      role: "Project Manager",
+      email: "jane.smith@example.com",
+      bio: "Dedicated project manager.",
+      linkedinUrl: "https://linkedin.com/janesmith",
+      photoUrl: "https://example.com/jane.jpg"
+    }
+  ])
+  event_insertMany(data: [
+    {
+      id: "750e8400-e29b-41d4-a716-446655440000",
+      title: "Sample Event 1",
+      description: "This is the description of sample event 1.",
+      location: "Conference Center",
+      eventDate: "2024-03-15T10:00:00Z",
+      imageUrl: "https://example.com/event1.jpg",
+      registrationLink: "https://example.com/register1"
+    },
+    {
+      id: "750e8400-e29b-41d4-a716-446655440001",
+      title: "Sample Event 2",
+      description: "This is the description of sample event 2.",
+      location: "Online Webinar",
+      eventDate: "2024-04-20T14:00:00Z",
+      imageUrl: "https://example.com/event2.jpg",
+      registrationLink: "https://example.com/register2"
+    }
+  ])
+  publication_insertMany(data: [
+    {
+      id: "850e8400-e29b-41d4-a716-446655440000",
+      title: "Sample Publication 1",
+      author: "Alice Brown",
+      fileUrl: "https://example.com/publication1.pdf",
+      publicationDate: "2024-02-01T00:00:00Z",
+      summary: "Summary of sample publication 1."
+    },
+    {
+      id: "850e8400-e29b-41d4-a716-446655440001",
+      title: "Sample Publication 2",
+      author: "Bob Green",
+      fileUrl: "https://example.com/publication2.pdf",
+      publicationDate: "2024-03-01T00:00:00Z",
+      summary: "Summary of sample publication 2."
+    }
+  ])
+  legalResource_insertMany(data: [
+    {
+      id: "950e8400-e29b-41d4-a716-446655440000",
+      title: "Sample Legal Resource 1",
+      resourceType: "Article",
+      url: "https://example.com/legal1",
+      summary: "Summary of sample legal resource 1."
+    },
+    {
+      id: "950e8400-e29b-41d4-a716-446655440001",
+      title: "Sample Legal Resource 2",
+      resourceType: "Document",
+      url: "https://example.com/legal2",
+      summary: "Summary of sample legal resource 2."
+    }
+  ])
+}

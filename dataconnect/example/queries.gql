@@ -1,0 +1,21 @@
+mutation CreateEvent($description: String!, $eventDate: Timestamp!, $location: String!, $title: String!) @auth(level: USER) {
+  event_insert(data: {description: $description, eventDate: $eventDate, location: $location, title: $title})
+}
+
+query ListPublications @auth(level: PUBLIC, insecureReason: "This operation is safe to expose to the public") {
+  publications {
+    id
+    title
+    author
+    publicationDate
+    fileUrl
+  }
+}
+
+mutation UpdateStaffMemberBio($id: UUID!, $bio: String) @auth(level: USER, insecureReason: "This operation is safe to expose to all logged in users.") {
+  staffMember_update(id: $id, data: {bio: $bio})
+}
+
+mutation DeleteLegalResource($id: UUID!) @auth(level: USER_EMAIL_VERIFIED) {
+  legalResource_delete(id: $id)
+}
