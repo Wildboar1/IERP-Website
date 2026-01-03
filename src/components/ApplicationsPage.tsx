@@ -28,6 +28,7 @@ const departments = [
 export function ApplicationsPage() {
   const { user } = useAuth();
   const [selectedDepartment, setSelectedDepartment] = useState("");
+  const [submissionSuccess, setSubmissionSuccess] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -106,6 +107,9 @@ export function ApplicationsPage() {
 
       const result = await response.json();
       
+      // Set submission success state
+      setSubmissionSuccess(true);
+      
       toast.success("Application Submitted Successfully!", {
         description: `Your application for ${departments.find(d => d.value === selectedDepartment)?.label} has been received. You will be notified of the outcome via email.`,
         icon: <CheckCircle2 className="w-4 h-4" />,
@@ -120,7 +124,6 @@ export function ApplicationsPage() {
         whyJoin: "",
         availability: "",
       });
-      setSelectedDepartment("");
     } catch (error) {
       console.error("Application error:", error);
       const errorMessage = error instanceof Error ? error.message : "Unknown error occurred";
@@ -202,7 +205,36 @@ export function ApplicationsPage() {
               <CardDescription>
                 Fill out the form below to submit your application
               </CardDescription>
-            </CardHeader>
+            </CsubmissionSuccess ? (
+                <div className="text-center py-12">
+                  <CheckCircle2 className="w-16 h-16 mx-auto mb-4 text-green-600" />
+                  <h3 className="text-xl font-semibold mb-2 text-green-700">Application Submitted!</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Your application has been successfully submitted and is now under review.
+                  </p>
+                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6 text-left max-w-md mx-auto">
+                    <p className="text-sm text-blue-800 mb-2">
+                      <strong>What happens next?</strong>
+                    </p>
+                    <ul className="text-sm text-blue-700 space-y-1">
+                      <li>✓ Your application is being reviewed by our team</li>
+                      <li>✓ You will receive an email notification with the decision</li>
+                      <li>✓ You will also get a Discord notification</li>
+                      <li>✓ Review typically takes 24-48 hours</li>
+                    </ul>
+                  </div>
+                  <p className="text-sm text-yellow-600 bg-yellow-50 border border-yellow-200 rounded-lg p-3 max-w-md mx-auto mb-4">
+                    <strong>⚠️ Please do not submit multiple applications</strong><br />
+                    Submitting duplicate applications will delay the review process.
+                  </p>
+                  <Button 
+                    onClick={() => setSubmissionSuccess(false)}
+                    variant="outline"
+                  >
+                    Submit Another Application
+                  </Button>
+                </div>
+              ) : ardHeader>
             <CardContent>
               {!selectedDepartment ? (
                 <div className="text-center py-12 text-muted-foreground">
