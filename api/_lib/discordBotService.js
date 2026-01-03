@@ -18,6 +18,7 @@ export async function sendApplicationApprovalMessage(discordId, department) {
     const payload = {
       content: `✅ **Application Approved**\n\n${mention} - Your **${department.toUpperCase()}** Department application has been **ACCEPTED**! 🎉`,
       username: 'IERP Portal',
+      avatar_url: 'https://ierp-website-sigma.vercel.app/sasp%20logo.webp'
     };
 
     console.log('[WEBHOOK] Webhook URL:', DISCORD_WEBHOOK_URL.substring(0, 50) + '...');
@@ -60,6 +61,7 @@ export async function sendApplicationRejectionMessage(discordId, department) {
     const payload = {
       content: `❌ **Application Status Update**\n\n${mention} - Unfortunately, your **${department.toUpperCase()}** Department application was not accepted at this time.`,
       username: 'IERP Portal',
+      avatar_url: 'https://ierp-website-sigma.vercel.app/sasp%20logo.webp'
     };
 
     console.log('[WEBHOOK] Webhook URL:', DISCORD_WEBHOOK_URL.substring(0, 50) + '...');
