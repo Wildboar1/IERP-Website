@@ -1,20 +1,24 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "npm install && npm run build",
   "outputDirectory": "dist",
-  "env": [
-    "VITE_DISCORD_CLIENT_ID",
-    "VITE_API_URL",
-    "DISCORD_CLIENT_SECRET",
-    "JWT_SECRET",
-    "MONGODB_URI",
-    "SENDGRID_API_KEY",
-    "DISCORD_WEBHOOK_URL",
-    "ADMIN_EMAIL"
-  ],
+  "nodeVersion": "20.x",
+  "installCommand": "npm install",
+  "env": {
+    "VITE_DISCORD_CLIENT_ID": "@vite_discord_client_id",
+    "VITE_API_URL": "@vite_api_url",
+    "DISCORD_CLIENT_SECRET": "@discord_client_secret",
+    "JWT_SECRET": "@jwt_secret",
+    "MONGODB_URI": "@mongodb_uri",
+    "SENDGRID_API_KEY": "@sendgrid_api_key",
+    "DISCORD_WEBHOOK_URL": "@discord_webhook_url",
+    "ADMIN_EMAIL": "@admin_email"
+  },
   "functions": {
     "api/**": {
       "memory": 1024,
-      "maxDuration": 60
+      "maxDuration": 60,
+      "runtime": "nodejs20.x"
     }
   }
 }
+
