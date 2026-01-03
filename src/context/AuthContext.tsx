@@ -17,7 +17,7 @@ interface AuthContextType {
   isAdmin: boolean;
 }
 
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
+const AuthContext = createContext<AuthContextType>(undefined as any);
 
 const DISCORD_CLIENT_ID = import.meta.env.VITE_DISCORD_CLIENT_ID || "";
 const ADMIN_DISCORD_ID = import.meta.env.VITE_ADMIN_DISCORD_ID || "";
@@ -79,48 +79,36 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const handleAuthCallback = async (code: string) => {
-    try {
-      console.log("Sending auth code to backend...");
-      const response = await fetch(`${API_BASE_URL}/api/auth/callback`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ code }),
-        credentials: "include",
-      });
+  try {
+    console.log("Sending auth code to backend.. .");
+    const response = await fetch(`${API_BASE_URL}/api/auth/callback`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ code }),
+      credentials: "include",
+    });
 
-      if (response.ok) {
-  const userData = await response.json();
-  setUser(userData. user); // Make sure to use userData.user based on your API
-  console.log("✓ Authentication successful:", userData);
-  toast.success(`Welcome back, ${userData.user?. username || 'User'}!`);
-  
-  // Redirect to home and clean URL
-  window.location.href = '/';
-} else {
-  console.error("Auth callback failed:", response.status, response.statusText);
-  const errorData = await response.json();
-  console.error("Error details:", errorData);
-  toast.error("Authentication failed. Please try again.");
-  
-  // Redirect to home on error too
-  setTimeout(() => {
-    window.location.href = '/';
-  }, 2000);
-}
-        window.history.replaceState({}, document.title, window.location.pathname);
-      } else {
-        console.error("Auth callback failed:", response.status, response.statusText);
-        const error = await response.json();
-        console.error("Error details:", error);
-      }
-    } catch (error) {
-      console.error("Auth callback error:", error);
-    } finally {
-      setIsLoading(false);
+    if (response.ok) {
+      const userData = await response.json();
+      setUser(userData. user);  // ← Use userData.user from API response
+      console.log("✓ Authentication successful:", userData);
+      toast.success(`Welcome, ${userData.user?. username}!`);
+      
+      // Clean URL and redirect home
+      window.location.href = '/';
+    } else {
+      console.error("Auth failed:", response.status);
+      toast.error("Authentication failed. Please try again.");
+      setTimeout(() => window.location.href = '/', 2000);
     }
-  };
+  } catch (error) {
+    console.error("Auth callback error:", error);
+    toast.error("Something went wrong. Please try again.");
+    setTimeout(() => window.location.href = '/', 2000);
+  } finally {
+    setIsLoading(false);
+  }
+};
 
   const login = () => {
     if (!DISCORD_CLIENT_ID) {
