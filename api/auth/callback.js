@@ -1,6 +1,6 @@
-const jwt = require('jsonwebtoken');
+import jwt from 'jsonwebtoken';
 
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   // Handle CORS
   res.setHeader('Access-Control-Allow-Credentials', 'true');
   res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*');
@@ -76,7 +76,16 @@ module.exports = async function handler(req, res) {
       { expiresIn: '7d' }
     );
 
-    res.setHeader('Set-Cookie', `auth_token=${token}; Path=/; HttpOnly; Max-Age=${7*24*60*60}`);
+    const isProduction = process.env.NODE_ENV === 'production' || process.env.VERCEL;
+    const cookieOptions = [
+      `auth_token=${token}`,
+      'Path=/',
+      'HttpOnly',
+      `Max-Age=${7*24*60*60}`,
+      'SameSite=Lax',
+      ...(isProduction ? ['Secure'] : [])
+    ].join('; ');
+    res.setHeader('Set-Cookie', cookieOptions);
     res.json({ success: true, token, user: userData });
   } catch (error) {
     console.error("Auth error:", error);
