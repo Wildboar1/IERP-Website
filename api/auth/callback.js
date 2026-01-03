@@ -2,6 +2,17 @@ import fetch from 'node-fetch';
 import jwt from 'jsonwebtoken';
 
 export default async function handler(req, res) {
+  // Handle CORS
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+  res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
+
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
+
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -18,6 +29,9 @@ export default async function handler(req, res) {
 
   console.log("Callback handler - REDIRECT_URI:", REDIRECT_URI);
   console.log("Received code:", code ? "✓" : "✗");
+  console.log("DISCORD_CLIENT_ID:", DISCORD_CLIENT_ID ? "✓" : "✗");
+  console.log("DISCORD_CLIENT_SECRET:", DISCORD_CLIENT_SECRET ? "✓" : "✗");
+  console.log("JWT_SECRET:", JWT_SECRET ? "✓" : "✗");
 
   try {
     // Exchange code for token
@@ -35,8 +49,11 @@ export default async function handler(req, res) {
 
     const tokenData = await tokenResponse.json();
     if (!tokenData.access_token) {
-      return res.status(400).json({ error: 'Failed to get token' });
+      console.error("Token exchange failed:", tokenData);
+      return res.status(400).json({ error: 'Failed to get token', details: tokenData });
     }
+
+    console.log("✓ Got Discord access token");
 
     // Get user info
     const userResponse = await fetch('https://discord.com/api/v10/users/@me', {
@@ -44,6 +61,7 @@ export default async function handler(req, res) {
     });
 
     const userData = await userResponse.json();
+    console.log("✓ Got user data:", userData.username);
 
     // Create JWT token
     const token = jwt.sign(
@@ -59,9 +77,9 @@ export default async function handler(req, res) {
     );
 
     res.setHeader('Set-Cookie', `auth_token=${token}; Path=/; HttpOnly; Max-Age=${7*24*60*60}`);
-    res.json({ success: true, token });
+    res.json({ success: true, token, user: userData });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Auth failed' });
+    console.error("Auth error:", error);
+    res.status(500).json({ error: 'Auth failed', message: error.message });
   }
 }

@@ -13,6 +13,16 @@
     "DISCORD_WEBHOOK_URL": "@discord_webhook_url",
     "ADMIN_EMAIL": "@admin_email"
   },
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
   "functions": {
     "api/**": {
       "memory": 1024,
