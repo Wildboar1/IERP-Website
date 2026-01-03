@@ -39,6 +39,16 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed', received: req.method, expected: 'POST' });
   }
 
+  // Validate environment variables
+  if (!process.env.JWT_SECRET) {
+    console.error('Missing JWT_SECRET environment variable');
+    return res.status(500).json({ error: 'Server configuration error', details: 'Missing JWT_SECRET' });
+  }
+  if (!process.env.MONGODB_URI) {
+    console.error('Missing MONGODB_URI environment variable');
+    return res.status(500).json({ error: 'Server configuration error', details: 'Missing MONGODB_URI' });
+  }
+
   const cookies = parseCookies(req.headers.cookie);
   const token = cookies.auth_token || req.cookies?.auth_token;
   if (!verifyToken(token)) {
@@ -78,6 +88,10 @@ export default async function handler(req, res) {
     res.json(application);
   } catch (error) {
     console.error('Approval error:', error);
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ 
+      error: error.message,
+      details: error.stack?.split('\n')[0],
+      step: 'database_operation'
+    });
   }
 }
