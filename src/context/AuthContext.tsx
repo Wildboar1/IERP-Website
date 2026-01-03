@@ -40,8 +40,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   // Initialize redirect URI on mount
   useEffect(() => {
-    DISCORD_REDIRECT_URI = `${window.location.origin}/auth/callback`;
-    console.log("Discord Redirect URI:", DISCORD_REDIRECT_URI);
+    // DISCORD_REDIRECT_URI = `${window.location.origin}/auth/callback`;
+    DISCORD_REDIRECT_URI = `${window.location.origin}/`; 
     console.log("API Base URL:", API_BASE_URL);
   }, []);
 
@@ -96,6 +96,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setUser(userData);
         console.log("✓ Authentication successful:", userData);
         // Clean up URL
+        if (response.ok) {
+       const userData = await response.json();
+       setUser(userData. user); // Note: use userData.user based on your API response
+      console.log("✓ Authentication successful:", userData);
+       toast.success(`Welcome back, ${userData.user. username}!`);
+       // Redirect to home page
+      window.location.href = '/';
+        }
         window.history.replaceState({}, document.title, window.location.pathname);
       } else {
         console.error("Auth callback failed:", response.status, response.statusText);
