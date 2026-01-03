@@ -53,21 +53,17 @@ export function AdminDashboard() {
 
   const handleStatusChange = async (appId: string, newStatus: "approved" | "rejected", notes?: string) => {
     try {
-      const response = await fetch(`/api/update-application-status`, {
+      const endpoint = newStatus === "approved" ? "/api/applications-approve" : "/api/applications-reject";
+      const response = await fetch(endpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         credentials: "include",
-        body: JSON.stringify({ 
-          applicationId: appId, 
-          status: newStatus, 
-          notes 
-        }),
+        body: JSON.stringify({ applicationId: appId, notes }),
       });
 
       if (!response.ok) {
-        // Log the error details if available
         const errorData = await response.json().catch(() => ({}));
         console.error("Server error:", errorData);
         throw new Error(errorData.error || "Failed to update status");
