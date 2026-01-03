@@ -26,8 +26,12 @@ const DISCORD_SCOPES = "identify email";
 // Redirect URI will be set dynamically in AuthProvider
 let DISCORD_REDIRECT_URI = "";
 
-// Backend API URL
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
+// Backend API URL - uses current domain on Vercel, localhost for development
+const API_BASE_URL = import.meta.env.VITE_API_URL || (
+  typeof window !== "undefined" && window.location.hostname === "localhost"
+    ? "http://localhost:3001"
+    : ""
+);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);

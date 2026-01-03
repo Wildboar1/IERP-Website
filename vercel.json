@@ -5,7 +5,7 @@
   "nodeVersion": "20.x",
   "env": {
     "VITE_DISCORD_CLIENT_ID": "@vite_discord_client_id",
-    "VITE_API_URL": "@vite_api_url",
+    "VITE_API_URL": "",
     "DISCORD_CLIENT_SECRET": "@discord_client_secret",
     "JWT_SECRET": "@jwt_secret",
     "MONGODB_URI": "@mongodb_uri",

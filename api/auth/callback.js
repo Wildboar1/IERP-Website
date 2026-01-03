@@ -10,7 +10,14 @@ export default async function handler(req, res) {
   const DISCORD_CLIENT_ID = process.env.VITE_DISCORD_CLIENT_ID;
   const DISCORD_CLIENT_SECRET = process.env.DISCORD_CLIENT_SECRET;
   const JWT_SECRET = process.env.JWT_SECRET;
-  const REDIRECT_URI = process.env.VITE_API_URL + '/api/auth/callback';
+  
+  // Construct the redirect URI based on the host
+  const protocol = req.headers['x-forwarded-proto'] || 'https';
+  const host = req.headers['x-forwarded-host'] || req.headers.host;
+  const REDIRECT_URI = `${protocol}://${host}/api/auth/callback`;
+
+  console.log("Callback handler - REDIRECT_URI:", REDIRECT_URI);
+  console.log("Received code:", code ? "✓" : "✗");
 
   try {
     // Exchange code for token
