@@ -1,8 +1,8 @@
 {
-  "buildCommand": "npm install && npm run build",
+  "buildCommand": "npx vite build",
+  "installCommand": "npm install --no-optional",
   "outputDirectory": "dist",
   "nodeVersion": "20.x",
-  "installCommand": "npm install",
   "env": {
     "VITE_DISCORD_CLIENT_ID": "@vite_discord_client_id",
     "VITE_API_URL": "@vite_api_url",
