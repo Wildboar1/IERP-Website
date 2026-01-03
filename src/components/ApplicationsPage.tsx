@@ -31,7 +31,6 @@ export function ApplicationsPage() {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
-    phone: "",
     discord: "",
     experience: "",
     whyJoin: "",
@@ -91,7 +90,6 @@ export function ApplicationsPage() {
         body: JSON.stringify({
           fullName: fullName,
           email: email,
-          phone: formData.phone.trim(),
           discord: discord,
           experience: formData.experience.trim(),
           whyJoin: whyJoin,
@@ -117,7 +115,6 @@ export function ApplicationsPage() {
       setFormData({
         fullName: "",
         email: "",
-        phone: "",
         discord: "",
         experience: "",
         whyJoin: "",
@@ -253,24 +250,10 @@ export function ApplicationsPage() {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label htmlFor="phone">Phone Number</Label>
-                        <Input
-                          id="phone"
-                          type="tel"
-                          placeholder="+91 XXXXX XXXXX"
-                          value={formData.phone}
-                          onChange={(e) =>
-                            setFormData({ ...formData, phone: e.target.value })
-                          }
-                        />
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="discord">
-                          Discord ID <span className="text-red-500">*</span>
-                        </Label>
+                    <div className="space-y-2">
+                      <Label htmlFor="discord">
+                        Discord ID <span className="text-red-500">*</span>
+                      </Label>
                         <Input
                           id="discord"
                           placeholder="username#0000"
@@ -286,7 +269,6 @@ export function ApplicationsPage() {
                           <p className="text-xs text-green-600">✓ Auto-filled from your Discord profile</p>
                         )}
                       </div>
-                    </div>
                   </div>
 
                   {/* Application Information */}
