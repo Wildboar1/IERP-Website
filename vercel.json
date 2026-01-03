@@ -16,14 +16,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/index.html",
-      "has": [
-        {
-          "type": "path",
-          "value": "/api/(.*)",
-          "negate": true
-        }
-      ]
+      "destination": "/index.html"
     }
   ],
   "functions": {
