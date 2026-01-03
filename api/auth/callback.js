@@ -24,7 +24,7 @@ export default async function handler(req, res) {
   // Construct the redirect URI based on the host
   const protocol = req.headers['x-forwarded-proto'] || 'https';
   const host = req.headers['x-forwarded-host'] || req.headers.host;
-  const REDIRECT_URI = `${protocol}://${host}/api/auth/callback`;
+  const REDIRECT_URI = `${protocol}://${host}/auth/callback`;
 
   console.log("Callback handler - REDIRECT_URI:", REDIRECT_URI);
   console.log("Received code:", code ? "✓" : "✗");
