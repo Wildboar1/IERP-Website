@@ -1,0 +1,20 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "env": [
+    "VITE_DISCORD_CLIENT_ID",
+    "VITE_API_URL",
+    "DISCORD_CLIENT_SECRET",
+    "JWT_SECRET",
+    "MONGODB_URI",
+    "SENDGRID_API_KEY",
+    "DISCORD_WEBHOOK_URL",
+    "ADMIN_EMAIL"
+  ],
+  "functions": {
+    "api/**": {
+      "memory": 1024,
+      "maxDuration": 60
+    }
+  }
+}

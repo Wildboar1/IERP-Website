@@ -1,0 +1,60 @@
+import fetch from 'node-fetch';
+import jwt from 'jsonwebtoken';
+
+export default async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  const { code } = req.body;
+  const DISCORD_CLIENT_ID = process.env.VITE_DISCORD_CLIENT_ID;
+  const DISCORD_CLIENT_SECRET = process.env.DISCORD_CLIENT_SECRET;
+  const JWT_SECRET = process.env.JWT_SECRET;
+  const REDIRECT_URI = process.env.VITE_API_URL + '/api/auth/callback';
+
+  try {
+    // Exchange code for token
+    const tokenResponse = await fetch('https://discord.com/api/v10/oauth2/token', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        client_id: DISCORD_CLIENT_ID,
+        client_secret: DISCORD_CLIENT_SECRET,
+        grant_type: 'authorization_code',
+        code,
+        redirect_uri: REDIRECT_URI,
+      }),
+    });
+
+    const tokenData = await tokenResponse.json();
+    if (!tokenData.access_token) {
+      return res.status(400).json({ error: 'Failed to get token' });
+    }
+
+    // Get user info
+    const userResponse = await fetch('https://discord.com/api/v10/users/@me', {
+      headers: { Authorization: `Bearer ${tokenData.access_token}` },
+    });
+
+    const userData = await userResponse.json();
+
+    // Create JWT token
+    const token = jwt.sign(
+      {
+        id: userData.id,
+        username: userData.username,
+        email: userData.email,
+        avatar: userData.avatar ? 
+          `https://cdn.discordapp.com/avatars/${userData.id}/${userData.avatar}.png` : null,
+      },
+      JWT_SECRET,
+      { expiresIn: '7d' }
+    );
+
+    res.setHeader('Set-Cookie', `auth_token=${token}; Path=/; HttpOnly; Max-Age=${7*24*60*60}`);
+    res.json({ success: true, token });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Auth failed' });
+  }
+}

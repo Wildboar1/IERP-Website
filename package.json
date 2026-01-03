@@ -8,13 +8,16 @@
     "server": "node server.js",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "npm run build && firebase deploy",
-    "deploy:hosting": "npm run build && firebase deploy --only hosting",
-    "deploy:functions": "firebase deploy --only functions",
+    "deploy": "vercel deploy --prod",
+    "deploy:firebase": "npm run build && firebase deploy",
+    "deploy:firebase:hosting": "npm run build && firebase deploy --only hosting",
+    "deploy:firebase:functions": "firebase deploy --only functions",
     "firebase:login": "firebase login",
     "firebase:init": "firebase init",
     "firebase:emulate": "firebase emulators:start",
-    "firebase:logs": "firebase functions:log"
+    "firebase:logs": "firebase functions:log",
+    "vercel:login": "vercel login",
+    "vercel:logs": "vercel logs --tail"
   },
   "dependencies": {
     "@dataconnect/generated": "file:src/dataconnect-generated",
