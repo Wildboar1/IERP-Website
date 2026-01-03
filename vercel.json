@@ -15,7 +15,7 @@
     "api/**/*.js": {
       "memory": 1024,
       "maxDuration": 60,
-      "runtime": "nodejs20.11"
+      "runtime": "node20.x"
     }
   }
 }
