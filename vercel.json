@@ -2,7 +2,6 @@
   "buildCommand": "npm run build",
   "installCommand": "npm install --legacy-peer-deps",
   "outputDirectory": "dist",
-  "nodeVersion": "20.x",
   "env": {
     "VITE_DISCORD_CLIENT_ID": "@vite_discord_client_id",
     "VITE_API_URL": "",
@@ -15,8 +14,8 @@
   },
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
+      "source": "/api/:path*",
+      "destination": "/api/:path*"
     },
     {
       "source": "/(.*)",
@@ -26,8 +25,7 @@
   "functions": {
     "api/**/*.js": {
       "memory": 1024,
-      "maxDuration": 60,
-      "runtime": "nodejs20.x"
+      "maxDuration": 60
     }
   }
 }
