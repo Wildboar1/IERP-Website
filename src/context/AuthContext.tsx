@@ -41,7 +41,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   // Initialize redirect URI on mount
   useEffect(() => {
-    DISCORD_REDIRECT_URI = `${window.location.origin}/`; 
+    DISCORD_REDIRECT_URI = `${window.location.origin}/auth/callback`; 
+    console.log("Discord Redirect URI:", DISCORD_REDIRECT_URI);
     console.log("API Base URL:", API_BASE_URL);
   }, []);
 
