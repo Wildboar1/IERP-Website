@@ -54,18 +54,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        console.log("Checking authentication...");
         const response = await fetch(`${API_BASE_URL}/api/auth/user`, {
           credentials: "include",
         });
         if (response.ok) {
           const userData = await response.json();
           setUser(userData);
-          console.log("User authenticated:", userData);
-        } else {
-          console.log("Not authenticated (status:", response.status, ")");
+          console.log("✓ User authenticated:", userData.username || userData.id);
         }
+        // Don't log 401 errors - they're expected when not logged in
       } catch (error) {
+        // Only log unexpected errors
         console.error("Auth check failed:", error);
       } finally {
         setIsLoading(false);
@@ -77,7 +76,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const code = params.get("code");
     
     if (code) {
-      console.log("Auth code found, exchanging for token...");
+      console.log("Processing Discord OAuth callback...");
       handleAuthCallback(code);
     } else {
       checkAuth();
@@ -85,36 +84,43 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const handleAuthCallback = async (code: string) => {
-  try {
-    console.log("Sending auth code to backend.. .");
-    const response = await fetch(`${API_BASE_URL}/api/auth/callback`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ code }),
-      credentials: "include",
-    });
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/auth/callback`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ code }),
+        credentials: "include",
+      });
 
-    if (response.ok) {
-      const userData = await response.json();
-      setUser(userData. user);  // ← Use userData.user from API response
-      console.log("✓ Authentication successful:", userData);
-      toast.success(`Welcome, ${userData.user?. username}!`);
-      
-      // Clean URL and redirect home
-      window.location.href = '/';
-    } else {
-      console.error("Auth failed:", response.status);
-      toast.error("Authentication failed. Please try again.");
+      if (response.ok) {
+        const data = await response.json();
+        // Extract user from response - API returns { success, token, user }
+        const userData = data.user || data;
+        setUser({
+          id: userData.id,
+          username: userData.username,
+          email: userData.email,
+          avatar: userData.avatar || `https://cdn.discordapp.com/avatars/${userData.id}/${userData.avatar}.png`
+        });
+        console.log("✓ Authentication successful:", userData.username);
+        toast.success(`Welcome, ${userData.username}!`);
+        
+        // Clean URL and redirect home
+        window.location.href = '/';
+      } else {
+        const errorData = await response.json().catch(() => ({}));
+        console.error("Auth failed:", response.status, errorData);
+        toast.error("Authentication failed. Please try again.");
+        setTimeout(() => window.location.href = '/', 2000);
+      }
+    } catch (error) {
+      console.error("Auth callback error:", error);
+      toast.error("Something went wrong. Please try again.");
       setTimeout(() => window.location.href = '/', 2000);
+    } finally {
+      setIsLoading(false);
     }
-  } catch (error) {
-    console.error("Auth callback error:", error);
-    toast.error("Something went wrong. Please try again.");
-    setTimeout(() => window.location.href = '/', 2000);
-  } finally {
-    setIsLoading(false);
-  }
-};
+  };
 
   const login = () => {
     if (!DISCORD_CLIENT_ID) {
@@ -135,15 +141,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const logout = async () => {
     try {
-      console.log("Logging out...");
       await fetch(`${API_BASE_URL}/api/auth/logout`, {
         method: "POST",
         credentials: "include",
       });
       setUser(null);
-      console.log("✓ Logged out successfully");
+      toast.success("Logged out successfully");
+      console.log("✓ Logged out");
     } catch (error) {
       console.error("Logout failed:", error);
+      setUser(null); // Clear user even if API call fails
+      toast.info("Logged out");
     }
   };
 

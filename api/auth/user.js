@@ -23,14 +23,14 @@ export default function handler(req, res) {
 
   const token = cookies.auth_token;
   if (!token) {
-    return res.status(401).json({ error: 'No token' });
+    return res.status(401).json({ authenticated: false, error: 'No token' });
   }
 
   try {
     const user = jwt.verify(token, process.env.JWT_SECRET);
-    res.json(user);
+    res.json({ authenticated: true, ...user });
   } catch (error) {
-    res.status(401).json({ error: 'Invalid token' });
+    res.status(401).json({ authenticated: false, error: 'Invalid token' });
   }
 };
 

@@ -31,12 +31,12 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
 
   if (req.method === 'OPTIONS') {
-    res.status(200).end();
-    return;
+    return res.status(200).end();
   }
 
   if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+    console.error('Invalid method:', req.method);
+    return res.status(405).json({ error: 'Method not allowed', received: req.method, expected: 'POST' });
   }
 
   const cookies = parseCookies(req.headers.cookie);
@@ -68,10 +68,16 @@ export default async function handler(req, res) {
       return res.status(404).json({ error: 'Application not found' });
     }
 
-    await sendApplicationRejectionMessage(application.discord, application.department);
+    try {
+      await sendApplicationRejectionMessage(application.discord, application.department);
+    } catch (discordError) {
+      console.error('Discord notification failed:', discordError);
+    }
 
+    console.log('✓ Application rejected:', applicationId);
     res.json(application);
   } catch (error) {
+    console.error('Rejection error:', error);
     res.status(500).json({ error: error.message });
   }
 }
