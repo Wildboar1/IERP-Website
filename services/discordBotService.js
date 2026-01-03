@@ -13,11 +13,11 @@ export async function sendApplicationApprovalMessage(discordId, department) {
   }
 
   try {
-    const mention = /^\d+$/.test(discordId) ? `<@${discordId}>` : `**${discordId}**`;
+    const mention = /^\d+$/.test(discordId) ? `<@${discordId}>` : `**<@${discordId}>**`;
     
     const payload = {
       content: `✅ **Application Approved**\n\n${mention} - Your **${department.toUpperCase()}** Department application has been **ACCEPTED**! 🎉`,
-      username: 'IERP Portal',
+      username: 'SASP HR',
     };
 
     console.log('[WEBHOOK] Webhook URL:', DISCORD_WEBHOOK_URL.substring(0, 50) + '...');
