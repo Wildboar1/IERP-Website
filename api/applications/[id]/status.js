@@ -32,12 +32,15 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
   res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
 
+  console.log('[status.js] Received request:', req.method, req.query);
+
   if (req.method === 'OPTIONS') {
     res.status(200).end();
     return;
   }
 
   if (req.method !== 'PATCH') {
+    console.log('[status.js] Method not allowed:', req.method);
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
