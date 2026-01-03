@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "server": "node server.js",
-    "build": "vite build",
+    "build": "node -e \"require('fs').chmodSync('node_modules/.bin/vite', 0o755)\" && vite build",
     "preview": "vite preview",
     "deploy": "vercel deploy --prod",
     "deploy:firebase": "npm run build && firebase deploy",
@@ -76,6 +76,8 @@
     "react-popper": "2.3.0",
     "react-resizable-panels": "2.1.7",
     "react-responsive-masonry": "2.7.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
     "react-slick": "0.31.0",
     "recharts": "2.15.2",
     "sonner": "2.0.3",
