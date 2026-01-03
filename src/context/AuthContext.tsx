@@ -40,7 +40,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   // Initialize redirect URI on mount
   useEffect(() => {
-    // DISCORD_REDIRECT_URI = `${window.location.origin}/auth/callback`;
     DISCORD_REDIRECT_URI = `${window.location.origin}/`; 
     console.log("API Base URL:", API_BASE_URL);
   }, []);
@@ -92,18 +91,24 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       });
 
       if (response.ok) {
-        const userData = await response.json();
-        setUser(userData);
-        console.log("✓ Authentication successful:", userData);
-        // Clean up URL
-        if (response.ok) {
-       const userData = await response.json();
-       setUser(userData. user); // Note: use userData.user based on your API response
-      console.log("✓ Authentication successful:", userData);
-       toast.success(`Welcome back, ${userData.user. username}!`);
-       // Redirect to home page
-      window.location.href = '/';
-        }
+  const userData = await response.json();
+  setUser(userData. user); // Make sure to use userData.user based on your API
+  console.log("✓ Authentication successful:", userData);
+  toast.success(`Welcome back, ${userData.user?. username || 'User'}!`);
+  
+  // Redirect to home and clean URL
+  window.location.href = '/';
+} else {
+  console.error("Auth callback failed:", response.status, response.statusText);
+  const errorData = await response.json();
+  console.error("Error details:", errorData);
+  toast.error("Authentication failed. Please try again.");
+  
+  // Redirect to home on error too
+  setTimeout(() => {
+    window.location.href = '/';
+  }, 2000);
+}
         window.history.replaceState({}, document.title, window.location.pathname);
       } else {
         console.error("Auth callback failed:", response.status, response.statusText);
