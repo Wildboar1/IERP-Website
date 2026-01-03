@@ -2,8 +2,9 @@
   "buildCommand": "npm run build",
   "installCommand": "npm install --legacy-peer-deps",
   "outputDirectory": "dist",
+  "nodeVersion": "20.x",
   "env": {
-    "VITE_DISCORD_CLIENT_ID":  "@vite_discord_client_id",
+    "VITE_DISCORD_CLIENT_ID": "@vite_discord_client_id",
     "VITE_API_URL": "",
     "DISCORD_CLIENT_SECRET": "@discord_client_secret",
     "JWT_SECRET": "@jwt_secret",
@@ -12,27 +13,21 @@
     "DISCORD_WEBHOOK_URL": "@discord_webhook_url",
     "ADMIN_EMAIL": "@admin_email"
   },
-  "routes":  [
+  "rewrites": [
     {
-      "src": "/api/auth/callback",
-      "dest": "/api/auth/callback. js"
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
     },
     {
-      "src":  "/api/(.*)",
-      "dest": "/api/$1"
-    },
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ],
   "functions": {
-    "api/auth/callback. js": {
+    "api/**/*.js": {
       "memory": 1024,
-      "maxDuration": 60
+      "maxDuration": 60,
+      "runtime": "nodejs20.x"
     }
   }
 }
