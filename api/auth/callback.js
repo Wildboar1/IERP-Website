@@ -1,4 +1,3 @@
-const fetch = require('node-fetch');
 const jwt = require('jsonwebtoken');
 
 module.exports = async function handler(req, res) {
@@ -34,6 +33,7 @@ module.exports = async function handler(req, res) {
   console.log("JWT_SECRET:", JWT_SECRET ? "✓" : "✗");
 
   try {
+    // Use built-in Node.js fetch (Node 18+)
     // Exchange code for token
     const tokenResponse = await fetch('https://discord.com/api/v10/oauth2/token', {
       method: 'POST',
