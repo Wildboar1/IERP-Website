@@ -29,6 +29,7 @@ export function ApplicationsPage() {
   const { user } = useAuth();
   const [selectedDepartment, setSelectedDepartment] = useState("");
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
+  const [hasSubmitted, setHasSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -37,6 +38,15 @@ export function ApplicationsPage() {
     whyJoin: "",
     availability: "",
   });
+
+  // Check if user has already submitted on mount
+  useEffect(() => {
+    const submitted = localStorage.getItem('application_submitted');
+    if (submitted === 'true') {
+      setHasSubmitted(true);
+      setSubmissionSuccess(true);
+    }
+  }, []);
 
   // Auto-populate Discord username when user logs in
   useEffect(() => {
@@ -107,8 +117,10 @@ export function ApplicationsPage() {
 
       const result = await response.json();
       
-      // Set submission success state
+      // Set submission success state and mark as submitted
       setSubmissionSuccess(true);
+      setHasSubmitted(true);
+      localStorage.setItem('application_submitted', 'true');
       
       toast.success("Application Submitted Successfully!", {
         description: `Your application for ${departments.find(d => d.value === selectedDepartment)?.label} has been received. You will be notified of the outcome via email.`,
@@ -205,7 +217,9 @@ export function ApplicationsPage() {
               <CardDescription>
                 Fill out the form below to submit your application
               </CardDescription>
-            </CsubmissionSuccess ? (
+            </CardHeader>
+            <CardContent>
+              {submissionSuccess ? (
                 <div className="text-center py-12">
                   <CheckCircle2 className="w-16 h-16 mx-auto mb-4 text-green-600" />
                   <h3 className="text-xl font-semibold mb-2 text-green-700">Application Submitted!</h3>
@@ -223,20 +237,14 @@ export function ApplicationsPage() {
                       <li>✓ Review typically takes 24-48 hours</li>
                     </ul>
                   </div>
-                  <p className="text-sm text-yellow-600 bg-yellow-50 border border-yellow-200 rounded-lg p-3 max-w-md mx-auto mb-4">
-                    <strong>⚠️ Please do not submit multiple applications</strong><br />
-                    Submitting duplicate applications will delay the review process.
-                  </p>
-                  <Button 
-                    onClick={() => setSubmissionSuccess(false)}
-                    variant="outline"
-                  >
-                    Submit Another Application
-                  </Button>
+                  <div className="bg-red-50 border border-red-200 rounded-lg p-4 max-w-md mx-auto">
+                    <p className="text-sm text-red-800">
+                      <strong>⚠️ Application Limit Reached</strong><br />
+                      You can only submit <strong>ONE application</strong>. Multiple submissions are not allowed and will result in automatic rejection.
+                    </p>
+                  </div>
                 </div>
-              ) : ardHeader>
-            <CardContent>
-              {!selectedDepartment ? (
+              ) : !selectedDepartment ? (
                 <div className="text-center py-12 text-muted-foreground">
                   <FileText className="w-12 h-12 mx-auto mb-4 opacity-50" />
                   <p>Please select a department to begin your application</p>
