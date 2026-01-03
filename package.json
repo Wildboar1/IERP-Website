@@ -4,9 +4,10 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
+    "preinstall": "npm config set legacy-peer-deps true",
     "dev": "vite",
     "server": "node server.js",
-    "build": "npx vite build",
+    "build": "npm exec vite -- build",
     "preview": "vite preview",
     "deploy": "vercel deploy --prod",
     "deploy:firebase": "npm run build && firebase deploy",
