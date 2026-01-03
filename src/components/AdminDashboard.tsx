@@ -72,7 +72,13 @@ export function AdminDashboard() {
           statusText: response.statusText,
           error: errorData
         });
-        alert(`Failed to ${newStatus} application: ${errorData.error || response.statusText}`);
+        
+        // Show detailed error message
+        const errorMsg = errorData.details 
+          ? `${errorData.error || 'Error'} - ${errorData.details}`
+          : errorData.error || response.statusText || 'Unknown error';
+        
+        alert(`Failed to ${newStatus} application:\n\n${errorMsg}\n\nCheck Vercel logs for details.`);
         throw new Error(errorData.error || `Failed to update status (${response.status})`);
       }
 
