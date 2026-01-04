@@ -13,6 +13,7 @@
     }
   ],
   "env": {
-    "FORCE_REBUILD": "true"
+    "FORCE_REBUILD": "true",
+    "ADMIN_DISCORD_IDS": "900293368138039376,690448643395682315"
   }
 }
