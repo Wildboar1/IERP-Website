@@ -90,7 +90,10 @@ export default async function handler(req, res) {
       ...(isProduction ? ['Secure'] : [])
     ].join('; ');
     res.setHeader('Set-Cookie', cookieOptions);
-    res.json({ success: true, token, user: userData });
+    
+    // Return the JWT payload (which includes isAdmin) instead of Discord userData
+    const tokenPayload = jwt.decode(token);
+    res.json({ success: true, token, user: tokenPayload });
   } catch (error) {
     console.error("Auth error:", error);
     res.status(500).json({ error: 'Auth failed', message: error.message });
