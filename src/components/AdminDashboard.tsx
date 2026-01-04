@@ -53,6 +53,7 @@ export function AdminDashboard() {
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState<"all" | "pending" | "approved" | "rejected">("pending");
   const [showTestForm, setShowTestForm] = useState(false);
+  const [processingAppId, setProcessingAppId] = useState<string | null>(null);
   const [testFormData, setTestFormData] = useState({
     fullName: "",
     email: "",
@@ -91,6 +92,13 @@ export function AdminDashboard() {
   };
 
   const handleStatusChange = async (appId: string, newStatus: "approved" | "rejected", notes?: string) => {
+    // Prevent multiple clicks
+    if (processingAppId) {
+      return;
+    }
+
+    setProcessingAppId(appId);
+
     try {
       const endpoint = newStatus === "approved" ? "/api/applications-approve" : "/api/applications-reject";
       console.log(`Sending ${newStatus} request to:`, endpoint);
@@ -128,6 +136,8 @@ export function AdminDashboard() {
       alert(`Application ${newStatus} successfully!`);
     } catch (error) {
       console.error("Update error:", error);
+    } finally {
+      setProcessingAppId(null);
     }
   };
 
@@ -538,16 +548,18 @@ export function AdminDashboard() {
                       size="sm"
                       onClick={() => handleStatusChange(selectedApp._id, "approved")}
                       className="flex-1 bg-green-600 hover:bg-green-700"
+                      disabled={processingAppId === selectedApp._id}
                     >
-                      Approve
+                      {processingAppId === selectedApp._id ? "Approving..." : "Approve"}
                     </Button>
                     <Button
                       size="sm"
                       variant="destructive"
                       onClick={() => handleStatusChange(selectedApp._id, "rejected")}
                       className="flex-1"
+                      disabled={processingAppId === selectedApp._id}
                     >
-                      Reject
+                      {processingAppId === selectedApp._id ? "Rejecting..." : "Reject"}
                     </Button>
                   </div>
                 )}
