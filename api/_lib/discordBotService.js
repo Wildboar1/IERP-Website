@@ -17,7 +17,7 @@ export async function sendApplicationApprovalMessage(discordId, department) {
     
     const payload = {
       content: `✅ **Application Approved**\n\n${mention} - Your **${department.toUpperCase()}** Department application has been **ACCEPTED**! 🎉`,
-      username: 'IERP Portal',
+      username: 'SASP HR',
       avatar_url: 'https://ierp-website-sigma.vercel.app/sasp%20logo.webp'
     };
 
@@ -60,7 +60,7 @@ export async function sendApplicationRejectionMessage(discordId, department) {
     
     const payload = {
       content: `❌ **Application Status Update**\n\n${mention} - Unfortunately, your **${department.toUpperCase()}** Department application was not accepted at this time.`,
-      username: 'IERP Portal',
+      username: 'SASP HR',
       avatar_url: 'https://ierp-website-sigma.vercel.app/sasp%20logo.webp'
     };
 
