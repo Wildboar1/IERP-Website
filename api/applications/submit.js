@@ -45,9 +45,6 @@ export default async function handler(req, res) {
   const token = cookies.auth_token || req.cookies?.auth_token;
   const user = verifyToken(token);
   
-  console.log('Submit endpoint - User:', user);
-  console.log('Submit endpoint - isAdmin:', user?.isAdmin);
-  
   if (!user) {
     return res.status(401).json({ error: 'Unauthorized' });
   }

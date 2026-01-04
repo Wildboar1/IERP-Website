@@ -70,10 +70,6 @@ export default async function handler(req, res) {
       .filter(id => id.length > 0);
     const isAdmin = ADMIN_DISCORD_IDS.includes(userData.id);
     
-    console.log('Admin Discord IDs:', ADMIN_DISCORD_IDS);
-    console.log('Current User ID:', userData.id);
-    console.log('Is Admin:', isAdmin);
-    
     const token = jwt.sign(
       {
         id: userData.id,
