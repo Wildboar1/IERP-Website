@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
 import { useAuth } from "../context/AuthContext";
-import { AlertCircle, CheckCircle2, XCircle, Clock } from "lucide-react";
+import { AlertCircle, CheckCircle2, XCircle, Clock, Plus } from "lucide-react";
 
 interface Application {
   _id: string;
@@ -21,11 +23,23 @@ interface Application {
 }
 
 export function AdminDashboard() {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, isAdmin } = useAuth();
   const [applications, setApplications] = useState<Application[]>([]);
   const [selectedApp, setSelectedApp] = useState<Application | null>(null);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState<"all" | "pending" | "approved" | "rejected">("pending");
+  const [showTestForm, setShowTestForm] = useState(false);
+  const [testFormData, setTestFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    discord: "",
+    department: "lspd" as "lspd" | "doj",
+    experience: "",
+    whyJoin: "",
+    availability: "",
+  });
+  const [submittingTest, setSubmittingTest] = useState(false);
 
   useEffect(() => {
     fetchApplications();
@@ -92,6 +106,46 @@ export function AdminDashboard() {
     }
   };
 
+  const handleSubmitTestApplication = async () => {
+    try {
+      setSubmittingTest(true);
+      const response = await fetch("/api/applications/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify(testFormData),
+      });
+
+      if (!response.ok) {
+        const error = await response.json();
+        alert("Error: " + error.error);
+        return;
+      }
+
+      const result = await response.json();
+      alert("Test application submitted successfully!");
+      setShowTestForm(false);
+      setTestFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        discord: "",
+        department: "lspd",
+        experience: "",
+        whyJoin: "",
+        availability: "",
+      });
+      fetchApplications();
+    } catch (error) {
+      console.error("Submit error:", error);
+      alert("Failed to submit test application");
+    } finally {
+      setSubmittingTest(false);
+    }
+  };
+
   if (!isAuthenticated) {
     return (
       <div className="max-w-7xl mx-auto px-8 py-12">
@@ -104,6 +158,24 @@ export function AdminDashboard() {
           </CardHeader>
           <CardContent>
             <p className="text-red-600">You must be logged in to access the admin dashboard.</p>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
+  if (!isAdmin) {
+    return (
+      <div className="max-w-7xl mx-auto px-8 py-12">
+        <Card className="border-red-200 bg-red-50">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2 text-red-700">
+              <AlertCircle className="w-5 h-5" />
+              Admin Access Required
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-red-600">You do not have permission to access the admin dashboard. Contact an administrator for access.</p>
           </CardContent>
         </Card>
       </div>
@@ -126,6 +198,117 @@ export function AdminDashboard() {
       <div className="mb-8">
         <h1 className="mb-2 text-3xl font-bold">Admin Dashboard</h1>
         <p className="text-muted-foreground">Manage department applications</p>
+      </div>
+
+      <div className="mb-6">
+        <Button onClick={() => setShowTestForm(true)} className="gap-2">
+          <Plus className="w-4 h-4" />
+          Create Test Application
+        </Button>
+      </div>
+
+      {showTestForm && (
+        <Card className="mb-8 border-blue-200 bg-blue-50">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Plus className="w-5 h-5" />
+              Create Test Application
+            </CardTitle>
+            <CardDescription>Submit a test application and test approval/rejection with Discord notifications</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="text-sm font-medium">Full Name</label>
+                <Input
+                  value={testFormData.fullName}
+                  onChange={(e) => setTestFormData({ ...testFormData, fullName: e.target.value })}
+                  placeholder="Test User"
+                />
+              </div>
+              <div>
+                <label className="text-sm font-medium">Email</label>
+                <Input
+                  type="email"
+                  value={testFormData.email}
+                  onChange={(e) => setTestFormData({ ...testFormData, email: e.target.value })}
+                  placeholder="test@example.com"
+                />
+              </div>
+              <div>
+                <label className="text-sm font-medium">Phone</label>
+                <Input
+                  value={testFormData.phone}
+                  onChange={(e) => setTestFormData({ ...testFormData, phone: e.target.value })}
+                  placeholder="+1234567890"
+                />
+              </div>
+              <div>
+                <label className="text-sm font-medium">Discord Username</label>
+                <Input
+                  value={testFormData.discord}
+                  onChange={(e) => setTestFormData({ ...testFormData, discord: e.target.value })}
+                  placeholder="TestUser#0000"
+                />
+              </div>
+            </div>
+            <div>
+              <label htmlFor="test-department" className="text-sm font-medium">Department</label>
+              <select
+                id="test-department"
+                value={testFormData.department}
+                onChange={(e) => setTestFormData({ ...testFormData, department: e.target.value as "lspd" | "doj" })}
+                className="w-full rounded-md border border-gray-300 p-2"
+              >
+                <option value="lspd">LSPD - Los Santos Police Department</option>
+                <option value="doj">DOJ - Department of Justice</option>
+              </select>
+            </div>
+            <div>
+              <label className="text-sm font-medium">Why Join</label>
+              <Textarea
+                value={testFormData.whyJoin}
+                onChange={(e) => setTestFormData({ ...testFormData, whyJoin: e.target.value })}
+                placeholder="Tell us why you want to join..."
+                rows={3}
+              />
+            </div>
+            <div>
+              <label className="text-sm font-medium">Experience</label>
+              <Textarea
+                value={testFormData.experience}
+                onChange={(e) => setTestFormData({ ...testFormData, experience: e.target.value })}
+                placeholder="Your experience (optional)"
+                rows={2}
+              />
+            </div>
+            <div>
+              <label className="text-sm font-medium">Availability</label>
+              <Input
+                value={testFormData.availability}
+                onChange={(e) => setTestFormData({ ...testFormData, availability: e.target.value })}
+                placeholder="e.g., 10 hours/week"
+              />
+            </div>
+            <div className="flex gap-2 pt-4">
+              <Button
+                onClick={handleSubmitTestApplication}
+                disabled={submittingTest}
+                className="flex-1 bg-blue-600 hover:bg-blue-700"
+              >
+                {submittingTest ? "Submitting..." : "Submit Test Application"}
+              </Button>
+              <Button
+                onClick={() => setShowTestForm(false)}
+                variant="outline"
+                className="flex-1"
+              >
+                Cancel
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      )}
       </div>
 
       {/* Stats */}
