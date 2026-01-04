@@ -79,7 +79,7 @@ export default async function handler(req, res) {
     }
 
     try {
-      await sendApplicationApprovalMessage(application.discord, application.department);
+      await sendApplicationApprovalMessage(application.discordId, application.department);
     } catch (discordError) {
       console.error('Discord notification failed:', discordError);
     }

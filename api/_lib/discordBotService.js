@@ -13,7 +13,7 @@ export async function sendApplicationApprovalMessage(discordId, department) {
   }
 
   try {
-    const mention = /^\d+$/.test(discordId) ? `<@${discordId}>` : `**${discordId}**`;
+    const mention = `<@${discordId}>`;
     
     const payload = {
       content: `✅ **Application Approved**\n\n${mention} - Your **${department.toUpperCase()}** Department application has been **ACCEPTED**! 🎉`,
@@ -56,7 +56,7 @@ export async function sendApplicationRejectionMessage(discordId, department) {
   }
 
   try {
-    const mention = /^\d+$/.test(discordId) ? `<@${discordId}>` : `**${discordId}**`;
+    const mention = `<@${discordId}>`;
     
     const payload = {
       content: `❌ **Application Status Update**\n\n${mention} - Unfortunately, your **${department.toUpperCase()}** Department application was not accepted at this time.`,
