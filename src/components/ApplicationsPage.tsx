@@ -234,7 +234,7 @@ export function ApplicationsPage() {
                       <li>✓ Your application is being reviewed by our team</li>
                       <li>✓ You will receive an email notification with the decision</li>
                       <li>✓ You will also get a Discord notification</li>
-                      <li>✓ Review typically takes 24-48 hours</li>
+                      <li>✓ Review typically takes 24 hours</li>
                     </ul>
                   </div>
                   <div className="bg-red-50 border border-red-200 rounded-lg p-4 max-w-md mx-auto">
@@ -384,7 +384,7 @@ export function ApplicationsPage() {
                     <div>
                       <strong>Application Review</strong>
                       <p className="text-muted-foreground">
-                        Your application will be reviewed by department leadership within 48 hours.
+                        Your application will be reviewed by department leadership within 24 hours.
                       </p>
                     </div>
                   </div>

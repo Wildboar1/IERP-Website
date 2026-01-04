@@ -2,6 +2,7 @@ import jwt from 'jsonwebtoken';
 import { connectDB } from '../_lib/mongoose.js';
 import { Application } from '../_lib/Application.js';
 import { sendApplicationEmail } from '../_lib/emailService.js';
+import { sendApplicationLogMessage } from '../_lib/discordBotService.js';
 
 function verifyToken(token) {
   try {
@@ -87,6 +88,14 @@ export default async function handler(req, res) {
       await sendApplicationEmail(req.body);
     } catch (emailError) {
       console.error('Email failed:', emailError);
+    }
+
+    // Send application log to Discord admin channel
+    try {
+      await sendApplicationLogMessage(application);
+    } catch (discordError) {
+      console.error('Discord log webhook failed:', discordError);
+      // Continue even if Discord webhook fails
     }
 
     res.json({ success: true, message: 'Application submitted', applicationId: application._id });

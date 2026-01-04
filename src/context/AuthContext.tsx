@@ -7,6 +7,7 @@ interface User {
   username: string;
   avatar: string;
   email: string;
+  isAdmin?: boolean;
 }
 
 interface AuthContextType {
@@ -59,7 +60,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         });
         if (response.ok) {
           const userData = await response.json();
-          setUser(userData);
+          setUser({
+            ...userData,
+            isAdmin: userData.isAdmin || false
+          });
           console.log("✓ User authenticated:", userData.username || userData.id);
         }
         // Don't log 401 errors - they're expected when not logged in
@@ -100,7 +104,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           id: userData.id,
           username: userData.username,
           email: userData.email,
-          avatar: userData.avatar || `https://cdn.discordapp.com/avatars/${userData.id}/${userData.avatar}.png`
+          avatar: userData.avatar || `https://cdn.discordapp.com/avatars/${userData.id}/${userData.avatar}.png`,
+          isAdmin: userData.isAdmin || false
         });
         console.log("✓ Authentication successful:", userData.username);
         toast.success(`Welcome, ${userData.username}!`);
@@ -162,7 +167,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         isLoading,
         login,
         logout,
-        isAdmin: user?.id === ADMIN_DISCORD_ID,
+        isAdmin: user?.isAdmin || false,
         isAuthenticated: !!user,
       }}
     >

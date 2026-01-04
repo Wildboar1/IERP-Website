@@ -7,7 +7,7 @@ import jwt from 'jsonwebtoken';
 import { connectDB } from './db/mongoose.js';
 import { Application } from './models/Application.js';
 import { sendApplicationEmail } from './services/emailService.js';
-import { sendApplicationApprovalMessage, sendApplicationRejectionMessage } from './services/discordBotService.js';
+import { sendApplicationApprovalMessage, sendApplicationRejectionMessage, sendApplicationLogMessage } from './services/discordBotService.js';
 
 dotenv.config();
 
@@ -114,6 +114,16 @@ app.post('/api/auth/callback', async (req, res) => {
     
     console.log('User data retrieved:', userData.id ? `✓ ID: ${userData.id}` : '✗ No user ID');
 
+    // Check if user is admin
+    const ADMIN_DISCORD_IDS = (process.env.ADMIN_DISCORD_IDS || '')
+      .split(',')
+      .map(id => id.trim())
+      .filter(id => id.length > 0);
+    const isAdmin = ADMIN_DISCORD_IDS.includes(userData.id);
+    
+    console.log('Admin IDs configured:', ADMIN_DISCORD_IDS);
+    console.log('User is admin:', isAdmin);
+
     // Create user object
     const user = {
       id: userData.id,
@@ -122,6 +132,7 @@ app.post('/api/auth/callback', async (req, res) => {
       avatar: userData.avatar
         ? `https://cdn.discordapp.com/avatars/${userData.id}/${userData.avatar}.png`
         : null,
+      isAdmin: isAdmin,
     };
     
     console.log('Creating JWT token for user:', user.id);
@@ -174,6 +185,7 @@ app.post('/api/applications/submit', verifyToken, async (req, res) => {
       email,
       phone,
       discord,
+      discordId: req.user.id,
       department,
       experience,
       whyJoin,
@@ -185,6 +197,7 @@ app.post('/api/applications/submit', verifyToken, async (req, res) => {
       email,
       phone,
       discord,
+      discordId: req.user.id,
       department,
       experience,
       whyJoin,
@@ -211,6 +224,15 @@ app.post('/api/applications/submit', verifyToken, async (req, res) => {
       console.log('✓ Email sent successfully');
     } catch (emailError) {
       console.error('Warning: Email notification failed (but application was saved):', emailError.message);
+    }
+    
+    // Send Discord log webhook
+    try {
+      console.log('Sending Discord log notification...');
+      await sendApplicationLogMessage(application);
+      console.log('✓ Discord log sent successfully');
+    } catch (discordError) {
+      console.error('Warning: Discord log failed (but application was saved):', discordError.message);
     }
     
     res.json({ 
@@ -315,6 +337,104 @@ app.patch('/api/applications/:id/status', verifyToken, async (req, res) => {
   }
 });
 
+// Approve application
+app.post('/api/applications-approve', verifyToken, async (req, res) => {
+  console.log('\n========== APPROVE APPLICATION ==========');
+  console.log('Admin User:', req.user?.username);
+  console.log('Request body:', req.body);
+  
+  try {
+    await connectDB();
+    
+    const { applicationId } = req.body;
+    
+    if (!applicationId) {
+      return res.status(400).json({ error: 'Missing applicationId' });
+    }
+    
+    const application = await Application.findByIdAndUpdate(
+      applicationId,
+      {
+        status: 'approved',
+        reviewedAt: new Date(),
+        reviewedBy: req.user.username,
+      },
+      { new: true }
+    );
+    
+    if (!application) {
+      console.log('✗ Application not found');
+      return res.status(404).json({ error: 'Application not found' });
+    }
+    
+    console.log('✓ Application approved:', application.fullName);
+    
+    // Send Discord approval message
+    try {
+      console.log('Sending Discord approval message...');
+      await sendApplicationApprovalMessage(application.discordId, application.department);
+      console.log('✓ Discord message sent');
+    } catch (discordError) {
+      console.error('Discord send failed:', discordError.message);
+    }
+    
+    console.log('========== END APPROVE ==========\n');
+    res.json({ success: true, application });
+  } catch (error) {
+    console.error('Approve application error:', error);
+    res.status(500).json({ error: 'Failed to approve application' });
+  }
+});
+
+// Reject application
+app.post('/api/applications-reject', verifyToken, async (req, res) => {
+  console.log('\n========== REJECT APPLICATION ==========');
+  console.log('Admin User:', req.user?.username);
+  console.log('Request body:', req.body);
+  
+  try {
+    await connectDB();
+    
+    const { applicationId } = req.body;
+    
+    if (!applicationId) {
+      return res.status(400).json({ error: 'Missing applicationId' });
+    }
+    
+    const application = await Application.findByIdAndUpdate(
+      applicationId,
+      {
+        status: 'rejected',
+        reviewedAt: new Date(),
+        reviewedBy: req.user.username,
+      },
+      { new: true }
+    );
+    
+    if (!application) {
+      console.log('✗ Application not found');
+      return res.status(404).json({ error: 'Application not found' });
+    }
+    
+    console.log('✓ Application rejected:', application.fullName);
+    
+    // Send Discord rejection message
+    try {
+      console.log('Sending Discord rejection message...');
+      await sendApplicationRejectionMessage(application.discordId, application.department);
+      console.log('✓ Discord message sent');
+    } catch (discordError) {
+      console.error('Discord send failed:', discordError.message);
+    }
+    
+    console.log('========== END REJECT ==========\n');
+    res.json({ success: true, application });
+  } catch (error) {
+    console.error('Reject application error:', error);
+    res.status(500).json({ error: 'Failed to reject application' });
+  }
+});
+
 // Test Discord webhook endpoint
 app.post('/api/test-webhook', async (req, res) => {
   console.log('=== TEST WEBHOOK ENDPOINT CALLED ===');
@@ -330,6 +450,46 @@ app.post('/api/test-webhook', async (req, res) => {
   } catch (error) {
     console.error('Webhook test failed:', error);
     res.status(500).json({ error: error.message });
+  }
+});
+
+// Reset specific applications to pending
+app.post('/api/applications/reset-to-pending', verifyToken, async (req, res) => {
+  try {
+    await connectDB();
+    const { names } = req.body;
+    
+    if (!Array.isArray(names) || names.length === 0) {
+      return res.status(400).json({ error: 'Names array required' });
+    }
+    
+    const result = await Application.updateMany(
+      { fullName: { $in: names } },
+      { $set: { status: 'pending', reviewedAt: null, reviewedBy: null, reviewNotes: null } }
+    );
+    
+    console.log(`Reset ${result.modifiedCount} applications to pending:`, names);
+    res.json({ success: true, modifiedCount: result.modifiedCount, names });
+  } catch (error) {
+    console.error('Reset applications error:', error);
+    res.status(500).json({ error: 'Failed to reset applications' });
+  }
+});
+
+// Delete all test applications (development only)
+app.delete('/api/applications/clear-all', verifyToken, async (req, res) => {
+  if (process.env.NODE_ENV === 'production') {
+    return res.status(403).json({ error: 'Not allowed in production' });
+  }
+  
+  try {
+    await connectDB();
+    const result = await Application.deleteMany({});
+    console.log(`Deleted ${result.deletedCount} applications`);
+    res.json({ success: true, deletedCount: result.deletedCount });
+  } catch (error) {
+    console.error('Delete applications error:', error);
+    res.status(500).json({ error: 'Failed to delete applications' });
   }
 });
 

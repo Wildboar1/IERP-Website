@@ -17,4 +17,13 @@ export default defineConfig({
       '@data': path.resolve(__dirname, './data'),
     },
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3001',
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
 })

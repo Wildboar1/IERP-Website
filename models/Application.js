@@ -14,6 +14,10 @@ const applicationSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  discordId: {
+    type: String,
+    required: false,
+  },
   department: {
     type: String,
     required: true,
