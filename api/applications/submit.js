@@ -43,7 +43,9 @@ export default async function handler(req, res) {
 
   const cookies = parseCookies(req.headers.cookie);
   const token = cookies.auth_token || req.cookies?.auth_token;
-  if (!verifyToken(token)) {
+  const user = verifyToken(token);
+  
+  if (!user) {
     return res.status(401).json({ error: 'Unauthorized' });
   }
 
@@ -56,11 +58,23 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Missing required fields' });
     }
 
+    // Check if user has already submitted an application (unless they are an admin)
+    if (!user.isAdmin) {
+      const existingApplication = await Application.findOne({ discordId: user.id });
+      if (existingApplication) {
+        return res.status(400).json({ 
+          error: 'You have already submitted an application',
+          message: 'Each user can only submit one application. Contact an admin if you need to reapply.'
+        });
+      }
+    }
+
     const application = new Application({
       fullName,
       email,
       phone,
       discord,
+      discordId: user.id,
       department,
       experience,
       whyJoin,

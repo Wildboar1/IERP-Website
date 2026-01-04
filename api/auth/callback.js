@@ -64,6 +64,9 @@ export default async function handler(req, res) {
     console.log("✓ Got user data:", userData.username);
 
     // Create JWT token
+    const ADMIN_DISCORD_IDS = process.env.ADMIN_DISCORD_IDS?.split(',') || [];
+    const isAdmin = ADMIN_DISCORD_IDS.includes(userData.id);
+    
     const token = jwt.sign(
       {
         id: userData.id,
@@ -71,6 +74,7 @@ export default async function handler(req, res) {
         email: userData.email,
         avatar: userData.avatar ? 
           `https://cdn.discordapp.com/avatars/${userData.id}/${userData.avatar}.png` : null,
+        isAdmin: isAdmin,
       },
       JWT_SECRET,
       { expiresIn: '7d' }
