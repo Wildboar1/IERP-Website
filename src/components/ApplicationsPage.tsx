@@ -43,6 +43,7 @@ export function ApplicationsPage() {
   const [selectedDepartment, setSelectedDepartment] = useState("");
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
   const [hasSubmitted, setHasSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -75,6 +76,11 @@ export function ApplicationsPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Prevent multiple submissions
+    if (isSubmitting) {
+      return;
+    }
     
     // Trim whitespace from fields
     const fullName = formData.fullName.trim();
@@ -134,6 +140,8 @@ export function ApplicationsPage() {
       return;
     }
 
+    setIsSubmitting(true);
+
     try {
       const response = await fetch("/api/applications/submit", {
         method: "POST",
@@ -187,6 +195,8 @@ export function ApplicationsPage() {
       toast.error("Failed to submit application", {
         description: errorMessage,
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -608,8 +618,8 @@ export function ApplicationsPage() {
                     <p className="text-sm text-muted-foreground">
                       <span className="text-red-500">*</span> Required fields
                     </p>
-                    <Button type="submit" size="lg" className="min-w-[200px]">
-                      Submit Application
+                    <Button type="submit" size="lg" className="min-w-[200px]" disabled={isSubmitting}>
+                      {isSubmitting ? "Submitting..." : "Submit Application"}
                     </Button>
                   </div>
                 </form>
