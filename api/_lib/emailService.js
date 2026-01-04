@@ -47,6 +47,24 @@ export async function sendAdminNotification(applicationData) {
   initializeSendGrid();
   try {
     const { fullName, email, department, position, whyJoin } = applicationData;
+    const lspdResponses =
+      department === 'lspd' && applicationData.lspdQuestions
+        ? `
+        <h3>LSPD Scenario Responses</h3>
+        <ol>
+          <li><strong>Why join / approach:</strong> ${applicationData.lspdQuestions.motivation || 'Not provided'}</li>
+          <li><strong>Realistic RP view:</strong> ${applicationData.lspdQuestions.realisticRoleplay || 'Not provided'}</li>
+          <li><strong>Rude but legal stop:</strong> ${applicationData.lspdQuestions.rudeButNotIllegal || 'Not provided'}</li>
+          <li><strong>Officer rule break:</strong> ${applicationData.lspdQuestions.officerMisconduct || 'Not provided'}</li>
+          <li><strong>Non-violent refusal:</strong> ${applicationData.lspdQuestions.nonCompliantStop || 'Not provided'}</li>
+          <li><strong>Winning vs RP:</strong> ${applicationData.lspdQuestions.balanceWinRp || 'Not provided'}</li>
+          <li><strong>Power abuse claim:</strong> ${applicationData.lspdQuestions.abuseAccusation || 'Not provided'}</li>
+          <li><strong>Injury RP:</strong> ${applicationData.lspdQuestions.injuryRoleplay || 'Not provided'}</li>
+          <li><strong>Officer qualities:</strong> ${applicationData.lspdQuestions.officerQualities || 'Not provided'}</li>
+          <li><strong>Handling mistakes:</strong> ${applicationData.lspdQuestions.mistakeHandling || 'Not provided'}</li>
+        </ol>
+      `
+        : '';
     const msg = {
       to: process.env.ADMIN_EMAIL,
       from: process.env.FROM_EMAIL,
@@ -58,6 +76,7 @@ export async function sendAdminNotification(applicationData) {
         <p><strong>Department:</strong> ${department.toUpperCase()}</p>
         ${position ? `<p><strong>Position:</strong> ${position}</p>` : ''}
         <p><strong>Why Join:</strong> ${whyJoin}</p>
+        ${lspdResponses}
         <br>
         <p>Review this application in the admin dashboard.</p>
       `,

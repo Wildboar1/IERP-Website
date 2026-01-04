@@ -171,11 +171,35 @@ app.post('/api/applications/submit', verifyToken, async (req, res) => {
     // Connect to MongoDB if not already connected
     await connectDB();
     
-    const { fullName, email, phone, discord, department, experience, whyJoin, availability } = req.body;
+    const { fullName, email, phone, discord, department, experience, whyJoin, availability, lspdQuestions } = req.body;
+    const isLspd = department === 'lspd';
+
+    const requiredLspdKeys = [
+      'motivation',
+      'realisticRoleplay',
+      'rudeButNotIllegal',
+      'officerMisconduct',
+      'nonCompliantStop',
+      'balanceWinRp',
+      'abuseAccusation',
+      'injuryRoleplay',
+      'officerQualities',
+      'mistakeHandling',
+    ];
+
+    const trimmedLspdQuestions = isLspd
+      ? Object.fromEntries(
+          requiredLspdKeys.map((key) => [key, (lspdQuestions?.[key] || '').trim()])
+        )
+      : undefined;
     
     // Validate required fields
-    if (!fullName || !email || !department || !whyJoin) {
-      console.log('Validation failed:', { fullName: !!fullName, email: !!email, department: !!department, whyJoin: !!whyJoin });
+    const missingLspdResponses = isLspd
+      ? requiredLspdKeys.filter((key) => !trimmedLspdQuestions?.[key])
+      : [];
+
+    if (!fullName || !email || !department || !whyJoin || missingLspdResponses.length) {
+      console.log('Validation failed:', { fullName: !!fullName, email: !!email, department: !!department, whyJoin: !!whyJoin, missingLspdResponses });
       return res.status(400).json({ error: 'Missing required fields' });
     }
     
@@ -190,6 +214,7 @@ app.post('/api/applications/submit', verifyToken, async (req, res) => {
       experience,
       whyJoin,
       availability,
+      lspdQuestions: trimmedLspdQuestions,
     });
     
     console.log('Application object created:', {
@@ -202,6 +227,7 @@ app.post('/api/applications/submit', verifyToken, async (req, res) => {
       experience,
       whyJoin,
       availability,
+      lspdQuestions: trimmedLspdQuestions,
     });
     
     console.log('Saving to database...');
@@ -220,6 +246,7 @@ app.post('/api/applications/submit', verifyToken, async (req, res) => {
         experience,
         whyJoin,
         availability,
+        lspdQuestions: trimmedLspdQuestions,
       });
       console.log('✓ Email sent successfully');
     } catch (emailError) {

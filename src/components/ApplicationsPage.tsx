@@ -25,6 +25,19 @@ const departments = [
   },
 ];
 
+const createEmptyLspdResponses = () => ({
+  motivation: "",
+  realisticRoleplay: "",
+  rudeButNotIllegal: "",
+  officerMisconduct: "",
+  nonCompliantStop: "",
+  balanceWinRp: "",
+  abuseAccusation: "",
+  injuryRoleplay: "",
+  officerQualities: "",
+  mistakeHandling: "",
+});
+
 export function ApplicationsPage() {
   const { user } = useAuth();
   const [selectedDepartment, setSelectedDepartment] = useState("");
@@ -37,7 +50,9 @@ export function ApplicationsPage() {
     experience: "",
     whyJoin: "",
     availability: "",
+    lspdQuestions: createEmptyLspdResponses(),
   });
+  const isLspd = selectedDepartment === "lspd";
 
   // Check if user has already submitted on mount
   useEffect(() => {
@@ -66,6 +81,21 @@ export function ApplicationsPage() {
     const email = formData.email.trim();
     const discord = formData.discord.trim();
     const whyJoin = formData.whyJoin.trim();
+    const trimmedLspdQuestions = Object.fromEntries(
+      Object.entries(formData.lspdQuestions || {}).map(([key, value]) => [key, (value || "").trim()])
+    );
+    const lspdQuestionLabels: Record<string, string> = {
+      motivation: "LSPD - Why join / approach",
+      realisticRoleplay: "LSPD - Realistic roleplay meaning",
+      rudeButNotIllegal: "LSPD - Handling rude but legal suspect",
+      officerMisconduct: "LSPD - Officer breaking rules",
+      nonCompliantStop: "LSPD - Non-violent refusal",
+      balanceWinRp: "LSPD - Winning vs RP",
+      abuseAccusation: "LSPD - Accused of power abuse",
+      injuryRoleplay: "LSPD - Injury roleplay",
+      officerQualities: "LSPD - Officer qualities",
+      mistakeHandling: "LSPD - Handling your mistake",
+    };
     
     // Debug logging
     console.log("=== Form Submission Debug ===");
@@ -84,9 +114,22 @@ export function ApplicationsPage() {
       if (!email) missing.push("Email");
       if (!discord) missing.push("Discord ID");
       if (!whyJoin) missing.push("Why Join");
-      
+
       const errorMsg = `Please fill in all required fields: ${missing.join(", ")}`;
       console.error("Validation failed:", missing);
+      toast.error(errorMsg);
+      return;
+    }
+
+    const lspdMissing = isLspd
+      ? Object.entries(trimmedLspdQuestions)
+          .filter(([, value]) => !value)
+          .map(([key]) => lspdQuestionLabels[key] || key)
+      : [];
+
+    if (lspdMissing.length) {
+      const errorMsg = `Please answer all LSPD questions: ${lspdMissing.join(", ")}`;
+      console.error("LSPD validation failed:", lspdMissing);
       toast.error(errorMsg);
       return;
     }
@@ -106,6 +149,7 @@ export function ApplicationsPage() {
           whyJoin: whyJoin,
           availability: formData.availability.trim(),
           department: selectedDepartment,
+          lspdQuestions: isLspd ? trimmedLspdQuestions : undefined,
         }),
       });
 
@@ -135,6 +179,7 @@ export function ApplicationsPage() {
         experience: "",
         whyJoin: "",
         availability: "",
+        lspdQuestions: createEmptyLspdResponses(),
       });
     } catch (error) {
       console.error("Application error:", error);
@@ -356,6 +401,207 @@ export function ApplicationsPage() {
                       />
                     </div>
                   </div>
+
+                  {isLspd && (
+                    <div className="space-y-4">
+                      <div>
+                        <h3 className="mb-4">LSPD Scenario Questions</h3>
+                        <p className="text-sm text-muted-foreground">These questions are required for LSPD applications to ensure realistic police roleplay.</p>
+                      </div>
+
+                      <div className="space-y-3">
+                        <div className="space-y-2">
+                          <Label htmlFor="lspd-motivation">
+                            Why do you want to join the police department in this roleplay server, and what makes your approach different from others? <span className="text-red-500">*</span>
+                          </Label>
+                          <Textarea
+                            id="lspd-motivation"
+                            placeholder="Explain your motivation and what sets you apart."
+                            value={formData.lspdQuestions.motivation}
+                            onChange={(e) =>
+                              setFormData({
+                                ...formData,
+                                lspdQuestions: { ...formData.lspdQuestions, motivation: e.target.value },
+                              })
+                            }
+                            rows={3}
+                            required
+                          />
+                        </div>
+
+                        <div className="space-y-2">
+                          <Label htmlFor="lspd-realistic">
+                            What does “realistic roleplay” mean to you? Give one example of good police RP and one example of bad police RP. <span className="text-red-500">*</span>
+                          </Label>
+                          <Textarea
+                            id="lspd-realistic"
+                            placeholder="Share your definition and one good and bad example."
+                            value={formData.lspdQuestions.realisticRoleplay}
+                            onChange={(e) =>
+                              setFormData({
+                                ...formData,
+                                lspdQuestions: { ...formData.lspdQuestions, realisticRoleplay: e.target.value },
+                              })
+                            }
+                            rows={3}
+                            required
+                          />
+                        </div>
+
+                        <div className="space-y-2">
+                          <Label htmlFor="lspd-rude">
+                            If you stop a suspect who is being rude but not breaking any laws, how would you handle the situation in RP? <span className="text-red-500">*</span>
+                          </Label>
+                          <Textarea
+                            id="lspd-rude"
+                            placeholder="Describe how you would respond and de-escalate."
+                            value={formData.lspdQuestions.rudeButNotIllegal}
+                            onChange={(e) =>
+                              setFormData({
+                                ...formData,
+                                lspdQuestions: { ...formData.lspdQuestions, rudeButNotIllegal: e.target.value },
+                              })
+                            }
+                            rows={3}
+                            required
+                          />
+                        </div>
+
+                        <div className="space-y-2">
+                          <Label htmlFor="lspd-misconduct">
+                            You witness a fellow officer breaking server rules or power-gaming. What would you do? <span className="text-red-500">*</span>
+                          </Label>
+                          <Textarea
+                            id="lspd-misconduct"
+                            placeholder="Explain your steps and reporting approach."
+                            value={formData.lspdQuestions.officerMisconduct}
+                            onChange={(e) =>
+                              setFormData({
+                                ...formData,
+                                lspdQuestions: { ...formData.lspdQuestions, officerMisconduct: e.target.value },
+                              })
+                            }
+                            rows={3}
+                            required
+                          />
+                        </div>
+
+                        <div className="space-y-2">
+                          <Label htmlFor="lspd-noncompliant">
+                            A suspect refuses to cooperate during a traffic stop but is not violent. What steps would you take, and why? <span className="text-red-500">*</span>
+                          </Label>
+                          <Textarea
+                            id="lspd-noncompliant"
+                            placeholder="Outline your process and justification."
+                            value={formData.lspdQuestions.nonCompliantStop}
+                            onChange={(e) =>
+                              setFormData({
+                                ...formData,
+                                lspdQuestions: { ...formData.lspdQuestions, nonCompliantStop: e.target.value },
+                              })
+                            }
+                            rows={3}
+                            required
+                          />
+                        </div>
+
+                        <div className="space-y-2">
+                          <Label htmlFor="lspd-balance">
+                            How would you balance winning a situation versus maintaining realistic roleplay? <span className="text-red-500">*</span>
+                          </Label>
+                          <Textarea
+                            id="lspd-balance"
+                            placeholder="Share how you prioritize realism over winning."
+                            value={formData.lspdQuestions.balanceWinRp}
+                            onChange={(e) =>
+                              setFormData({
+                                ...formData,
+                                lspdQuestions: { ...formData.lspdQuestions, balanceWinRp: e.target.value },
+                              })
+                            }
+                            rows={3}
+                            required
+                          />
+                        </div>
+
+                        <div className="space-y-2">
+                          <Label htmlFor="lspd-abuse">
+                            What would you do if a civilian accuses you of abusing police power during an interaction? <span className="text-red-500">*</span>
+                          </Label>
+                          <Textarea
+                            id="lspd-abuse"
+                            placeholder="Explain your response and documentation approach."
+                            value={formData.lspdQuestions.abuseAccusation}
+                            onChange={(e) =>
+                              setFormData({
+                                ...formData,
+                                lspdQuestions: { ...formData.lspdQuestions, abuseAccusation: e.target.value },
+                              })
+                            }
+                            rows={3}
+                            required
+                          />
+                        </div>
+
+                        <div className="space-y-2">
+                          <Label htmlFor="lspd-injury">
+                            Explain how you would roleplay being injured after a shootout, even if the game mechanics allow you to move freely. <span className="text-red-500">*</span>
+                          </Label>
+                          <Textarea
+                            id="lspd-injury"
+                            placeholder="Describe how you'd represent injuries and call for help."
+                            value={formData.lspdQuestions.injuryRoleplay}
+                            onChange={(e) =>
+                              setFormData({
+                                ...formData,
+                                lspdQuestions: { ...formData.lspdQuestions, injuryRoleplay: e.target.value },
+                              })
+                            }
+                            rows={3}
+                            required
+                          />
+                        </div>
+
+                        <div className="space-y-2">
+                          <Label htmlFor="lspd-qualities">
+                            What are the most important qualities a police officer should have in roleplay, and which of those qualities do you personally bring? <span className="text-red-500">*</span>
+                          </Label>
+                          <Textarea
+                            id="lspd-qualities"
+                            placeholder="List key qualities and note which you exemplify."
+                            value={formData.lspdQuestions.officerQualities}
+                            onChange={(e) =>
+                              setFormData({
+                                ...formData,
+                                lspdQuestions: { ...formData.lspdQuestions, officerQualities: e.target.value },
+                              })
+                            }
+                            rows={3}
+                            required
+                          />
+                        </div>
+
+                        <div className="space-y-2">
+                          <Label htmlFor="lspd-mistake">
+                            If you make a mistake during RP that affects another player, how would you handle it? <span className="text-red-500">*</span>
+                          </Label>
+                          <Textarea
+                            id="lspd-mistake"
+                            placeholder="Explain how you would address and correct the mistake."
+                            value={formData.lspdQuestions.mistakeHandling}
+                            onChange={(e) =>
+                              setFormData({
+                                ...formData,
+                                lspdQuestions: { ...formData.lspdQuestions, mistakeHandling: e.target.value },
+                              })
+                            }
+                            rows={3}
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  )}
 
                   {/* Submit Button */}
                   <div className="flex items-center justify-between pt-4 border-t">

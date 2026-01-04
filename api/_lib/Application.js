@@ -31,6 +31,18 @@ const applicationSchema = new mongoose.Schema({
     required: true,
   },
   availability: String,
+  lspdQuestions: {
+    motivation: String,
+    realisticRoleplay: String,
+    rudeButNotIllegal: String,
+    officerMisconduct: String,
+    nonCompliantStop: String,
+    balanceWinRp: String,
+    abuseAccusation: String,
+    injuryRoleplay: String,
+    officerQualities: String,
+    mistakeHandling: String,
+  },
   status: {
     type: String,
     enum: ['pending', 'approved', 'rejected'],

@@ -99,6 +99,14 @@ export async function sendApplicationLogMessage(applicationData) {
   }
 
   try {
+    const formatLong = (text) => {
+      if (!text) return 'Not provided';
+      return text.length > 1024 ? `${text.slice(0, 1021)}...` : text;
+    };
+
+    const lspdQuestions =
+      applicationData.department === 'lspd' ? applicationData.lspdQuestions : undefined;
+
     const embed = {
       title: '📝 New Application Submitted',
       color: 0x3498db,
@@ -147,7 +155,61 @@ export async function sendApplicationLogMessage(applicationData) {
           name: '⏰ Availability',
           value: applicationData.availability || 'Not specified',
           inline: false
-        }
+        },
+        ...(lspdQuestions
+          ? [
+              {
+                name: '🚔 LSPD: Why join + approach',
+                value: formatLong(lspdQuestions.motivation),
+                inline: false,
+              },
+              {
+                name: '🚔 LSPD: Realistic RP view',
+                value: formatLong(lspdQuestions.realisticRoleplay),
+                inline: false,
+              },
+              {
+                name: '🚔 LSPD: Rude but legal stop',
+                value: formatLong(lspdQuestions.rudeButNotIllegal),
+                inline: false,
+              },
+              {
+                name: '🚔 LSPD: Officer rule break',
+                value: formatLong(lspdQuestions.officerMisconduct),
+                inline: false,
+              },
+              {
+                name: '🚔 LSPD: Non-violent refusal',
+                value: formatLong(lspdQuestions.nonCompliantStop),
+                inline: false,
+              },
+              {
+                name: '🚔 LSPD: Winning vs RP',
+                value: formatLong(lspdQuestions.balanceWinRp),
+                inline: false,
+              },
+              {
+                name: '🚔 LSPD: Power abuse claim',
+                value: formatLong(lspdQuestions.abuseAccusation),
+                inline: false,
+              },
+              {
+                name: '🚔 LSPD: Injury RP',
+                value: formatLong(lspdQuestions.injuryRoleplay),
+                inline: false,
+              },
+              {
+                name: '🚔 LSPD: Officer qualities',
+                value: formatLong(lspdQuestions.officerQualities),
+                inline: false,
+              },
+              {
+                name: '🚔 LSPD: Handling mistakes',
+                value: formatLong(lspdQuestions.mistakeHandling),
+                inline: false,
+              },
+            ]
+          : []),
       ],
       timestamp: new Date().toISOString(),
       footer: {

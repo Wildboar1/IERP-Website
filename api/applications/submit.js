@@ -53,9 +53,29 @@ export default async function handler(req, res) {
   try {
     await connectDB();
 
-    const { fullName, email, phone, discord, department, experience, whyJoin, availability } = req.body;
+    const { fullName, email, phone, discord, department, experience, whyJoin, availability, lspdQuestions } = req.body;
+    const isLspd = department === 'lspd';
+    const requiredLspdKeys = [
+      'motivation',
+      'realisticRoleplay',
+      'rudeButNotIllegal',
+      'officerMisconduct',
+      'nonCompliantStop',
+      'balanceWinRp',
+      'abuseAccusation',
+      'injuryRoleplay',
+      'officerQualities',
+      'mistakeHandling',
+    ];
+    const trimmedLspdQuestions = isLspd
+      ? Object.fromEntries(requiredLspdKeys.map((key) => [key, (lspdQuestions?.[key] || '').trim()]))
+      : undefined;
 
-    if (!fullName || !email || !department || !whyJoin) {
+    const missingLspdResponses = isLspd
+      ? requiredLspdKeys.filter((key) => !trimmedLspdQuestions?.[key])
+      : [];
+
+    if (!fullName || !email || !department || !whyJoin || missingLspdResponses.length) {
       return res.status(400).json({ error: 'Missing required fields' });
     }
 
@@ -80,12 +100,23 @@ export default async function handler(req, res) {
       experience,
       whyJoin,
       availability,
+      lspdQuestions: trimmedLspdQuestions,
     });
 
     await application.save();
 
     try {
-      await sendApplicationEmail(req.body);
+      await sendApplicationEmail({
+        fullName,
+        email,
+        phone,
+        discord,
+        department,
+        experience,
+        whyJoin,
+        availability,
+        lspdQuestions: trimmedLspdQuestions,
+      });
     } catch (emailError) {
       console.error('Email failed:', emailError);
     }

@@ -20,10 +20,34 @@ interface Application {
   whyJoin: string;
   availability?: string;
   phone?: string;
+  lspdQuestions?: {
+    motivation?: string;
+    realisticRoleplay?: string;
+    rudeButNotIllegal?: string;
+    officerMisconduct?: string;
+    nonCompliantStop?: string;
+    balanceWinRp?: string;
+    abuseAccusation?: string;
+    injuryRoleplay?: string;
+    officerQualities?: string;
+    mistakeHandling?: string;
+  };
 }
 
 export function AdminDashboard() {
   const { isAuthenticated, isAdmin } = useAuth();
+  const defaultLspdTestAnswers = {
+    motivation: "Test: why join and approach.",
+    realisticRoleplay: "Test: realistic RP definition with good/bad examples.",
+    rudeButNotIllegal: "Test: stay professional and de-escalate.",
+    officerMisconduct: "Test: report misconduct through proper channels.",
+    nonCompliantStop: "Test: call backup, follow policy, detain if needed.",
+    balanceWinRp: "Test: prioritize realism over winning.",
+    abuseAccusation: "Test: stay calm, explain, involve supervisor.",
+    injuryRoleplay: "Test: emote injuries, call EMS, limit movement.",
+    officerQualities: "Test: professionalism, integrity, communication.",
+    mistakeHandling: "Test: admit error, fix scene, apologize.",
+  };
   const [applications, setApplications] = useState<Application[]>([]);
   const [selectedApp, setSelectedApp] = useState<Application | null>(null);
   const [loading, setLoading] = useState(true);
@@ -38,6 +62,7 @@ export function AdminDashboard() {
     experience: "",
     whyJoin: "",
     availability: "",
+    lspdQuestions: defaultLspdTestAnswers,
   });
   const [submittingTest, setSubmittingTest] = useState(false);
 
@@ -109,13 +134,17 @@ export function AdminDashboard() {
   const handleSubmitTestApplication = async () => {
     try {
       setSubmittingTest(true);
+      const payload = {
+        ...testFormData,
+        lspdQuestions: testFormData.department === "lspd" ? testFormData.lspdQuestions : undefined,
+      };
       const response = await fetch("/api/applications/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         credentials: "include",
-        body: JSON.stringify(testFormData),
+        body: JSON.stringify(payload),
       });
 
       if (!response.ok) {
@@ -136,6 +165,7 @@ export function AdminDashboard() {
         experience: "",
         whyJoin: "",
         availability: "",
+        lspdQuestions: defaultLspdTestAnswers,
       });
       fetchApplications();
     } catch (error) {
@@ -453,6 +483,54 @@ export function AdminDashboard() {
                   <label className="text-sm font-medium">Availability</label>
                   <p className="text-sm text-muted-foreground">{selectedApp.availability || "Not specified"}</p>
                 </div>
+
+                {selectedApp.department === "lspd" && selectedApp.lspdQuestions && (
+                  <div className="space-y-3 pt-3 border-t">
+                    <h4 className="text-sm font-semibold">LSPD Scenario Responses</h4>
+                    <div className="space-y-3 text-sm text-muted-foreground">
+                      <div>
+                        <div className="font-medium text-foreground">Why join / approach</div>
+                        <p>{selectedApp.lspdQuestions.motivation || "Not provided"}</p>
+                      </div>
+                      <div>
+                        <div className="font-medium text-foreground">Realistic RP meaning</div>
+                        <p>{selectedApp.lspdQuestions.realisticRoleplay || "Not provided"}</p>
+                      </div>
+                      <div>
+                        <div className="font-medium text-foreground">Rude but legal stop</div>
+                        <p>{selectedApp.lspdQuestions.rudeButNotIllegal || "Not provided"}</p>
+                      </div>
+                      <div>
+                        <div className="font-medium text-foreground">Officer rule break</div>
+                        <p>{selectedApp.lspdQuestions.officerMisconduct || "Not provided"}</p>
+                      </div>
+                      <div>
+                        <div className="font-medium text-foreground">Non-violent refusal</div>
+                        <p>{selectedApp.lspdQuestions.nonCompliantStop || "Not provided"}</p>
+                      </div>
+                      <div>
+                        <div className="font-medium text-foreground">Winning vs RP</div>
+                        <p>{selectedApp.lspdQuestions.balanceWinRp || "Not provided"}</p>
+                      </div>
+                      <div>
+                        <div className="font-medium text-foreground">Power abuse claim</div>
+                        <p>{selectedApp.lspdQuestions.abuseAccusation || "Not provided"}</p>
+                      </div>
+                      <div>
+                        <div className="font-medium text-foreground">Injury RP</div>
+                        <p>{selectedApp.lspdQuestions.injuryRoleplay || "Not provided"}</p>
+                      </div>
+                      <div>
+                        <div className="font-medium text-foreground">Officer qualities</div>
+                        <p>{selectedApp.lspdQuestions.officerQualities || "Not provided"}</p>
+                      </div>
+                      <div>
+                        <div className="font-medium text-foreground">Handling mistakes</div>
+                        <p>{selectedApp.lspdQuestions.mistakeHandling || "Not provided"}</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
 
                 {selectedApp.status === "pending" && (
                   <div className="flex gap-2 pt-4">
