@@ -16,7 +16,7 @@ export async function sendApplicationApprovalMessage(discordId, department) {
     const mention = /^\d+$/.test(discordId) ? `<@${discordId}>` : `**<@${discordId}**`;
     
     const payload = {
-      content: `✅ **Application Approved**\n\n${mention} - Your **${department.toUpperCase()}** Department application has been **ACCEPTED**! 🎉`,
+      content: `✅ **Application Approved**\n\n${mention} - Your **${department.toUpperCase()}**  application has been **ACCEPTED**! 🎉`,
       username: 'SASP HR',
       avatar_url: 'https://ierp-website-sigma.vercel.app/sasp%20logo.webp'
     };
