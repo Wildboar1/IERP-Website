@@ -309,7 +309,6 @@ export function AdminDashboard() {
           </CardContent>
         </Card>
       )}
-      </div>
 
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
