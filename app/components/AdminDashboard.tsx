@@ -21,7 +21,7 @@ interface Application {
 }
 
 export function AdminDashboard() {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, isAdmin } = useAuth();
   const [applications, setApplications] = useState<Application[]>([]);
   const [selectedApp, setSelectedApp] = useState<Application | null>(null);
   const [loading, setLoading] = useState(true);
@@ -87,6 +87,24 @@ export function AdminDashboard() {
           </CardHeader>
           <CardContent>
             <p className="text-red-600">You must be logged in to access the admin dashboard.</p>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
+  if (!isAdmin) {
+    return (
+      <div className="max-w-7xl mx-auto px-8 py-12">
+        <Card className="border-red-200 bg-red-50">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2 text-red-700">
+              <AlertCircle className="w-5 h-5" />
+              Admin Access Required
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-red-600">You do not have permission to access the admin dashboard. Contact an administrator for access.</p>
           </CardContent>
         </Card>
       </div>

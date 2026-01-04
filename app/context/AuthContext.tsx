@@ -6,6 +6,7 @@ interface User {
   username: string;
   avatar: string;
   email: string;
+  isAdmin?: boolean;
 }
 
 interface AuthContextType {
@@ -20,7 +21,7 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 const DISCORD_CLIENT_ID = import.meta.env.VITE_DISCORD_CLIENT_ID || "";
-const ADMIN_DISCORD_ID = import.meta.env.VITE_ADMIN_DISCORD_ID || "";
+const ADMIN_DISCORD_IDS = (import.meta.env.VITE_ADMIN_DISCORD_IDS || "").split(",").filter(id => id.trim());
 const DISCORD_SCOPES = "identify email";
 
 // Redirect URI will be set dynamically in AuthProvider
@@ -147,7 +148,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         isLoading,
         login,
         logout,
-        isAdmin: user?.id === ADMIN_DISCORD_ID,
+        isAdmin: user?.isAdmin || ADMIN_DISCORD_IDS.includes(user?.id || ""),
         isAuthenticated: !!user,
       }}
     >
