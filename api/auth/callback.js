@@ -64,8 +64,15 @@ export default async function handler(req, res) {
     console.log("✓ Got user data:", userData.username);
 
     // Create JWT token
-    const ADMIN_DISCORD_IDS = process.env.ADMIN_DISCORD_IDS?.split(',') || [];
+    const ADMIN_DISCORD_IDS = (process.env.ADMIN_DISCORD_IDS || '')
+      .split(',')
+      .map(id => id.trim())
+      .filter(id => id.length > 0);
     const isAdmin = ADMIN_DISCORD_IDS.includes(userData.id);
+    
+    console.log('Admin Discord IDs:', ADMIN_DISCORD_IDS);
+    console.log('Current User ID:', userData.id);
+    console.log('Is Admin:', isAdmin);
     
     const token = jwt.sign(
       {
