@@ -12,9 +12,6 @@
       "destination": "/index.html"
     }
   ],
-  "buildEnv": [
-    "ADMIN_DISCORD_IDS"
-  ],
   "env": {
     "FORCE_REBUILD": "true"
   }
