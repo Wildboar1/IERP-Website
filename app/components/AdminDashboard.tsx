@@ -236,8 +236,9 @@ export function AdminDashboard() {
               </div>
             </div>
             <div>
-              <label className="text-sm font-medium">Department</label>
+              <label htmlFor="test-department" className="text-sm font-medium">Department</label>
               <select
+                id="test-department"
                 value={testFormData.department}
                 onChange={(e) => setTestFormData({ ...testFormData, department: e.target.value as "lspd" | "doj" })}
                 className="w-full rounded-md border border-gray-300 p-2"
