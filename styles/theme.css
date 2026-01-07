@@ -1,3 +1,55 @@
+/* LSPD Theme Background/Sidebar Overrides */
+.dark.theme-lspd {
+  --primary: #3b82f6; /* LSPD blue */
+  --primary-foreground: #fff;
+  --accent: #1e293b;
+  --accent-foreground: #fff;
+  --ring: #3b82f6;
+  --sidebar-primary: #3b82f6;
+  --sidebar-primary-foreground: #fff;
+  --background: #101a2b; /* deep blue background */
+  --sidebar: #17233a;    /* sidebar with a blue tint */
+  --sidebar-foreground: #e6f0ff; /* sidebar text */
+}
+/* Department Theme Background/Sidebar Overrides */
+.dark.theme-sasp {
+  --primary: #a3e635; /* SASP green */
+  --primary-foreground: #222;
+  --accent: #365314;
+  --accent-foreground: #fff;
+  --ring: #a3e635;
+  --sidebar-primary: #a3e635;
+  --sidebar-primary-foreground: #222;
+  --background: #19281a; /* SASP dark green background */
+  --sidebar: #22391c;    /* SASP sidebar color */
+  --sidebar-foreground: #e6ffe6; /* SASP sidebar text */
+}
+
+.dark.theme-police-red {
+  --primary: #ef4444; /* Police Red */
+  --primary-foreground: #fff;
+  --accent: #7f1d1d;
+  --accent-foreground: #fff;
+  --ring: #ef4444;
+  --sidebar-primary: #ef4444;
+  --sidebar-primary-foreground: #fff;
+  --background: #200202; /* deep red-tinted background */
+  --sidebar: #2a0909;    /* sidebar with a red tint */
+  --sidebar-foreground: #fff;
+}
+
+.dark.theme-bcso {
+  --primary: #fbbf24; /* BCSO gold */
+  --primary-foreground: #222;
+  --accent: #78350f;
+  --accent-foreground: #fff;
+  --ring: #fbbf24;
+  --sidebar-primary: #fbbf24;
+  --sidebar-primary-foreground: #222;
+  --background: #1a1507; /* deep gold-tinted background */
+  --sidebar: #33240a;    /* sidebar with a gold/brown tint */
+  --sidebar-foreground: #fff;
+}
 .dark.theme-lspd {
   --primary: #3b82f6; /* LSPD blue */
   --primary-foreground: #fff;
@@ -90,41 +142,42 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
+  --background: #18191c;
+  --foreground: #f5f5f7;
+  --card: #232325;
+  --card-foreground: #f5f5f7;
+  --popover: #232325;
+  --popover-foreground: #f5f5f7;
+  --primary: #f5f5f7;
+  --primary-foreground: #232325;
+  --secondary: #232325;
+  --secondary-foreground: #f5f5f7;
+  --muted: #232325;
+  --muted-foreground: #b0b0b8;
+  --accent: #232325;
+  --accent-foreground: #f5f5f7;
+  --destructive: #d4183d;
+  --destructive-foreground: #fff;
+  --border: #232325;
+  --input: #232325;
+  --ring: #3b82f6;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  --chart-1: #3b82f6;
+  --chart-2: #22d3ee;
+  --chart-3: #fbbf24;
+  --chart-4: #a3e635;
+  --chart-5: #ef4444;
+  --sidebar: #232325;
+  --sidebar-foreground: #f5f5f7;
+  --sidebar-primary: #3b82f6;
+  --sidebar-primary-foreground: #f5f5f7;
+  --sidebar-accent: #232325;
+  --sidebar-accent-foreground: #f5f5f7;
+  --sidebar-border: #232325;
+  --sidebar-ring: #3b82f6;
 }
 
 /* Dark presets: warm (amber), mono (neutral), ocean (cyan/blue) */
