@@ -9,7 +9,6 @@ import { Badge } from "./ui/badge";
 import { toast } from "sonner";
 import { FileText, CheckCircle2 } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
-import { useTheme } from "../context/ThemeContext";
 
 const departments = [
 	{
@@ -41,7 +40,6 @@ const createEmptyLspdResponses = () => ({
 
 export function ApplicationsPage() {
 	const { user } = useAuth();
-	const { theme } = useTheme();
 	const [selectedDepartment, setSelectedDepartment] = useState("");
 	const [submissionSuccess, setSubmissionSuccess] = useState(false);
 	const [hasSubmitted, setHasSubmitted] = useState(false);
@@ -204,53 +202,8 @@ export function ApplicationsPage() {
 
 	const selectedDept = departments.find((d) => d.value === selectedDepartment);
 
-	// Theme-based background and card accent
-	const getBgClass = () => {
-		switch (theme) {
-			case "dark-warm":
-				return "bg-gradient-to-br from-[#2d1a13] to-[#1e293b]";
-			case "dark-mono":
-				return "bg-gradient-to-br from-[#232323] to-[#1e293b]";
-			case "dark-ocean":
-				return "bg-gradient-to-br from-[#0f2027] via-[#2c5364] to-[#1e293b]";
-			case "lspd":
-				return "bg-gradient-to-br from-blue-900 to-blue-700";
-			case "bcso":
-				return "bg-gradient-to-br from-yellow-900 to-yellow-700";
-			case "saspr":
-				return "bg-gradient-to-br from-green-900 to-green-700";
-			case "police-red":
-				return "bg-gradient-to-br from-red-900 to-red-700";
-			case "sasp":
-				return "bg-gradient-to-br from-indigo-900 to-indigo-700";
-			case "dark":
-				return "bg-gradient-to-br from-background to-[#1e293b]";
-			case "light":
-				return "bg-gradient-to-br from-white to-gray-100";
-			default:
-				return "bg-gradient-to-br from-background to-[#1e293b]";
-		}
-	};
-
-	const getCardClass = () => {
-		switch (theme) {
-			case "lspd":
-				return "border-blue-700 shadow-blue-900/20";
-			case "bcso":
-				return "border-yellow-700 shadow-yellow-900/20";
-			case "saspr":
-				return "border-green-700 shadow-green-900/20";
-			case "police-red":
-				return "border-red-700 shadow-red-900/20";
-			case "sasp":
-				return "border-indigo-700 shadow-indigo-900/20";
-			default:
-				return "";
-		}
-	};
-
 	return (
-		<div className={`min-h-screen w-full ${getBgClass()} transition-colors`}>
+		<div className="min-h-screen w-full bg-gradient-to-br from-background to-[#1e293b] text-foreground">
 			<div className="max-w-7xl mx-auto px-8 py-12">
 				<div className="mb-8">
 					<h1 className="mb-2">Department Applications</h1>
@@ -259,7 +212,7 @@ export function ApplicationsPage() {
 				<div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 					{/* Department Selection */}
 					<div className="lg:col-span-1">
-						<Card className={getCardClass()}>
+						<Card>
 							<CardHeader>
 								<CardTitle>Select Department</CardTitle>
 								<CardDescription>Choose the department you'd like to join</CardDescription>
@@ -315,7 +268,7 @@ export function ApplicationsPage() {
 
 					{/* Application Form */}
 					<div className="lg:col-span-2">
-						<Card className={getCardClass()}>
+						<Card>
 							<CardHeader>
 								<CardTitle>
 									{selectedDept ? `Apply to ${selectedDept.label}` : "Application Form"}
@@ -681,7 +634,7 @@ export function ApplicationsPage() {
 
 						{/* Additional Information */}
 						{selectedDepartment && (
-							<Card className={`mt-6 ${getCardClass()}`}>
+							<Card className="mt-6">
 								<CardHeader>
 									<CardTitle>What Happens Next?</CardTitle>
 								</CardHeader>
