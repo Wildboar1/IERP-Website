@@ -20,184 +20,51 @@ export function DocumentsPage() {
   const [infractionFilter, setInfractionFilter] = useState("all");
   const [chargeTypeFilter, setChargeTypeFilter] = useState("all");
   return (
-    <div id="root">
-      <div className="group/sidebar-wrapper flex min-h-svh w-full has-[[data-variant=inset]]:bg-sidebar">
-        <div id="app-root" className="min-h-screen bg-background text-foreground relative">
-          {/* ... existing sidebar and header code ... */}
-          
-          <div className="flex-1 flex flex-col min-w-0 relative z-10 md:ml-64 app-main will-change-transform">
-            <main className="flex-1 animate-fade-in">
-              <div className="min-h-screen p-6">
-                <div className="max-w-6xl mx-auto">
-                  <div className="mb-8">
-                    <div className="flex items-center space-x-3 mb-4">
-                      <div className="p-2 bg-primary/10 rounded-lg">
-                        <Scale className="h-6 w-6 text-primary" />
-                      </div>
-                      <div>
-                        <h1 className="font-heading text-3xl font-bold">Legal Documents</h1>
-                        <p className="text-muted-foreground">Official laws, codes, and standard operating procedures</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <Tabs defaultValue="penal" className="w-full">
-                    <TabsList className="grid w-full grid-cols-7 mb-8">
-                      <TabsTrigger value="penal" className="flex items-center gap-2">
-                        <Scale className="w-4 h-4" />
-                        Penal Codes
-                      </TabsTrigger>
-                      <TabsTrigger value="10codes" className="flex items-center gap-2">
-                        <Radio className="w-4 h-4" />
-                        10-Codes
-                      </TabsTrigger>
-                      <TabsTrigger value="codecomms" className="flex items-center gap-2">
-                        <AlertCircle className="w-4 h-4" />
-                        Code Comms
-                      </TabsTrigger>
-                      <TabsTrigger value="shortforms" className="flex items-center gap-2">
-                        <Zap className="w-4 h-4" />
-                        Short Forms
-                      </TabsTrigger>
-                      <TabsTrigger value="amendments" className="flex items-center gap-2">
-                        <FileText className="w-4 h-4" />
-                        Amendments
-                      </TabsTrigger>
-                      <TabsTrigger value="cases" className="flex items-center gap-2">
-                        <BookOpen className="w-4 h-4" />
-                        Case Laws
-                      </TabsTrigger>
-                      <TabsTrigger value="sop" className="flex items-center gap-2">
-                        <Shield className="w-4 h-4" />
-                        Police SOP
-                      </TabsTrigger>
-                    </TabsList>
-
-                    {/* Penal Codes - Now with simplified content */}
-                    <TabsContent value="penal">
-                      <Card>
-                        <CardHeader>
-                          <CardTitle>San Andreas Penal Codes</CardTitle>
-                          <CardDescription>
-                            Official criminal offenses, classifications, and penalties
-                          </CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                          <div className="space-y-6">
-                            <div className="immersive-card border-primary/20 bg-gradient-to-br from-primary/5 to-transparent p-6">
-                              <h3 className="font-semibold tracking-tight gradient-text font-heading text-2xl flex items-center space-x-3 mb-4">
-                                <AlertCircle className="h-6 w-6 text-primary" />
-                                <span>Criminal Classification System</span>
-                              </h3>
-                              <p className="text-lg leading-relaxed mb-4">
-                                Criminal offenses are classified into three main categories based on their severity and potential punishment. Understanding these classifications is crucial for law enforcement officers to apply appropriate procedures and determine the correct level of response.
-                              </p>
-                              <div className="grid md:grid-cols-3 gap-4 mt-6">
-                                <div className="text-center p-4 bg-card/50 rounded-lg border border-border">
-                                  <div className="font-semibold text-red-500 mb-1">Felony</div>
-                                  <div className="text-sm text-muted-foreground">Most Serious</div>
-                                </div>
-                                <div className="text-center p-4 bg-card/50 rounded-lg border border-border">
-                                  <div className="font-semibold text-orange-500 mb-1">Misdemeanor</div>
-                                  <div className="text-sm text-muted-foreground">Moderate</div>
-                                </div>
-                                <div className="text-center p-4 bg-card/50 rounded-lg border border-border">
-                                  <div className="font-semibold text-yellow-500 mb-1">Infraction</div>
-                                  <div className="text-sm text-muted-foreground">Minor</div>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div className="grid gap-6">
-                              <Card className="border-red-200 bg-red-50/10">
-                                <CardHeader>
-                                  <div className="flex items-center justify-between">
-                                    <div className="flex items-center gap-3">
-                                      <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center">
-                                        <Scale className="h-8 w-8 text-white" />
-                                      </div>
-                                      <div>
-                                        <CardTitle>Felony</CardTitle>
-                                        <Badge variant="destructive">High Severity</Badge>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </CardHeader>
-                                <CardContent>
-                                  <p className="text-sm text-muted-foreground mb-4">
-                                    Serious crimes punishable by imprisonment for more than one year or capital punishment. Maximum sentence: Life/HUT.
-                                  </p>
-                                  <div>
-                                    <h4 className="font-semibold mb-2">Examples:</h4>
-                                    <div className="flex flex-wrap gap-2">
-                                      {['Murder', 'Kidnapping', 'Armed Robbery', 'Drug Trafficking'].map((crime) => (
-                                        <Badge key={crime} variant="outline">{crime}</Badge>
-                                      ))}
-                                    </div>
-                                  </div>
-                                </CardContent>
-                              </Card>
-
-                              <Card>
-                                <CardHeader>
-                                  <div className="flex items-center justify-between">
-                                    <div className="flex items-center gap-3">
-                                      <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center">
-                                        <Scale className="h-8 w-8 text-white" />
-                                      </div>
-                                      <div>
-                                        <CardTitle>Misdemeanor</CardTitle>
-                                        <Badge>Medium Severity</Badge>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </CardHeader>
-                                <CardContent>
-                                  <p className="text-sm text-muted-foreground mb-4">
-                                    Lesser offenses typically punishable by less than one year in jail. Maximum sentence: 30 months.
-                                  </p>
-                                  <div>
-                                    <h4 className="font-semibold mb-2">Examples:</h4>
-                                    <div className="flex flex-wrap gap-2">
-                                      {['Assault', 'Petty Theft', 'DUI', 'Trespassing'].map((crime) => (
-                                        <Badge key={crime} variant="outline">{crime}</Badge>
-                                      ))}
-                                    </div>
-                                  </div>
-                                </CardContent>
-                              </Card>
-
-                              <Card className="border-yellow-200 bg-yellow-50/10">
-                                <CardHeader>
-                                  <div className="flex items-center justify-between">
-                                    <div className="flex items-center gap-3">
-                                      <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-yellow-500 to-yellow-600 flex items-center justify-center">
-                                        <FileText className="h-8 w-8 text-white" />
-                                      </div>
-                                      <div>
-                                        <CardTitle>Infraction</CardTitle>
-                                        <Badge variant="secondary">Low Severity</Badge>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </CardHeader>
-                                <CardContent>
-                                  <p className="text-sm text-muted-foreground mb-4">
-                                    Minor violations typically punishable by fines rather than imprisonment.
-                                  </p>
-                                  <div>
-                                    <h4 className="font-semibold mb-2">Examples:</h4>
-                                    <div className="flex flex-wrap gap-2">
-                                      {['Speeding', 'Parking Violations', 'Jaywalking', 'Littering'].map((crime) => (
-                                        <Badge key={crime} variant="outline">{crime}</Badge>
-                                      ))}
-                                    </div>
-                                  </div>
-                                </CardContent>
-                              </Card>
-                            </div>
-
-                            <Card>
+    <div className="min-h-screen w-full bg-gradient-to-br from-background to-[#1e293b] text-foreground">
+      <div className="max-w-6xl mx-auto p-6">
+        <div className="mb-8">
+          <div className="flex items-center space-x-3 mb-4">
+            <div className="p-2 bg-primary/10 rounded-lg">
+              <Scale className="h-6 w-6 text-primary" />
+            </div>
+            <div>
+              <h1 className="font-heading text-3xl font-bold">Legal Documents</h1>
+              <p className="text-muted-foreground">Official laws, codes, and standard operating procedures</p>
+            </div>
+          </div>
+        </div>
+        <Tabs defaultValue="penal" className="w-full">
+          <TabsList className="grid w-full grid-cols-7 mb-8">
+            <TabsTrigger value="penal" className="flex items-center gap-2">
+              <Scale className="w-4 h-4" />
+              Penal Codes
+            </TabsTrigger>
+            <TabsTrigger value="10codes" className="flex items-center gap-2">
+              <Radio className="w-4 h-4" />
+              10-Codes
+            </TabsTrigger>
+            <TabsTrigger value="codecomms" className="flex items-center gap-2">
+              <AlertCircle className="w-4 h-4" />
+              Code Comms
+            </TabsTrigger>
+            <TabsTrigger value="shortforms" className="flex items-center gap-2">
+              <Zap className="w-4 h-4" />
+              Short Forms
+            </TabsTrigger>
+            <TabsTrigger value="amendments" className="flex items-center gap-2">
+              <FileText className="w-4 h-4" />
+              Amendments
+            </TabsTrigger>
+            <TabsTrigger value="cases" className="flex items-center gap-2">
+              <BookOpen className="w-4 h-4" />
+              Case Laws
+            </TabsTrigger>
+            <TabsTrigger value="sop" className="flex items-center gap-2">
+              <Shield className="w-4 h-4" />
+              Police SOP
+            </TabsTrigger>
+          </TabsList>
+          {/* ...existing TabsContent... */}
                               <CardHeader>
                                 <CardTitle className="text-xl flex items-center gap-2">
                                   <AlertCircle className="h-5 w-5 text-orange-600" />
