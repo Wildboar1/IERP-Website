@@ -1644,7 +1644,13 @@ export function DocumentsPage() {
         </CardContent>
       </Card>
     </TabsContent>
-      </Tabs>
+                  </Tabs>
+                </div>
+              </div>
+            </main>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
