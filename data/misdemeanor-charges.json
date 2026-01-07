@@ -1,0 +1,373 @@
+[
+  {
+    "offense": "Criminal Threats",
+    "classification": "Misdemeanor",
+    "sentence": "5 months",
+    "licensePoints": "N/A",
+    "description": "Threatening to physically harm or kill another, causing fear."
+  },
+  {
+    "offense": "Aggravated Criminal Threats",
+    "classification": "Misdemeanor",
+    "sentence": "15 months",
+    "licensePoints": "N/A",
+    "description": "Willfully threatening death or great bodily injury, causing sustained fear."
+  },
+  {
+    "offense": "Unlawful Imprisonment",
+    "classification": "Misdemeanor",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Restricting a person's freedom of movement without legal justification."
+  },
+  {
+    "offense": "Misdemeanor Domestic Violence",
+    "classification": "Misdemeanor",
+    "sentence": "15 months",
+    "licensePoints": "N/A",
+    "description": "Unlawful act of enacting violence or abuse on a domestic partner or family member."
+  },
+  {
+    "offense": "Reckless Endangerment",
+    "classification": "Misdemeanor",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Willfully engaging in an activity that endangers the life or property of another."
+  },
+  {
+    "offense": "Assault",
+    "classification": "Misdemeanor",
+    "sentence": "12 months",
+    "licensePoints": "N/A",
+    "description": "Unlawful attempt to touch or injure another person, or intentionally placing them in fear of injury."
+  },
+  {
+    "offense": "Battery",
+    "classification": "Misdemeanor",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Unlawful use of force or violence against another person, causing physical harm."
+  },
+  {
+    "offense": "Aggravated Battery",
+    "classification": "Misdemeanor",
+    "sentence": "15 months",
+    "licensePoints": "N/A",
+    "description": "Unlawful intentional and reckless use of force or violence, resulting in serious bodily injury."
+  },
+  {
+    "offense": "Battery on a Government Employee",
+    "classification": "Misdemeanor",
+    "sentence": "20 months",
+    "licensePoints": "N/A",
+    "description": "Unlawful use of force or violence against a Government Employee."
+  },
+  {
+    "offense": "Battery on a Judge",
+    "classification": "Misdemeanor",
+    "sentence": "30 months",
+    "licensePoints": "N/A",
+    "description": "Unlawful use of force or violence against a Judge."
+  },
+  {
+    "offense": "Petty Theft",
+    "classification": "Misdemeanor",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Stealing property valued at less than $5,000."
+  },
+  {
+    "offense": "Burglary",
+    "classification": "Misdemeanor",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Unlawfully entering or remaining concealed in a building with intent to commit a crime."
+  },
+  {
+    "offense": "Leaving Without Paying",
+    "classification": "Misdemeanor",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Obtaining services by deception or unlawful means without compensating the provider."
+  },
+  {
+    "offense": "Possession of Nonlegal Currency",
+    "classification": "Misdemeanor",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Possession of loose, rolled, marked, or inked monies in relation to certain offenses."
+  },
+  {
+    "offense": "Possession of Government-Issued Items",
+    "classification": "Misdemeanor",
+    "sentence": "15 months",
+    "licensePoints": "N/A",
+    "description": "Possession of items issued and accessible only in SASP armories to SASP or state employees."
+  },
+  {
+    "offense": "Possession of Items Used in the Commission of a Crime",
+    "classification": "Misdemeanor",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Possession of items that could aid in the commission of certain offenses, or possession of a still for liquor manufacture."
+  },
+  {
+    "offense": "Impersonating",
+    "classification": "Misdemeanor",
+    "sentence": "15 months",
+    "licensePoints": "N/A",
+    "description": "Impersonating another person that could make them civilly or criminally liable."
+  },
+  {
+    "offense": "Possession of Stolen Identification",
+    "classification": "Misdemeanor",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Fraudulent use or possession of another person's identifying information."
+  },
+  {
+    "offense": "Possession of Stolen Government Identification",
+    "classification": "Misdemeanor",
+    "sentence": "20 months",
+    "licensePoints": "N/A",
+    "description": "Possessing a governmental employee's badge or other identifying information that does not belong to the individual."
+  },
+  {
+    "offense": "Fraud",
+    "classification": "Misdemeanor",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Knowingly or designedly defrauding any other person of money, labor, or property by false representation."
+  },
+  {
+    "offense": "Forgery",
+    "classification": "Misdemeanor",
+    "sentence": "15 months",
+    "licensePoints": "N/A",
+    "description": "Possessing or creating any false government document or false currency."
+  },
+  {
+    "offense": "Trespassing",
+    "classification": "Misdemeanor",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Knowingly entering or remaining unlawfully in or upon private property."
+  },
+  {
+    "offense": "Vandalism",
+    "classification": "Misdemeanor",
+    "sentence": "5 months",
+    "licensePoints": "N/A",
+    "description": "Intentionally defacing, destroying, or damaging any property that does not belong to the individual."
+  },
+  {
+    "offense": "Criminal Possession of Stolen Property",
+    "classification": "Misdemeanor",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Possessing any physical property that is reported and reasonably believed to be stolen."
+  },
+  {
+    "offense": "Misuse of Emergency Systems",
+    "classification": "Misdemeanor",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Making a request for emergency response when no actual emergency exists, or reporting a false crime."
+  },
+  {
+    "offense": "Conspiracy",
+    "classification": "Misdemeanor",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Conspiring to commit any crime with one or more people, and one of them commits an overt act in furtherance of that agreement."
+  },
+  {
+    "offense": "Violating a Court Order",
+    "classification": "Misdemeanor",
+    "sentence": "Judge Discretion",
+    "licensePoints": "N/A",
+    "description": "Willfully disobeying or not complying with the terms written in any court-issued order."
+  },
+  {
+    "offense": "Failure to Appear",
+    "classification": "Misdemeanor",
+    "sentence": "Judge Discretion",
+    "licensePoints": "N/A",
+    "description": "Failure to Appear in Court when summoned."
+  },
+  {
+    "offense": "Resisting Arrest",
+    "classification": "Misdemeanor",
+    "sentence": "5 months",
+    "licensePoints": "N/A",
+    "description": "Using physical force or willfully absconding to prevent arrest, handcuffing, or being taken to jail or prison."
+  },
+  {
+    "offense": "Disorderly Conduct",
+    "classification": "Misdemeanor",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Engaging in behavior intending to cause public inconvenience."
+  },
+  {
+    "offense": "False Reporting",
+    "classification": "Misdemeanor",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Unlawful act of reporting a false or nonexistent crime."
+  },
+  {
+    "offense": "Harassment",
+    "classification": "Misdemeanor",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Intimidating or pressuring another person aggressively with unwelcome words, deeds, actions, or gestures."
+  },
+  {
+    "offense": "Misdemeanor Obstruction of Justice",
+    "classification": "Misdemeanor",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Recklessly or with criminal negligence hindering the discovery, apprehension, conviction, or punishment of a person who committed a crime."
+  },
+  {
+    "offense": "Unlawful Assembly",
+    "classification": "Misdemeanor",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Participating in an event/assembly which results in violent conduct or creates a risk of causing public harm with a group of at least four people."
+  },
+  {
+    "offense": "Harboring a Fugitive",
+    "classification": "Misdemeanor",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Knowingly hiding a criminal with an active warrant or who has escaped police custody."
+  },
+  {
+    "offense": "3rd Degree Possession of Controlled/Dangerous Substance",
+    "classification": "Misdemeanor",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Possession of a controlled/dangerous substance or untaxed alcohol within specified amounts."
+  },
+  {
+    "offense": "Prostitution",
+    "classification": "Misdemeanor",
+    "sentence": "20 months",
+    "licensePoints": "N/A",
+    "description": "Offering, for payment, the services of prostitution or offering payment for prostitution."
+  },
+  {
+    "offense": "Aggressive Panhandling",
+    "classification": "Misdemeanor",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Solicitation made in person for immediate donation of money or other gratuity by vocal or nonvocal appeal, including badgering, harassment, threats, or demands."
+  },
+  {
+    "offense": "Obstructing Emergency Services",
+    "classification": "Misdemeanor",
+    "sentence": "20 months",
+    "licensePoints": "N/A",
+    "description": "Hindering Medical or Fire personnel in the performance of their duties."
+  },
+  {
+    "offense": "Brandishing a Weapon",
+    "classification": "Misdemeanor",
+    "sentence": "5 months",
+    "licensePoints": "N/A",
+    "description": "Unlawful drawing or exhibition of a deadly weapon in the presence of another person not in self-defense, or otherwise displaying a weapon in public without a legal reason."
+  },
+  {
+    "offense": "Unlawful Discharge of a Stun Gun or Deleterious Agent",
+    "classification": "Misdemeanor",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Unlawful act of knowingly discharging any electrical stun gun, propelled bean bag, tear gas, or similar agent against another person without cause."
+  },
+  {
+    "offense": "Negligent Discharge of a Firearm",
+    "classification": "Misdemeanor",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Unlawful act of willfully or unwillfully discharging a firearm in a negligent manner that could result in injury, death, or property damage."
+  },
+  {
+    "offense": "Possession of Illegal Weapon Modification Device",
+    "classification": "Misdemeanor",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Possessing any weapon modification device that would unlawfully alter any weapon."
+  },
+  {
+    "offense": "Driving While Under the Influence of Drugs or Alcohol",
+    "classification": "Misdemeanor",
+    "sentence": "5 months",
+    "licensePoints": "5",
+    "description": "Operating a vehicle or bicycle while affected by drug or alcohol intoxication."
+  },
+  {
+    "offense": "Evading",
+    "classification": "Misdemeanor",
+    "sentence": "5 months",
+    "licensePoints": "2",
+    "description": "Fleeing from a peace officer to avoid apprehension, detention, or arrest while on foot or in a vehicle."
+  },
+  {
+    "offense": "Reckless Driving",
+    "classification": "Misdemeanor",
+    "sentence": "10 months",
+    "licensePoints": "2",
+    "description": "Driving with a willful or wanton disregard for the safety of oneself or others, or in a manner likely to cause injury or death."
+  },
+  {
+    "offense": "Unlawful Use of a Motor Vehicle",
+    "classification": "Misdemeanor",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Taking a vehicle without the owner's consent, without intent to permanently deprive the owner."
+  },
+  {
+    "offense": "Animal Cruelty",
+    "classification": "Misdemeanor",
+    "sentence": "15 months",
+    "licensePoints": "N/A",
+    "description": "Maliciously and intentionally wounding or killing an animal."
+  },
+  {
+    "offense": "Hunting With A Non-Hunting Weapon",
+    "classification": "Misdemeanor",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "The use of any firearm that is not a hunting rifle in the act of hunting."
+  },
+  {
+    "offense": "Overhunting",
+    "classification": "Misdemeanor",
+    "sentence": "15 months",
+    "licensePoints": "N/A",
+    "description": "Illegally killing more than allowed through collecting over the limit of pelts, meat, antlers etc, allowed by the season's stipulations published by the San Andreas Park Rangers."
+  },
+  {
+    "offense": "Overfishing",
+    "classification": "Misdemeanor",
+    "sentence": "15 months",
+    "licensePoints": "N/A",
+    "description": "Illegally catching or possessing more than allowed through collecting over the limit of fish allowed by the season's stipulations published by the San Andreas Park Rangers."
+  },
+  {
+    "offense": "Hit and Run",
+    "classification": "Misdemeanor",
+    "sentence": "10 months",
+    "licensePoints": "5",
+    "description": "Operating a vehicle involved in an accident resulting in injury, death, or property damage, and leaving the scene without providing identifiable information or rendering aid."
+  },
+  {
+    "offense": "Disobeying a Peace Officer",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "N/A",
+    "description": "Willfully refusing or failing to comply with a lawful order, signal, or direction of any peace officer."
+  }
+]
