@@ -2,6 +2,9 @@ import { useState } from "react";
 import { Navigation } from "./components/Navigation";
 import { LandingPage } from "./components/LandingPage";
 import { DocumentsPage } from "./components/DocumentsPage";
+import { ThemeWarmPage } from "./components/ThemeWarmPage";
+import { ThemeMonoPage } from "./components/ThemeMonoPage";
+import { ThemeOceanPage } from "./components/ThemeOceanPage";
 import { ApplicationsPage } from "./components/ApplicationsPage";
 import { AdminDashboard } from "./components/AdminDashboard";
 import { AuthProvider, useAuth } from "./context/AuthContext";
@@ -9,7 +12,15 @@ import { ThemeProvider } from "./context/ThemeContext";
 import { Card } from "./components/ui/card";
 
 function AppContent() {
-  const [currentPage, setCurrentPage] = useState<"home" | "documents" | "applications" | "admin">("home");
+  const [currentPage, setCurrentPage] = useState<
+    | "home"
+    | "documents"
+    | "applications"
+    | "admin"
+    | "theme-warm"
+    | "theme-mono"
+    | "theme-ocean"
+  >("home");
   const { isAuthenticated, isAdmin } = useAuth();
 
   // Redirect to home if trying to access applications without authentication
@@ -62,6 +73,12 @@ function AppContent() {
           <DocumentsPage />
         ) : currentPage === "applications" ? (
           <ApplicationsPage />
+        ) : currentPage === "theme-warm" ? (
+          <ThemeWarmPage />
+        ) : currentPage === "theme-mono" ? (
+          <ThemeMonoPage />
+        ) : currentPage === "theme-ocean" ? (
+          <ThemeOceanPage />
         ) : (
           <AdminDashboard />
         )}

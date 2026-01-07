@@ -5,8 +5,24 @@ import { useTheme } from "../context/ThemeContext";
 import { useAuth } from "../context/AuthContext";
 
 interface NavigationProps {
-  currentPage: "home" | "documents" | "applications" | "admin";
-  onNavigate: (page: "home" | "documents" | "applications" | "admin") => void;
+  currentPage:
+    | "home"
+    | "documents"
+    | "applications"
+    | "admin"
+    | "theme-warm"
+    | "theme-mono"
+    | "theme-ocean";
+  onNavigate: (
+    page:
+      | "home"
+      | "documents"
+      | "applications"
+      | "admin"
+      | "theme-warm"
+      | "theme-mono"
+      | "theme-ocean"
+  ) => void;
 }
 
 export function Navigation({ currentPage, onNavigate }: NavigationProps) {
@@ -99,6 +115,10 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                   <DropdownMenuItem onClick={() => setTheme("dark-warm")}>Dark (Warm)</DropdownMenuItem>
                   <DropdownMenuItem onClick={() => setTheme("dark-mono")}>Dark (Mono)</DropdownMenuItem>
                   <DropdownMenuItem onClick={() => setTheme("dark-ocean")}>Dark (Ocean)</DropdownMenuItem>
+                  <div className="h-px my-1 bg-border" />
+                  <DropdownMenuItem onClick={() => { setTheme("dark-warm"); onNavigate("theme-warm"); }}>Open Warm Theme Page</DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => { setTheme("dark-mono"); onNavigate("theme-mono"); }}>Open Mono Theme Page</DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => { setTheme("dark-ocean"); onNavigate("theme-ocean"); }}>Open Ocean Theme Page</DropdownMenuItem>
                   <DropdownMenuItem onClick={() => setTheme("system")}>
                     <Laptop className="w-4 h-4" /> System
                   </DropdownMenuItem>
