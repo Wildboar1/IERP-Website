@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
 
-type Theme = "light" | "dark" | "system";
+type Theme = "light" | "dark" | "system" | "dark-warm" | "dark-mono" | "dark-ocean";
 
 interface ThemeContextValue {
   theme: Theme;
@@ -12,8 +12,18 @@ const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
 function applyTheme(theme: Theme) {
   const root = document.documentElement;
   const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const shouldDark = theme === "dark" || (theme === "system" && prefersDark);
-  root.classList.toggle("dark", shouldDark);
+  const customClasses = ["theme-warm", "theme-mono", "theme-ocean"] as const;
+
+  // Reset custom theme classes
+  for (const cls of customClasses) root.classList.remove(cls);
+
+  const isDarkBase = theme === "dark" || theme.startsWith("dark-") || (theme === "system" && prefersDark);
+  root.classList.toggle("dark", isDarkBase);
+
+  // Apply preset accents on top of dark
+  if (theme === "dark-warm") root.classList.add("theme-warm");
+  if (theme === "dark-mono") root.classList.add("theme-mono");
+  if (theme === "dark-ocean") root.classList.add("theme-ocean");
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {

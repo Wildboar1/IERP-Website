@@ -96,6 +96,9 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                   <DropdownMenuItem onClick={() => setTheme("dark")}>
                     <Moon className="w-4 h-4" /> Dark
                   </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setTheme("dark-warm")}>Dark (Warm)</DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setTheme("dark-mono")}>Dark (Mono)</DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setTheme("dark-ocean")}>Dark (Ocean)</DropdownMenuItem>
                   <DropdownMenuItem onClick={() => setTheme("system")}>
                     <Laptop className="w-4 h-4" /> System
                   </DropdownMenuItem>
