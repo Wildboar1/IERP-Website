@@ -1485,7 +1485,7 @@ export function DocumentsPage() {
             <div className="space-y-6">
 
               {/* Amendment 1 */}
-              <Card className="border-l-4 border-l-blue-600">
+              <Card className="">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Badge>Amendment 1</Badge>
@@ -1505,7 +1505,7 @@ export function DocumentsPage() {
               </Card>
 
               {/* Amendment 2 */}
-              <Card className="border-l-4 border-l-cyan-600">
+              <Card className="">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Badge>Amendment 2</Badge>
@@ -1524,7 +1524,7 @@ export function DocumentsPage() {
               </Card>
 
               {/* Amendment 3 */}
-              <Card className="border-l-4 border-l-emerald-600">
+              <Card className="">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Badge>Amendment 3</Badge>
@@ -1543,7 +1543,7 @@ export function DocumentsPage() {
               </Card>
 
               {/* Amendment 4 */}
-              <Card className="border-l-4 border-l-indigo-600">
+              <Card className="">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Badge>Amendment 4</Badge>
@@ -1562,7 +1562,7 @@ export function DocumentsPage() {
               </Card>
 
               {/* Amendment 5 */}
-              <Card className="border-l-4 border-l-rose-600">
+              <Card className="">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Badge>Amendment 5</Badge>
@@ -1581,7 +1581,7 @@ export function DocumentsPage() {
               </Card>
 
               {/* Amendment 6 */}
-              <Card className="border-l-4 border-l-yellow-600">
+              <Card className="">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Badge>Amendment 6</Badge>
@@ -1600,7 +1600,7 @@ export function DocumentsPage() {
               </Card>
 
               {/* Amendment 7 */}
-              <Card className="border-l-4 border-l-sky-600">
+              <Card className="">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Badge>Amendment 7</Badge>
@@ -1618,7 +1618,7 @@ export function DocumentsPage() {
               </Card>
 
               {/* Amendment 8 */}
-              <Card className="border-l-4 border-l-pink-600">
+              <Card className="">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Badge>Amendment 8</Badge>
@@ -1636,7 +1636,7 @@ export function DocumentsPage() {
               </Card>
 
               {/* Amendment 9 */}
-              <Card className="border-l-4 border-l-emerald-600">
+              <Card className="">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Badge>Amendment 9</Badge>
@@ -1654,7 +1654,7 @@ export function DocumentsPage() {
               </Card>
 
               {/* Amendment 10 */}
-              <Card className="border-l-4 border-l-teal-600">
+              <Card className="">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Badge>Amendment 10</Badge>
@@ -1672,7 +1672,7 @@ export function DocumentsPage() {
               </Card>
 
               {/* Simple summary table */}
-              <Card className="border-l-4 border-l-neutral-600">
+              <Card className="">
                 <CardHeader>
                   <CardTitle>Amendments — Simple Summary</CardTitle>
                 </CardHeader>
@@ -1710,7 +1710,7 @@ export function DocumentsPage() {
             <div className="space-y-6">
 
               {/* Tennessee v. Garner */}
-              <Card className="border-l-4 border-l-red-600">
+              <Card className="">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <CardTitle>Tennessee v. Garner</CardTitle>
@@ -1724,7 +1724,7 @@ export function DocumentsPage() {
               </Card>
 
               {/* Terry v. Ohio */}
-              <Card className="border-l-4 border-l-yellow-600">
+              <Card className="">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <CardTitle>Terry v. Ohio</CardTitle>
@@ -1738,7 +1738,7 @@ export function DocumentsPage() {
               </Card>
 
               {/* Pennsylvania v. Mimms */}
-              <Card className="border-l-4 border-l-blue-600">
+              <Card className="">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <CardTitle>Pennsylvania v. Mimms</CardTitle>
@@ -1752,7 +1752,7 @@ export function DocumentsPage() {
               </Card>
 
               {/* Wyoming v. Houghton */}
-              <Card className="border-l-4 border-l-emerald-600">
+              <Card className="">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <CardTitle>Wyoming v. Houghton</CardTitle>
@@ -1766,7 +1766,7 @@ export function DocumentsPage() {
               </Card>
 
               {/* Carroll v. United States */}
-              <Card className="border-l-4 border-l-indigo-600">
+              <Card className="">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <CardTitle>Carroll v. United States</CardTitle>
@@ -1780,7 +1780,7 @@ export function DocumentsPage() {
               </Card>
 
               {/* Mike Smoore v. LSPD (local/procedural) */}
-              <Card className="border-l-4 border-l-slate-600">
+              <Card className="">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <CardTitle>Mike Smoore v. LSPD</CardTitle>
@@ -1794,7 +1794,7 @@ export function DocumentsPage() {
               </Card>
 
               {/* The People v. Otto Delmar (exigent circumstances) */}
-              <Card className="border-l-4 border-l-rose-400">
+              <Card className="">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <CardTitle>The People v. Otto Delmar</CardTitle>
@@ -1808,7 +1808,7 @@ export function DocumentsPage() {
               </Card>
 
               {/* Miranda v. Arizona */}
-              <Card className="border-l-4 border-l-cyan-600">
+              <Card className="">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <CardTitle>Miranda v. Arizona</CardTitle>
@@ -1822,7 +1822,7 @@ export function DocumentsPage() {
               </Card>
 
               {/* The People v. Georgina Williams (undercover exception) */}
-              <Card className="border-l-4 border-l-emerald-400">
+              <Card className="">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <CardTitle>The People v. Georgina Williams</CardTitle>
@@ -1836,7 +1836,7 @@ export function DocumentsPage() {
               </Card>
 
               {/* The People v. Meg Kyracruz (right to counsel) */}
-              <Card className="border-l-4 border-l-pink-600">
+              <Card className="">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <CardTitle>The People v. Meg Kyracruz</CardTitle>
@@ -2228,7 +2228,7 @@ export function DocumentsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
               {/* High Speed Pursuit Unit */}
-              <Card className="border-l-4 border-l-rose-600">
+              <Card className="">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Badge variant="destructive">HSPU</Badge>
@@ -2281,7 +2281,7 @@ export function DocumentsPage() {
               </Card>
 
               {/* Speed Enforcement Unit */}
-              <Card className="border-l-4 border-l-amber-600">
+              <Card className="">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Badge>SEU</Badge>
@@ -2333,7 +2333,7 @@ export function DocumentsPage() {
               </Card>
 
               {/* SWAT & EOD */}
-              <Card className="border-l-4 border-l-red-700">
+              <Card className="">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Badge variant="destructive">SWAT</Badge>
@@ -2395,7 +2395,7 @@ export function DocumentsPage() {
               </Card>
 
               {/* Motorbike Pursuit Unit */}
-              <Card className="border-l-4 border-l-sky-600">
+              <Card className="">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Badge variant="secondary">MPU</Badge>
@@ -2451,7 +2451,7 @@ export function DocumentsPage() {
               </Card>
 
               {/* Criminal Investigations Division */}
-              <Card className="border-l-4 border-l-violet-600">
+              <Card className="">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Badge>CID</Badge>
@@ -2509,7 +2509,7 @@ export function DocumentsPage() {
               </Card>
 
               {/* K-9 Joint Task Force */}
-              <Card className="border-l-4 border-l-emerald-600">
+              <Card className="">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Badge>K-9</Badge>
