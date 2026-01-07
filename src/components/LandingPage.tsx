@@ -142,18 +142,18 @@ const bcsoOfficials = [
 
 export function LandingPage({ onNavigateToDocuments }: LandingPageProps) {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <div 
+      <div
         className="relative bg-cover bg-center py-20 px-8"
-        style={{ 
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/2.webp')`
+        style={{
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/2.webp')`
         }}
       >
-        <div className="max-w-7xl mx-auto text-center text-white">
-          <h1 className="mb-4 text-white">Indian Empire Roleplay</h1>
+        <div className="max-w-7xl mx-auto text-center text-foreground">
+          <h1 className="mb-4 text-foreground">Indian Empire Roleplay</h1>
           <p className="text-xl mb-8">Law Enforcement & Justice System</p>
-          <Button size="lg" onClick={onNavigateToDocuments} className="bg-white text-black hover:bg-gray-100">
+          <Button size="lg" onClick={onNavigateToDocuments} className="bg-card text-card-foreground hover:bg-accent hover:text-accent-foreground">
             View Legal Documents
           </Button>
         </div>

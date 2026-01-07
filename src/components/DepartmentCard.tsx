@@ -11,10 +11,10 @@ export function DepartmentCard({ title, description, logo }: DepartmentCardProps
     <Card className="hover:shadow-lg transition-shadow h-full flex flex-col">
       <CardHeader>
         <div className="flex items-start gap-4 mb-4">
-          <div className="p-2 bg-gray-100 rounded-lg flex-shrink-0">
+          <div className="p-2 bg-card/80 rounded-lg flex-shrink-0">
             <img src={logo} alt={`${title} Logo`} className="h-16 w-16 object-contain" />
           </div>
-          <CardTitle className="text-lg leading-tight">{title}</CardTitle>
+          <CardTitle className="text-lg leading-tight text-card-foreground">{title}</CardTitle>
         </div>
       </CardHeader>
       <CardContent className="flex-grow">

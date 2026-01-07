@@ -38,7 +38,13 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
   };
 
   return (
-    <nav className="border-b bg-white sticky top-0 z-50 shadow-sm">
+    <nav
+      className="border-b sticky top-0 z-50 shadow-sm"
+      style={{
+        background: "var(--sidebar)",
+        color: "var(--sidebar-foreground)",
+      }}
+    >
       <div className="max-w-7xl mx-auto px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-3">
