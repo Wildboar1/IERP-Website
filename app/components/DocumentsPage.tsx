@@ -12,6 +12,10 @@ import codeCommunications from "@data/code-communications.json";
 
 export function DocumentsPage() {
   const [penalSearchTerm, setPenalSearchTerm] = useState("");
+  const [crimetype, setCrimetype] = useState("all");
+  const [felonyFilter, setFelonyFilter] = useState("all");
+  const [misdemeanorFilter, setMisdemeanorFilter] = useState("all");
+  const [infractionFilter, setInfractionFilter] = useState("all");
   return (
     <div className="max-w-7xl mx-auto px-8 py-12">
       <div className="mb-8">
@@ -85,16 +89,48 @@ export function DocumentsPage() {
           />
         </div>
 
-        <div className="border border-orange-200 dark:border-orange-900 bg-orange-50 dark:bg-orange-950 rounded-lg p-4">
-          <div className="flex items-start gap-3">
-            <AlertCircle className="h-5 w-5 text-orange-600 dark:text-orange-400 flex-shrink-0 mt-0.5" />
-            <div className="text-sm text-orange-800 dark:text-orange-200">
-              <p className="font-semibold">Important Notice</p>
-              <p className="mt-1">
-                These penal codes reflect serious criminal offenses. Always consult with a legal professional for specific legal advice. This reference is provided for informational purposes only.
-              </p>
-            </div>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <select
+            value={crimetype}
+            onChange={(e) => setCrimetype(e.target.value)}
+            className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+          >
+            <option value="all">All Types of Crime</option>
+            <option value="violent">Violent Crimes</option>
+            <option value="property">Property Crimes</option>
+            <option value="drug">Drug Crimes</option>
+            <option value="other">Other Crimes</option>
+          </select>
+
+          <select
+            value={felonyFilter}
+            onChange={(e) => setFelonyFilter(e.target.value)}
+            className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+          >
+            <option value="all">All Felonies</option>
+            <option value="capital">Capital Offense</option>
+            <option value="felony">Standard Felony</option>
+          </select>
+
+          <select
+            value={misdemeanorFilter}
+            onChange={(e) => setMisdemeanorFilter(e.target.value)}
+            className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+          >
+            <option value="all">All Misdemeanors</option>
+            <option value="show">Include Misdemeanors</option>
+            <option value="hide">Exclude Misdemeanors</option>
+          </select>
+
+          <select
+            value={infractionFilter}
+            onChange={(e) => setInfractionFilter(e.target.value)}
+            className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+          >
+            <option value="all">All Infractions</option>
+            <option value="show">Include Infractions</option>
+            <option value="hide">Exclude Infractions</option>
+          </select>
         </div>
 
         <div className="overflow-x-auto">
@@ -110,11 +146,30 @@ export function DocumentsPage() {
             </thead>
             <tbody>
               {penalCodes
-                .filter(
-                  (offense) =>
+                .filter((offense) => {
+                  // Search filter
+                  const matchesSearch =
                     offense.offense.toLowerCase().includes(penalSearchTerm.toLowerCase()) ||
-                    offense.description.toLowerCase().includes(penalSearchTerm.toLowerCase())
-                )
+                    offense.description.toLowerCase().includes(penalSearchTerm.toLowerCase());
+
+                  if (!matchesSearch) return false;
+
+                  // Felony filter
+                  if (felonyFilter !== "all") {
+                    if (felonyFilter === "capital" && offense.classification !== "Capital Offense") return false;
+                    if (felonyFilter === "felony" && offense.classification !== "Felony") return false;
+                  }
+
+                  // Misdemeanor filter
+                  if (misdemeanorFilter === "hide" && offense.classification === "Misdemeanor") return false;
+                  if (misdemeanorFilter === "show" && offense.classification !== "Misdemeanor" && !matchesSearch) return false;
+
+                  // Infraction filter
+                  if (infractionFilter === "hide" && offense.classification === "Infraction") return false;
+                  if (infractionFilter === "show" && offense.classification !== "Infraction" && !matchesSearch) return false;
+
+                  return true;
+                })
                 .map((offense, index) => (
                   <tr
                     key={index}
@@ -146,11 +201,26 @@ export function DocumentsPage() {
           </table>
         </div>
 
-        {penalCodes.filter(
-          (offense) =>
+        {penalCodes.filter((offense) => {
+          const matchesSearch =
             offense.offense.toLowerCase().includes(penalSearchTerm.toLowerCase()) ||
-            offense.description.toLowerCase().includes(penalSearchTerm.toLowerCase())
-        ).length === 0 && (
+            offense.description.toLowerCase().includes(penalSearchTerm.toLowerCase());
+
+          if (!matchesSearch) return false;
+
+          if (felonyFilter !== "all") {
+            if (felonyFilter === "capital" && offense.classification !== "Capital Offense") return false;
+            if (felonyFilter === "felony" && offense.classification !== "Felony") return false;
+          }
+
+          if (misdemeanorFilter === "hide" && offense.classification === "Misdemeanor") return false;
+          if (misdemeanorFilter === "show" && offense.classification !== "Misdemeanor" && !matchesSearch) return false;
+
+          if (infractionFilter === "hide" && offense.classification === "Infraction") return false;
+          if (infractionFilter === "show" && offense.classification !== "Infraction" && !matchesSearch) return false;
+
+          return true;
+        }).length === 0 && (
           <div className="text-center py-8 text-gray-500 dark:text-gray-400">
             No offenses found matching your search.
           </div>
