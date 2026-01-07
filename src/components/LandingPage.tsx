@@ -2,6 +2,7 @@ import { DepartmentCard } from "./DepartmentCard";
 import { EmployeeCard } from "./EmployeeCard";
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
+import { GlobalFeedbackSection } from "./ui/global-feedback-section";
 
 interface LandingPageProps {
   onNavigateToDocuments: () => void;
@@ -142,7 +143,7 @@ const bcsoOfficials = [
 
 export function LandingPage({ onNavigateToDocuments }: LandingPageProps) {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen w-full bg-gradient-to-br from-background to-[#1e293b] text-foreground flex flex-col">
       {/* Hero Section */}
       <div
         className="relative bg-cover bg-center py-20 px-8"
@@ -159,82 +160,86 @@ export function LandingPage({ onNavigateToDocuments }: LandingPageProps) {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-8 py-12">
-        {/* Departments Section */}
-        <section className="mb-16">
-          <h2 className="mb-8">Departments</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {departments.map((dept) => (
-              <DepartmentCard
-                key={dept.title}
-                title={dept.title}
-                description={dept.description}
-                logo={dept.logo}
-              />
-            ))}
-          </div>
-        </section>
+      <main className="flex-1">
+        <div className="max-w-7xl mx-auto px-8 py-12">
+          {/* Departments Section */}
+          <section className="mb-16">
+            <h2 className="mb-8">Departments</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {departments.map((dept) => (
+                <DepartmentCard
+                  key={dept.title}
+                  title={dept.title}
+                  description={dept.description}
+                  logo={dept.logo}
+                />
+              ))}
+            </div>
+          </section>
 
-        <Separator className="my-12" />
+          <Separator className="my-12" />
 
-        {/* Government Officials */}
-        <section className="mb-16">
-          <h2 className="mb-6">Government</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {governmentOfficials.map((official, index) => (
-              <EmployeeCard key={`${official.department}-${index}`} {...official} />
-            ))}
-          </div>
-        </section>
+          {/* Government Officials */}
+          <section className="mb-16">
+            <h2 className="mb-6">Government</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {governmentOfficials.map((official, index) => (
+                <EmployeeCard key={`${official.department}-${index}`} {...official} />
+              ))}
+            </div>
+          </section>
 
-        <Separator className="my-12" />
+          <Separator className="my-12" />
 
-        {/* DOJ Officials */}
-        <section className="mb-16">
-          <h2 className="mb-6">Department Of Justice</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {dojOfficials.map((official, index) => (
-              <EmployeeCard key={`${official.department}-${index}`} {...official} />
-            ))}
-          </div>
-        </section>
+          {/* DOJ Officials */}
+          <section className="mb-16">
+            <h2 className="mb-6">Department Of Justice</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {dojOfficials.map((official, index) => (
+                <EmployeeCard key={`${official.department}-${index}`} {...official} />
+              ))}
+            </div>
+          </section>
 
-        <Separator className="my-12" />
+          <Separator className="my-12" />
 
-        {/* SASP Officials */}
-        <section className="mb-16">
-          <h2 className="mb-6">San Andreas State Police</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {saspOfficials.map((official, index) => (
-              <EmployeeCard key={`${official.department}-${index}`} {...official} />
-            ))}
-          </div>
-        </section>
+          {/* SASP Officials */}
+          <section className="mb-16">
+            <h2 className="mb-6">San Andreas State Police</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {saspOfficials.map((official, index) => (
+                <EmployeeCard key={`${official.department}-${index}`} {...official} />
+              ))}
+            </div>
+          </section>
 
-        <Separator className="my-12" />
+          <Separator className="my-12" />
 
-        {/* LSPD Officials */}
-        <section className="mb-16">
-          <h2 className="mb-6">Los Santos Police Department</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {lspdOfficials.map((official, index) => (
-              <EmployeeCard key={`${official.department}-${index}`} {...official} />
-            ))}
-          </div>
-        </section>
+          {/* LSPD Officials */}
+          <section className="mb-16">
+            <h2 className="mb-6">Los Santos Police Department</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {lspdOfficials.map((official, index) => (
+                <EmployeeCard key={`${official.department}-${index}`} {...official} />
+              ))}
+            </div>
+          </section>
 
-        <Separator className="my-12" />
+          <Separator className="my-12" />
 
-        {/* BCSO Officials */}
-        <section className="mb-16">
-          <h2 className="mb-6">Blaine County Sheriff's Office</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {bcsoOfficials.map((official, index) => (
-              <EmployeeCard key={`${official.department}-${index}`} {...official} />
-            ))}
-          </div>
-        </section>
-      </div>
+          {/* BCSO Officials */}
+          <section className="mb-16">
+            <h2 className="mb-6">Blaine County Sheriff's Office</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {bcsoOfficials.map((official, index) => (
+                <EmployeeCard key={`${official.department}-${index}`} {...official} />
+              ))}
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <GlobalFeedbackSection />
     </div>
   );
 }

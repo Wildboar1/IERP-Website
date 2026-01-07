@@ -11,6 +11,7 @@ import infractionCharges from "@data/infractions-charges.json";
 import tenCodes from "@data/10-codes.json";
 import shortForms from "@data/short-forms.json";
 import codeCommunications from "@data/code-communications.json";
+import { GlobalFeedbackSection } from "./ui/global-feedback-section";
 
 export function DocumentsPage() {
   const [penalSearchTerm, setPenalSearchTerm] = useState("");
@@ -20,7 +21,7 @@ export function DocumentsPage() {
   const [infractionFilter, setInfractionFilter] = useState("all");
   const [chargeTypeFilter, setChargeTypeFilter] = useState("all");
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-background to-[#1e293b] text-foreground">
+    <div className="min-h-screen w-full bg-gradient-to-br from-background to-[#1e293b] text-foreground flex flex-col">
       <div className="max-w-6xl mx-auto p-6">
         <div className="mb-8">
           <div className="flex items-center space-x-3 mb-4">
@@ -1511,8 +1512,7 @@ export function DocumentsPage() {
 
                     <div>
                       <strong>Evidence & Documentation:</strong>
-                      <div>• Log all evidence into SASP Evidence Locker with full chain-of-custody records</div>
-                      <div>• Maintain comprehensive case files and provide weekly updates to CID leadership</div>
+                      <div>• Log all evidence into SASP Evidence Locker with full chain-of-custody records</div                      <div>• Maintain comprehensive case files and provide weekly updates to CID leadership</div>
                     </div>
 
                     <div>
@@ -1598,10 +1598,8 @@ export function DocumentsPage() {
 
     </TabsContent>
 
-
-
-        </Tabs>
-      </div>
+      </Tabs>
+      <GlobalFeedbackSection />
     </div>
   );
 }
