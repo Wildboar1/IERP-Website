@@ -5,6 +5,7 @@ import { DocumentsPage } from "./components/DocumentsPage";
 import { ApplicationsPage } from "./components/ApplicationsPage";
 import { AdminDashboard } from "./components/AdminDashboard";
 import { AuthProvider, useAuth } from "./context/AuthContext";
+import { ThemeProvider } from "./context/ThemeContext";
 import { Card } from "./components/ui/card";
 
 function AppContent() {
@@ -72,7 +73,9 @@ function AppContent() {
 export default function App() {
   return (
     <AuthProvider>
-      <AppContent />
+      <ThemeProvider>
+        <AppContent />
+      </ThemeProvider>
     </AuthProvider>
   );
 }

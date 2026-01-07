@@ -1,5 +1,7 @@
 import { Button } from "./ui/button";
-import { Home, FileText, ClipboardList, LogOut, LogIn, Settings } from "lucide-react";
+import { Home, FileText, ClipboardList, LogOut, LogIn, Settings, Sun, Moon, Laptop } from "lucide-react";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
+import { useTheme } from "../context/ThemeContext";
 import { useAuth } from "../context/AuthContext";
 
 interface NavigationProps {
@@ -9,6 +11,7 @@ interface NavigationProps {
 
 export function Navigation({ currentPage, onNavigate }: NavigationProps) {
   const { user, isAuthenticated, login, logout, isAdmin } = useAuth();
+  const { theme, setTheme } = useTheme();
 
   const handleApplicationsClick = () => {
     if (!isAuthenticated) {
@@ -72,6 +75,32 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
             )}
 
             <div className="flex items-center gap-2 ml-4 pl-4 border-l">
+              {/* Theme toggle */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" className="flex items-center gap-2" title="Theme">
+                    {theme === "dark" ? (
+                      <Moon className="w-4 h-4" />
+                    ) : theme === "light" ? (
+                      <Sun className="w-4 h-4" />
+                    ) : (
+                      <Laptop className="w-4 h-4" />
+                    )}
+                    <span className="hidden sm:inline">Theme</span>
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuItem onClick={() => setTheme("light")}>
+                    <Sun className="w-4 h-4" /> Light
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setTheme("dark")}>
+                    <Moon className="w-4 h-4" /> Dark
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setTheme("system")}>
+                    <Laptop className="w-4 h-4" /> System
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
               {isAuthenticated && user ? (
                 <>
                   <div className="flex items-center gap-2">
