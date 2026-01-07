@@ -3,10 +3,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import { ScrollArea } from "./ui/scroll-area";
 import { Badge } from "./ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
-import { FileText, Scale, BookOpen, Shield, Users, Radio, Zap } from "lucide-react";
+import { FileText, Scale, BookOpen, Shield, Users, Radio, Zap, AlertCircle } from "lucide-react";
 import penalCodes from "@data/penal-codes.json";
 import tenCodes from "@data/10-codes.json";
 import shortForms from "@data/short-forms.json";
+import codeCommunications from "@data/code-communications.json";
 
 export function DocumentsPage() {
   return (
@@ -17,7 +18,7 @@ export function DocumentsPage() {
       </div>
 
       <Tabs defaultValue="penal" className="w-full">
-        <TabsList className="grid w-full grid-cols-7 mb-8">
+        <TabsList className="grid w-full grid-cols-8 mb-8">
           <TabsTrigger value="penal" className="flex items-center gap-2">
             <Scale className="w-4 h-4" />
             Penal Codes
@@ -25,6 +26,10 @@ export function DocumentsPage() {
           <TabsTrigger value="10codes" className="flex items-center gap-2">
             <Radio className="w-4 h-4" />
             10-Codes
+          </TabsTrigger>
+          <TabsTrigger value="codecomms" className="flex items-center gap-2">
+            <AlertCircle className="w-4 h-4" />
+            Code Comms
           </TabsTrigger>
           <TabsTrigger value="shortforms" className="flex items-center gap-2">
             <Zap className="w-4 h-4" />
@@ -39,6 +44,14 @@ export function DocumentsPage() {
             Case Laws
           </TabsTrigger>
           <TabsTrigger value="sop" className="flex items-center gap-2">
+            <Shield className="w-4 h-4" />
+            Police SOP
+          </TabsTrigger>
+          <TabsTrigger value="resources" className="flex items-center gap-2">
+            <Users className="w-4 h-4" />
+            Resources
+          </TabsTrigger>
+        </TabsList>
             <Shield className="w-4 h-4" />
             Police SOP
           </TabsTrigger>
@@ -1114,6 +1127,102 @@ export function DocumentsPage() {
                       </div>
                       <p className="text-sm font-medium mb-3">{item.description}</p>
                       <Badge variant="outline">{item.category}</Badge>
+                    </div>
+                  ))}
+                </div>
+              </ScrollArea>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        {/* Code Communications */}
+        <TabsContent value="codecomms">
+          <Card>
+            <CardHeader>
+              <CardTitle>Code Communications</CardTitle>
+              <CardDescription>Essential response codes and priority levels for law enforcement operations</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-6 flex gap-4">
+                <input
+                  type="text"
+                  placeholder="Search codes..."
+                  className="flex-1 px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800"
+                  id="codecommsSearch"
+                  onChange={(e) => {
+                    const query = e.target.value.toLowerCase();
+                    const items = document.querySelectorAll('[data-codecomm-item]');
+                    items.forEach(item => {
+                      const code = item.getAttribute('data-code')?.toLowerCase() || '';
+                      const desc = item.getAttribute('data-desc')?.toLowerCase() || '';
+                      item.style.display = code.includes(query) || desc.includes(query) ? 'block' : 'none';
+                    });
+                  }}
+                />
+                <select
+                  className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800"
+                  onChange={(e) => {
+                    const priority = e.target.value;
+                    const items = document.querySelectorAll('[data-codecomm-item]');
+                    items.forEach(item => {
+                      const itemPriority = item.getAttribute('data-priority');
+                      item.style.display = priority === 'All' || itemPriority === priority ? 'block' : 'none';
+                    });
+                  }}
+                >
+                  <option value="All">All Priorities</option>
+                  <option value="Low">Low</option>
+                  <option value="Medium">Medium</option>
+                  <option value="High">High</option>
+                </select>
+                <select
+                  className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800"
+                  onChange={(e) => {
+                    const type = e.target.value;
+                    const items = document.querySelectorAll('[data-codecomm-item]');
+                    items.forEach(item => {
+                      const itemType = item.getAttribute('data-type');
+                      item.style.display = type === 'All' || itemType === type ? 'block' : 'none';
+                    });
+                  }}
+                >
+                  <option value="All">All Types</option>
+                  <option value="Routine">Routine</option>
+                  <option value="Urgent">Urgent</option>
+                  <option value="Emergency">Emergency</option>
+                  <option value="Status">Status</option>
+                  <option value="Assignment">Assignment</option>
+                  <option value="Administrative">Administrative</option>
+                </select>
+              </div>
+              <ScrollArea className="h-[600px] pr-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {codeCommunications.map((item, index) => (
+                    <div
+                      key={index}
+                      data-codecomm-item
+                      data-code={item.code}
+                      data-desc={item.description}
+                      data-priority={item.priority}
+                      data-type={item.type}
+                      className="border rounded-lg p-4 bg-gray-50 dark:bg-gray-800 hover:shadow-md transition-shadow"
+                    >
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="font-mono text-lg font-bold text-blue-600 dark:text-blue-400">{item.code}</h3>
+                        <Badge
+                          variant={
+                            item.priority === 'High'
+                              ? 'destructive'
+                              : item.priority === 'Medium'
+                              ? 'default'
+                              : 'secondary'
+                          }
+                        >
+                          {item.priority}
+                        </Badge>
+                      </div>
+                      <p className="text-sm font-medium mb-3">{item.description}</p>
+                      <Badge variant="outline">{item.type}</Badge>
                     </div>
                   ))}
                 </div>

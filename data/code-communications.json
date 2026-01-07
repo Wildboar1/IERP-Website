@@ -1,0 +1,98 @@
+[
+  {
+    "code": "Code 1",
+    "description": "Routine Call - No lights or Sirens",
+    "priority": "Low",
+    "type": "Routine"
+  },
+  {
+    "code": "Code 2",
+    "description": "Use Lights. No Sirens",
+    "priority": "Medium",
+    "type": "Urgent"
+  },
+  {
+    "code": "Code 3",
+    "description": "EMERGENCY - Lights and Sirens ON",
+    "priority": "High",
+    "type": "Emergency"
+  },
+  {
+    "code": "Code 4",
+    "description": "All Clear",
+    "priority": "Low",
+    "type": "Status"
+  },
+  {
+    "code": "Code 5",
+    "description": "Felony Stop",
+    "priority": "High",
+    "type": "Emergency"
+  },
+  {
+    "code": "Code 6",
+    "description": "Investigating the Area",
+    "priority": "Medium",
+    "type": "Assignment"
+  },
+  {
+    "code": "Code 36",
+    "description": "Posted Traffic Enforcement",
+    "priority": "Low",
+    "type": "Assignment"
+  },
+  {
+    "code": "Code 44",
+    "description": "Food break",
+    "priority": "Low",
+    "type": "Status"
+  },
+  {
+    "code": "Code 50",
+    "description": "Report Writing",
+    "priority": "Low",
+    "type": "Administrative"
+  },
+  {
+    "code": "Code 100",
+    "description": "Emergency assistance required",
+    "priority": "High",
+    "type": "Emergency"
+  },
+  {
+    "code": "Code Arson",
+    "description": "Active fire incident caused by deliberate criminal activity (arson). Used when there's confirmation or strong suspicion that a fire was intentionally set.",
+    "priority": "High",
+    "type": "Emergency"
+  },
+  {
+    "code": "Code Grey",
+    "description": "Uncooperative or combative individual, usually in a hospital or detention setting. May also refer to a mental health emergency or hostile subject requiring restraint.",
+    "priority": "Medium",
+    "type": "Status"
+  },
+  {
+    "code": "Code Blue",
+    "description": "Medical emergency — person is unconscious or not breathing (cardiac/respiratory arrest). Often used by EMS or hospitals to signal urgent life-saving measures are needed.",
+    "priority": "High",
+    "type": "Emergency"
+  },
+  {
+    "code": "Code Red",
+    "description": "Fire or major emergency requiring immediate response. Sometimes also used in tactical units to mean full alert / lockdown / highest-level threat.",
+    "priority": "High",
+    "type": "Emergency"
+  },
+  {
+    "code": "Code Adam",
+    "description": "Missing or abducted child. Originally developed by Walmart and now used widely, this code is activated when a child is reported missing in a public area or facility.",
+    "priority": "High",
+    "type": "Emergency"
+  },
+  {
+    "code": "Code Purple",
+    "description": "Hostage situation or violent person with a weapon — especially in hospitals or schools. Some systems may use it for bomb threats or VIP threats, depending on local protocol.",
+    "priority": "High",
+    "type": "Emergency"
+  }
+]
