@@ -64,41 +64,31 @@ export function DocumentsPage() {
               Police SOP
             </TabsTrigger>
           </TabsList>
-          {/* ...existing TabsContent... */}
-                              <CardHeader>
-                                <CardTitle className="text-xl flex items-center gap-2">
-                                  <AlertCircle className="h-5 w-5 text-orange-600" />
-                                  Important Legal Notes
-                                </CardTitle>
-                              </CardHeader>
-                              <CardContent>
-                                <div className="space-y-3 text-sm">
-                                  <p><strong>HUT (Held Until Trial):</strong> Reserved for the most serious offenses where bail is typically denied.</p>
-                                  <p><strong>Capital Offense:</strong> Crimes that may be punishable by life imprisonment or other severe penalties.</p>
-                                  <p><strong>Sentence Modifications:</strong> Actual sentences may vary based on circumstances, criminal history, and judicial discretion.</p>
-                                  <p><strong>License Points:</strong> Apply only to vehicle-related offenses and affect driving privileges.</p>
-                                </div>
-                              </CardContent>
-                            </Card>
-
-                            <Card>
-                              <CardHeader>
-                                <CardTitle>Comprehensive Felony Offenses</CardTitle>
-                                <CardDescription>
-                                  Complete reference of 124 criminal statutes with detailed information
-                                </CardDescription>
-                              </CardHeader>
-                              <CardContent>
-<div className="grid gap-4">
-                                    <div>
-                                      <input
-                                        type="text"
-                                        placeholder="Search offenses by name or description..."
-                                        value={penalSearchTerm}
-                                        onChange={(e) => setPenalSearchTerm(e.target.value)}
-                                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-                                      />
-                                    </div>
+          <TabsContent value="penal">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-xl flex items-center gap-2">
+                  <AlertCircle className="h-5 w-5 text-orange-600" />
+                  Important Legal Notes
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3 text-sm mb-8">
+                  <p><strong>HUT (Held Until Trial):</strong> Reserved for the most serious offenses where bail is typically denied.</p>
+                  <p><strong>Capital Offense:</strong> Crimes that may be punishable by life imprisonment or other severe penalties.</p>
+                  <p><strong>Sentence Modifications:</strong> Actual sentences may vary based on circumstances, criminal history, and judicial discretion.</p>
+                  <p><strong>License Points:</strong> Apply only to vehicle-related offenses and affect driving privileges.</p>
+                </div>
+                <div className="grid gap-4">
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="Search offenses by name or description..."
+                      value={penalSearchTerm}
+                      onChange={(e) => setPenalSearchTerm(e.target.value)}
+                      className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                    />
+                  </div>
 
                                     <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
                                       <select title="Document Type Selector"
@@ -250,13 +240,10 @@ export function DocumentsPage() {
                                       No offenses found matching your search.
                                     </div>
                                   )}
-                                </div>
-                              </CardContent>
-                            </Card>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </TabsContent>
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
 
                     {/* Misdemeanor Charges */}
                     {/* 10-Codes */}
@@ -1608,14 +1595,15 @@ export function DocumentsPage() {
           </ScrollArea>
         </CardContent>
       </Card>
+
     </TabsContent>
-                  </Tabs>
-                </div>
-              </div>
-            </main>
-          </div>
-        </div>
+
+
+
+        </Tabs>
       </div>
     </div>
   );
 }
+
+export default DocumentsPage;
