@@ -13,13 +13,16 @@ type Theme =
   | "police-red"
   | "sasp";
 
+
 interface ThemeContextValue {
   theme: Theme;
   setTheme: (t: Theme) => void;
 }
 
+
 const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
 
+function applyTheme(theme: Theme) {
   const root = document.documentElement;
   const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
   const customClasses = [
