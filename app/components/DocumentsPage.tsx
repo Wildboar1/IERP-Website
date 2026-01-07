@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import { ScrollArea } from "./ui/scroll-area";
@@ -10,6 +11,7 @@ import shortForms from "@data/short-forms.json";
 import codeCommunications from "@data/code-communications.json";
 
 export function DocumentsPage() {
+  const [penalSearchTerm, setPenalSearchTerm] = useState("");
   return (
     <div className="max-w-7xl mx-auto px-8 py-12">
       <div className="mb-8">
@@ -67,25 +69,99 @@ export function DocumentsPage() {
     <CardHeader>
       <CardTitle>San Andreas Penal Codes</CardTitle>
       <CardDescription>
-        Official criminal offenses, classifications, and penalties
+        Comprehensive felony offenses reference - 124 criminal statutes
       </CardDescription>
     </CardHeader>
 
     <CardContent>
-      <ScrollArea className="h-[600px] pr-4">
-        <Accordion type="single" collapsible className="w-full">
+      <div className="space-y-4">
+        <div>
+          <input
+            type="text"
+            placeholder="Search offenses by name or description..."
+            value={penalSearchTerm}
+            onChange={(e) => setPenalSearchTerm(e.target.value)}
+            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+          />
+        </div>
 
-          {/* TITLE 1 */}
-           <AccordionItem value="title-1">
-            <AccordionTrigger className="text-lg font-semibold">
-              TITLE 1. OFFENSES AGAINST PERSONS
-            </AccordionTrigger>
-            <AccordionContent>
-              <div className="space-y-4">
-                
-                <div className="border-l-4 border-blue-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Assault & Battery</h3>
+        <div className="border border-orange-200 dark:border-orange-900 bg-orange-50 dark:bg-orange-950 rounded-lg p-4">
+          <div className="flex items-start gap-3">
+            <AlertCircle className="h-5 w-5 text-orange-600 dark:text-orange-400 flex-shrink-0 mt-0.5" />
+            <div className="text-sm text-orange-800 dark:text-orange-200">
+              <p className="font-semibold">Important Notice</p>
+              <p className="mt-1">
+                These penal codes reflect serious criminal offenses. Always consult with a legal professional for specific legal advice. This reference is provided for informational purposes only.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800">
+                <th className="text-left px-4 py-3 font-semibold">Offense</th>
+                <th className="text-left px-4 py-3 font-semibold">Classification</th>
+                <th className="text-left px-4 py-3 font-semibold">Sentence</th>
+                <th className="text-left px-4 py-3 font-semibold">License Points</th>
+                <th className="text-left px-4 py-3 font-semibold">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              {penalCodes
+                .filter(
+                  (offense) =>
+                    offense.offense.toLowerCase().includes(penalSearchTerm.toLowerCase()) ||
+                    offense.description.toLowerCase().includes(penalSearchTerm.toLowerCase())
+                )
+                .map((offense, index) => (
+                  <tr
+                    key={index}
+                    className="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
+                  >
+                    <td className="px-4 py-3 font-medium text-gray-900 dark:text-white">
+                      {offense.offense}
+                    </td>
+                    <td className="px-4 py-3">
+                      <Badge
+                        variant={offense.classification === "Capital Offense" ? "destructive" : "default"}
+                        className={offense.classification === "Capital Offense" ? "" : "bg-red-600 hover:bg-red-700"}
+                      >
+                        {offense.classification}
+                      </Badge>
+                    </td>
+                    <td className="px-4 py-3 text-gray-700 dark:text-gray-300">
+                      {offense.sentence}
+                    </td>
+                    <td className="px-4 py-3 text-gray-700 dark:text-gray-300">
+                      {offense.licensePoints}
+                    </td>
+                    <td className="px-4 py-3 text-gray-700 dark:text-gray-300 max-w-md">
+                      {offense.description}
+                    </td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
+        </div>
+
+        {penalCodes.filter(
+          (offense) =>
+            offense.offense.toLowerCase().includes(penalSearchTerm.toLowerCase()) ||
+            offense.description.toLowerCase().includes(penalSearchTerm.toLowerCase())
+        ).length === 0 && (
+          <div className="text-center py-8 text-gray-500 dark:text-gray-400">
+            No offenses found matching your search.
+          </div>
+        )}
+      </div>
+    </CardContent>
+  </Card>
+</TabsContent>
+
+
+        {/* 10-Codes */}
                     <Badge variant="destructive">Misdemeanor</Badge>
                   </div>
                   <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">

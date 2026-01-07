@@ -1,1 +1,793 @@
-[{"SAN ANDREAS PENAL CODE":"PART 1. CRIMINAL PROCEDURES"},{"SAN ANDREAS PENAL CODE":"TITLE 1","__EMPTY_1":"Sentencing"},{"SAN ANDREAS PENAL CODE":"TITLE 2","__EMPTY_1":"Definitions"},{"SAN ANDREAS PENAL CODE":"TITLE 3","__EMPTY_1":"Guidelines"},{"SAN ANDREAS PENAL CODE":"TITLE 4 ","__EMPTY_1":"Speed Limits"},{"SAN ANDREAS PENAL CODE":"PART 2. CRIMINAL OFFENSES"},{"SAN ANDREAS PENAL CODE":"TITLE 1","__EMPTY_1":"Offenses against persons"},{"SAN ANDREAS PENAL CODE":"TITLE 2","__EMPTY_1":"Offenses involving theft"},{"SAN ANDREAS PENAL CODE":"TITLE 3","__EMPTY_1":"Offenses involving fraud"},{"SAN ANDREAS PENAL CODE":"TITLE 4 ","__EMPTY_1":"Offenses involving damage to property"},{"SAN ANDREAS PENAL CODE":"TITLE 5","__EMPTY_1":"Offenses against public administration"},{"SAN ANDREAS PENAL CODE":"TITLE 6","__EMPTY_1":"Offenses against public order"},{"SAN ANDREAS PENAL CODE":"TITLE 7","__EMPTY_1":"Offenses against health and morals"},{"SAN ANDREAS PENAL CODE":"TITLE 8","__EMPTY_1":"Offenses against public safety "},{"SAN ANDREAS PENAL CODE":"TITLE 9","__EMPTY_1":"Offenses involving operation of a vehicle and general citations "},{"SAN ANDREAS PENAL CODE":"TITLE 10","__EMPTY_1":"Offenses involving Natural Resources"},{"SAN ANDREAS PENAL CODE":"PART 1. CRIMINAL PROCEDURE"},{"SAN ANDREAS PENAL CODE":"Infraction","__EMPTY":"Only fine."},{"SAN ANDREAS PENAL CODE":"Misdemeanor","__EMPTY":"Time & Fine"},{"SAN ANDREAS PENAL CODE":"Felony","__EMPTY":"Time & Fine"},{"SAN ANDREAS PENAL CODE":"Accessory","__EMPTY":"An accessory is generally not present at the actual crime, and may be subject to lesser penalties then an accomplice or principal. "},{"SAN ANDREAS PENAL CODE":"Accomplice","__EMPTY":"An accomplice differs from an accessory in that an accomplice is present at the actual crime, and could be prosecuted even if the main criminal (the principal) is not charged or convicted. "},{"SAN ANDREAS PENAL CODE":"Attempted","__EMPTY":"Same time and fine as related charge unless stated otherwise (i.e. Attempted Kidnapping = time/fine of Kidnapping)"},{"SAN ANDREAS PENAL CODE":"Class 1 weapon","__EMPTY":"Possesses a Class 1 weapon without a proper license, not registered, or a weapon that has been tampered with. Combat Pistol, Vintage Pistol, Pistol, and SNS."},{"SAN ANDREAS PENAL CODE":"Class 2 weapon","__EMPTY":"Semi-automatic to automatic firearms and shotguns"},{"SAN ANDREAS PENAL CODE":"Controlled Substance","__EMPTY":"Cocaine, Crack-Cocaine, Oxy, and Marijuana."},{"SAN ANDREAS PENAL CODE":"Government Property","__EMPTY":"Any property issued to a public servant."},{"SAN ANDREAS PENAL CODE":"HUT","__EMPTY":"Held Until Trial."},{"SAN ANDREAS PENAL CODE":"Peace Officer","__EMPTY":"Police Officer, Trooper, Sheriff (and deputies), and CID."},{"SAN ANDREAS PENAL CODE":"Public Official","__EMPTY":"A person who is appointed, nominated, or elected into a position in the government."},{"SAN ANDREAS PENAL CODE":"Public Servant","__EMPTY":"A person who works for the government."},{"SAN ANDREAS PENAL CODE":"Fine per month","__EMPTY":"Offenses against public administration"},{"SAN ANDREAS PENAL CODE":"Aiding and Abetting","__EMPTY":"All persons that help in the commission of a crime are guilt of such crime."},{"SAN ANDREAS PENAL CODE":"Attempt","__EMPTY":"All persons that attempt a crime are guilty of such crime."},{"SAN ANDREAS PENAL CODE":"Speed limits","__EMPTY":"35 in the city, 55 on Route 68, and 75 on Highways"},{"SAN ANDREAS PENAL CODE":"Removal","__EMPTY":"20 or more points total on driving record is grounds for suspension/removal of license. "},{"SAN ANDREAS PENAL CODE":"PART 2. CRIMINAL OFFENSES"},{"SAN ANDREAS PENAL CODE":"TITLE 1. OFFENSES AGAINST PERSONS                                                                                                                                                                                                                                                    ","__EMPTY":"CLASSIFICATION    ","__EMPTY_1":"SENTENCE (MONTHS)","__EMPTY_2":"FINE","__EMPTY_3":"DESCRIPTION"},{"SAN ANDREAS PENAL CODE":"Assault & Battery","__EMPTY":"Misdemeanor","__EMPTY_1":11,"__EMPTY_2":825,"__EMPTY_3":"Openly threatens violence or injury upon an individual either orally or through their actions and acts upon that threat."},{"SAN ANDREAS PENAL CODE":"Accomplice of Assault & Battery","__EMPTY":"Misdemeanor","__EMPTY_1":11,"__EMPTY_2":825},{"SAN ANDREAS PENAL CODE":"Accessory of Assault & Battery","__EMPTY":"Misdemeanor","__EMPTY_1":9,"__EMPTY_2":660},{"SAN ANDREAS PENAL CODE":"Unlawful Imprisonment","__EMPTY":"Felony","__EMPTY_1":11,"__EMPTY_2":825,"__EMPTY_3":"Restricts a person's movement within any area without justification or consent."},{"SAN ANDREAS PENAL CODE":"Accomplice of Unlawful Imprisonment","__EMPTY":"Felony","__EMPTY_1":11,"__EMPTY_2":825},{"SAN ANDREAS PENAL CODE":"Accessory of Unlawful Imprisonment","__EMPTY":"Felony","__EMPTY_1":9,"__EMPTY_2":660},{"SAN ANDREAS PENAL CODE":"Kidnapping","__EMPTY":"Felony","__EMPTY_1":14,"__EMPTY_2":1050,"__EMPTY_3":"Abducts another person and holds them against their will."},{"SAN ANDREAS PENAL CODE":"Accomplice of Kidnapping","__EMPTY":"Felony","__EMPTY_1":14,"__EMPTY_2":1050},{"SAN ANDREAS PENAL CODE":"Accessory of Kidnapping","__EMPTY":"Felony","__EMPTY_1":12,"__EMPTY_2":840},{"SAN ANDREAS PENAL CODE":"Kidnapping a Government Employee","__EMPTY":"Felony","__EMPTY_1":25,"__EMPTY_2":1875,"__EMPTY_3":"Abducts a government employee and holds them against their will."},{"SAN ANDREAS PENAL CODE":"Accomplice to Kidnapping of a Government Employee","__EMPTY":"Felony","__EMPTY_1":25,"__EMPTY_2":1875},{"SAN ANDREAS PENAL CODE":"Accessory to Kidnapping of a Government Employee","__EMPTY":"Felony","__EMPTY_1":20,"__EMPTY_2":1500},{"SAN ANDREAS PENAL CODE":"Assault with a Deadly Weapon","__EMPTY":"Felony","__EMPTY_1":21,"__EMPTY_2":1575,"__EMPTY_3":"Attempts to commit a violent injury upon another person with a deadly weapon. A weapon is described as a firearm or any type of melee item, also including motor vehicles."},{"SAN ANDREAS PENAL CODE":"Accomplice of Assault with a Deadly Weapon","__EMPTY":"Felony","__EMPTY_1":21,"__EMPTY_2":1575},{"SAN ANDREAS PENAL CODE":"Accessory of Assault with a Deadly Weapon","__EMPTY":"Felony","__EMPTY_1":17,"__EMPTY_2":1260},{"SAN ANDREAS PENAL CODE":"Manslaughter","__EMPTY":"Felony","__EMPTY_1":150,"__EMPTY_2":11250,"__EMPTY_3":"The accidental, criminally negligent, or criminally reckless killing of another individual for whom a death certificate or autopsy report may be produced or supplied within a reasonable time. "},{"SAN ANDREAS PENAL CODE":"Accomplice of Manslaughter","__EMPTY":"Felony","__EMPTY_1":150,"__EMPTY_2":11250},{"SAN ANDREAS PENAL CODE":"Accessory of Manslaughter","__EMPTY":"Felony","__EMPTY_1":120,"__EMPTY_2":9000},{"SAN ANDREAS PENAL CODE":"Attempted 2nd Degree Murder","__EMPTY":"Felony","__EMPTY_1":25,"__EMPTY_2":1875,"__EMPTY_3":"The attempt to unlawfully kill that doesn't involve malice aforethought—intent to seriously harm or kill, or extreme, reckless disregard for life. Heat of passion, callous disregard for human life."},{"SAN ANDREAS PENAL CODE":"Accomplice of Attempted 2nd Degree Murder","__EMPTY":"Felony","__EMPTY_1":25,"__EMPTY_2":1875},{"SAN ANDREAS PENAL CODE":"Accessory of Attempted 2nd Degree Murder","__EMPTY":"Felony","__EMPTY_1":20,"__EMPTY_2":1500},{"SAN ANDREAS PENAL CODE":"2nd Degree Murder","__EMPTY":"Felony","__EMPTY_1":300,"__EMPTY_2":22500,"__EMPTY_3":"The act of unlawfully killing that doesn't involve malice aforethought—intent to seriously harm or kill, or extreme, reckless disregard for life. Heat of passion, callous disregard for human life."},{"SAN ANDREAS PENAL CODE":"Accomplice of 2nd Degree Murder","__EMPTY":"Felony","__EMPTY_1":300,"__EMPTY_2":22500},{"SAN ANDREAS PENAL CODE":"Accessory of 2nd Degree Murder","__EMPTY":"Felony","__EMPTY_1":240,"__EMPTY_2":18000},{"SAN ANDREAS PENAL CODE":"Attempted 1st Degree Murder","__EMPTY":"Felony","__EMPTY_1":35,"__EMPTY_2":2625,"__EMPTY_3":"The attempt to unlawfully kill another human without justification or valid excuse, with malice aforethought / premeditation."},{"SAN ANDREAS PENAL CODE":"Accomplice of Attempted 1st Degree Murder","__EMPTY":"Felony","__EMPTY_1":35,"__EMPTY_2":2625},{"SAN ANDREAS PENAL CODE":"Accessory of Attempted 1st Degree Murder","__EMPTY":"Felony","__EMPTY_1":28,"__EMPTY_2":2100},{"SAN ANDREAS PENAL CODE":"1st Degree Murder","__EMPTY":"Felony","__EMPTY_1":"HUT","__EMPTY_2":"HUT","__EMPTY_3":"The unlawful killing of another human without justification or valid excuse, with malice aforethought / premeditation."},{"SAN ANDREAS PENAL CODE":"Accomplice of 1st Degree Murder","__EMPTY":"Felony","__EMPTY_1":"HUT","__EMPTY_2":"HUT"},{"SAN ANDREAS PENAL CODE":"Accessory of 1st Degree Murder","__EMPTY":"Felony","__EMPTY_1":"HUT","__EMPTY_2":"HUT"},{"SAN ANDREAS PENAL CODE":"Criminal Threats","__EMPTY":"Misdemeanor","__EMPTY_1":14,"__EMPTY_2":1050,"__EMPTY_3":"A \"criminal threat\" is when you threaten to kill or physically harm someone.\n\nThat person is thereby placed in a state of reasonably sustained fear for his/her safety or for the safety of his/her immediate family, the threat is specific and unequivocal and you communicate the threat verbally, in writing, or via an electronically transmitted device."},{"SAN ANDREAS PENAL CODE":"Accomplice of Criminal Threats","__EMPTY":"Misdemeanor","__EMPTY_1":14,"__EMPTY_2":1050},{"SAN ANDREAS PENAL CODE":"Accessory of Criminal Threats","__EMPTY":"Misdemeanor","__EMPTY_1":12,"__EMPTY_2":840},{"SAN ANDREAS PENAL CODE":"Attempted Murder of a Government Employee","__EMPTY":"Felony","__EMPTY_1":45,"__EMPTY_2":3375,"__EMPTY_3":"The attempt to murder a government employee.  A government employee is listed as a Law Enforcement Officer, Emergency Medical Services personnel, Doctor, District Attorney / Assistant District Attorney, and Judge. "},{"SAN ANDREAS PENAL CODE":"Accomplice of Attempted Murder of a Government Employee","__EMPTY":"Felony","__EMPTY_1":45,"__EMPTY_2":3375},{"SAN ANDREAS PENAL CODE":"Accessory of Attempted Murder of a Government Employss","__EMPTY":"Felony","__EMPTY_1":36,"__EMPTY_2":2700},{"SAN ANDREAS PENAL CODE":"Murder of a Government Employee","__EMPTY":"Felony","__EMPTY_1":"HUT","__EMPTY_2":"HUT","__EMPTY_3":"The intentional act that leads to the death of a Government Employee.  A government employee is listed as a Law Enforcement Officer, Emergency Medical Services personnel, Doctor, District Attorney / Assistant District Attorney, and Judge. Held Until Trial"},{"SAN ANDREAS PENAL CODE":"Accomplice of Murder of a Governement Employee","__EMPTY":"Felony","__EMPTY_1":"HUT","__EMPTY_2":"HUT"},{"SAN ANDREAS PENAL CODE":"Accessory of Murder of a Governement Employee","__EMPTY":"Felony","__EMPTY_1":"HUT","__EMPTY_2":"HUT"},{"SAN ANDREAS PENAL CODE":"Gang Related Shooting","__EMPTY":"Felony","__EMPTY_1":75,"__EMPTY_2":500,"__EMPTY_3":"Any individual who, with one or more members of their “gang” engages in a shooting/shootout with two or more members of other gangs. \r\n\r\nA “gang” is defined as an ongoing group, club, organization, or association of three or more persons which has the primary purpose of the commission of criminal offenses, or the members of which over the last ninety days have engaged in continuing or ongoing series of felony offenses. Alternatively, any individual or individuals flagged as “gang related” based on knowledge or probable cause by the Unified Police Department. "},{"SAN ANDREAS PENAL CODE":"Accomplice of a Gang Related Shooting","__EMPTY":"Felony","__EMPTY_1":75,"__EMPTY_2":500},{"SAN ANDREAS PENAL CODE":"Accessory of a Gang Related Shooting","__EMPTY":"Felony","__EMPTY_1":60,"__EMPTY_2":400},{"SAN ANDREAS PENAL CODE":"Reckless Endangerment ","__EMPTY":"Felony","__EMPTY_1":11,"__EMPTY_2":825,"__EMPTY_3":"Person creates a substantial risk of serious physical injury to another person. The accused person isn't required to intend the resulting or potential harm, but must have acted in a way that showed a disregard for the foreseeable consequences of the actions."},{"SAN ANDREAS PENAL CODE":"Accomplice of Reckless Endangerment","__EMPTY":"Felony","__EMPTY_1":11,"__EMPTY_2":825},{"SAN ANDREAS PENAL CODE":"Accessory of Reckless Endangerment","__EMPTY":"Felony","__EMPTY_1":9,"__EMPTY_2":660},{"SAN ANDREAS PENAL CODE":"Brandishing of a Firearm","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525,"__EMPTY_3":"Displaying a firearm in public without a legal reason. \"Open Carry\" is not a legal reason to have a weapon in your hand. To open carry, the weapon must be holstered or attached to a sling. "},{"SAN ANDREAS PENAL CODE":"Forcer's Law","__EMPTY":"Felony","__EMPTY_1":"HUT","__EMPTY_2":"HUT","__EMPTY_3":"See Case law."},{"SAN ANDREAS PENAL CODE":"TITLE 2. OFFENSES INVOLVING THEFT                                                                                                                                                                                                                                                 ","__EMPTY":"CLASSIFICATION    ","__EMPTY_1":"SENTENCE (MONTHS)","__EMPTY_2":"FINE","__EMPTY_3":"DESCRIPTION"},{"SAN ANDREAS PENAL CODE":"Petty Theft","__EMPTY":"Infraction","__EMPTY_1":0,"__EMPTY_2":250,"__EMPTY_3":"Steals property in the value of less than $1,000 from another person."},{"SAN ANDREAS PENAL CODE":"Accomplice to Petty Theft","__EMPTY":"Infraction","__EMPTY_1":0,"__EMPTY_2":250},{"SAN ANDREAS PENAL CODE":"Accessory to Petty Theft","__EMPTY":"Infraction","__EMPTY_1":0,"__EMPTY_2":200},{"SAN ANDREAS PENAL CODE":"Grand Theft","__EMPTY":"Misdemeanor","__EMPTY_1":5,"__EMPTY_2":375,"__EMPTY_3":"Steals property in the value of more than $1,000 from another person."},{"SAN ANDREAS PENAL CODE":"Accomplice of Grand Theft","__EMPTY":"Misdemeanor","__EMPTY_1":5,"__EMPTY_2":375},{"SAN ANDREAS PENAL CODE":"Accessory of Grand Theft","__EMPTY":"Misdemeanor","__EMPTY_1":4,"__EMPTY_2":300},{"SAN ANDREAS PENAL CODE":"Joyriding","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525,"__EMPTY_3":"The taking or operating of a vehicle without the owner's consent, without the intent to deprive the owner of the vehicle permanently."},{"SAN ANDREAS PENAL CODE":"Accomplice to Joyriding","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525},{"SAN ANDREAS PENAL CODE":"Accessory to Joyriding","__EMPTY":"Misdemeanor","__EMPTY_1":6,"__EMPTY_2":420},{"SAN ANDREAS PENAL CODE":"Grand Theft Auto","__EMPTY":"Felony","__EMPTY_1":14,"__EMPTY_2":1050,"__EMPTY_3":"Unlawfully taking a vehicle belonging to another, or driving the vehicle without the owner's consent, with the intent to permanently deprive the owner of the vehicle."},{"SAN ANDREAS PENAL CODE":"Accomplice to Grand Theft Auto","__EMPTY":"Felony","__EMPTY_1":14,"__EMPTY_2":1050},{"SAN ANDREAS PENAL CODE":"Accessory to Grand Theft Auto","__EMPTY":"Felony","__EMPTY_1":12,"__EMPTY_2":840},{"SAN ANDREAS PENAL CODE":"Tampering with a Vehicle","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525,"__EMPTY_3":"No person shall either individually or in association with one or more other persons, willfully tamper with any vehicle or the contents thereof, or break or remove any part of a vehicle without the consent of the owner."},{"SAN ANDREAS PENAL CODE":"Accomplice to Tampering with a Vehicle","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525},{"SAN ANDREAS PENAL CODE":"Accessory to Tampering with a Vehicle","__EMPTY":"Misdemeanor","__EMPTY_1":6,"__EMPTY_2":420},{"SAN ANDREAS PENAL CODE":"Receiving Stolen Property in the Third Degree","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525,"__EMPTY_3":"A person who bought, received, sold or participated in selling, concealed or withheld property that has been stolen from another, and the individual knew the property was stolen. To included color coded bank cards in the amount of 5 or less."},{"SAN ANDREAS PENAL CODE":"Receiving Stolen Property in the Second Degree","__EMPTY":"Misdemeanor","__EMPTY_1":12,"__EMPTY_2":900,"__EMPTY_3":"A person who bought, received, sold or participated in selling, concealed or withheld property that has been stolen from another, and the individual knew the property was stolen. To included color coded bank cards in the amount of 6 to 10"},{"SAN ANDREAS PENAL CODE":"Receiving Stolen Property in the First Degree","__EMPTY":"Felony","__EMPTY_1":14,"__EMPTY_2":1050,"__EMPTY_3":"A person who bought, received, sold or participated in selling, concealed or withheld property that has been stolen from another, and the individual knew the property was stolen.  To include possession of color coded bank cards in the amount of 11 or more."},{"SAN ANDREAS PENAL CODE":"Robbery","__EMPTY":"Felony","__EMPTY_1":25,"__EMPTY_2":1875,"__EMPTY_3":"The taking or carrying away with the intent to steal any thing of value in the care, custody, control, management, or possession of any store, bank, or financial institution, including but not limited to all Fleeca Banks, 24/7 Gas Stations, LTD Gas Stations, or Vangelico’s Jewelry Stores. \r\n\r\nAlternatively, the taking or carrying away with the intent to steal any thing of value from the direct custody of another person."},{"SAN ANDREAS PENAL CODE":"Accomplice to Robbery","__EMPTY":"Felony","__EMPTY_1":25,"__EMPTY_2":1875},{"SAN ANDREAS PENAL CODE":"Accessory to Robbery","__EMPTY":"Felony","__EMPTY_1":20,"__EMPTY_2":1500},{"SAN ANDREAS PENAL CODE":"First Degree Robbery","__EMPTY":"Felony","__EMPTY_1":30,"__EMPTY_2":2250,"__EMPTY_3":"A robbery in which the victim, a hostage, or a third party otherwise uninvolved in the crime is physically injured. "},{"SAN ANDREAS PENAL CODE":"Accomplice to First Degree Robbery","__EMPTY":"Felony","__EMPTY_1":30,"__EMPTY_2":2250},{"SAN ANDREAS PENAL CODE":"Accessory to First Degree Robbery","__EMPTY":"Felony","__EMPTY_1":24,"__EMPTY_2":1800},{"SAN ANDREAS PENAL CODE":"Possession of Stolen Goods","__EMPTY":"Felony","__EMPTY_1":14,"__EMPTY_2":1050,"__EMPTY_3":"Possession of Valuable Goods without proof of ownership."},{"SAN ANDREAS PENAL CODE":"Possession of a Stolen Identification ","__EMPTY":"Misdemeanor","__EMPTY_1":12,"__EMPTY_2":900,"__EMPTY_3":"Possesses the Identification Card of another citizen without consent."},{"SAN ANDREAS PENAL CODE":"Grand Larceny","__EMPTY":"Felony","__EMPTY_1":33,"__EMPTY_2":2750,"__EMPTY_3":"The attempt, or robbery of the public vault location at “Pacific Standard Public Deposit Bank”"},{"SAN ANDREAS PENAL CODE":"Accomplice to Grand Larceny","__EMPTY":"Felony","__EMPTY_1":33,"__EMPTY_2":2750},{"SAN ANDREAS PENAL CODE":"Accessory to Grand Larceny","__EMPTY":"Felony","__EMPTY_1":28,"__EMPTY_2":2450},{"SAN ANDREAS PENAL CODE":"Possession of Dirty Money in the Second Degree","__EMPTY":"Misdemeanor","__EMPTY_1":12,"__EMPTY_2":900,"__EMPTY_3":"Person possesses dirty money in the amount of $15,000 or less."},{"SAN ANDREAS PENAL CODE":"Possession of Dirty Money in the First Degree","__EMPTY":"Felony","__EMPTY_1":21,"__EMPTY_2":1575,"__EMPTY_3":"Person possesses dirty money in the amount of $15,001 or more."},{"SAN ANDREAS PENAL CODE":"Leaving Without Paying","__EMPTY":"Misdemeanor","__EMPTY_1":12,"__EMPTY_2":900,"__EMPTY_3":"It is illegal for a person to obtain services by deception, force, threat or other unlawful means, or without lawfully compensating the provider for these services provided. This will include garages and restaurants."},{"SAN ANDREAS PENAL CODE":"Accomplice to Leaving Without Paying","__EMPTY":"Misdemeanor","__EMPTY_1":12,"__EMPTY_2":900},{"SAN ANDREAS PENAL CODE":"Accessory to Leaving Without Paying","__EMPTY":"Misdemeanor","__EMPTY_1":10,"__EMPTY_2":720},{"SAN ANDREAS PENAL CODE":"Sale of Stolen Goods or Stolen Property","__EMPTY":"Misdemeanor","__EMPTY_1":22,"__EMPTY_2":1650,"__EMPTY_3":"The bartering or selling of wares, merchandise, or property that has been stolen from another and the person knew or has reason to know the property was stolen. Color coded bank cards are per se considered to be stolen goods or property under this statute. "},{"SAN ANDREAS PENAL CODE":"Accomplice to Sale of Stolen Goods or Stolen Property","__EMPTY":"Misdemeanor","__EMPTY_1":22,"__EMPTY_2":1650},{"SAN ANDREAS PENAL CODE":"Accessory to Sale of Stolen Goods or Stolen Property","__EMPTY":"Misdemeanor","__EMPTY_1":18,"__EMPTY_2":1320},{"SAN ANDREAS PENAL CODE":"Theft of a Commercial Aircraft","__EMPTY":"Felony","__EMPTY_1":23,"__EMPTY_2":1725,"__EMPTY_3":"Any person who commits larceny of a commercial aircraft vehicle without the consent of the owner, the business, or their appointed representative, and with the intent of using the aircraft for their own profit, purpose or pleasure."},{"SAN ANDREAS PENAL CODE":"Theft of an Aircraft","__EMPTY":"Felony","__EMPTY_1":19,"__EMPTY_2":1425,"__EMPTY_3":"Any person who purposefully commits the act of stealing and operating an aircraft. Person is found to be in possession, and / or found in flight of the aircraft without proper documentation."},{"SAN ANDREAS PENAL CODE":"TITLE 3. OFFENSES INVOLVING FRAUD                                                                                                                                                                                                                                                 ","__EMPTY":"CLASSIFICATION    ","__EMPTY_1":"SENTENCE (MONTHS)","__EMPTY_2":"FINE","__EMPTY_3":"DESCRIPTION"},{"SAN ANDREAS PENAL CODE":"Extortion","__EMPTY":"Felony","__EMPTY_1":14,"__EMPTY_2":1050,"__EMPTY_3":"The use of force or threats to compel another person to relinquish money or property or to compel a public officer or State employee to perform an official act within the course and scope of their employment. "},{"SAN ANDREAS PENAL CODE":"Accomplice to Extortion","__EMPTY":"Felony","__EMPTY_1":14,"__EMPTY_2":1050},{"SAN ANDREAS PENAL CODE":"Accessory to Extortion","__EMPTY":"Felony","__EMPTY_1":12,"__EMPTY_2":840},{"SAN ANDREAS PENAL CODE":"Fraud","__EMPTY":"Felony","__EMPTY_1":14,"__EMPTY_2":1050,"__EMPTY_3":"Wrongfully deceits intending to receive financial or personal gain."},{"SAN ANDREAS PENAL CODE":"Accomplice to Fraud","__EMPTY":"Felony","__EMPTY_1":14,"__EMPTY_2":1050},{"SAN ANDREAS PENAL CODE":"Accessory to Fraud","__EMPTY":"Felony","__EMPTY_1":12,"__EMPTY_2":840},{"SAN ANDREAS PENAL CODE":"Impersonation","__EMPTY":"Felony","__EMPTY_1":14,"__EMPTY_2":1050,"__EMPTY_3":"Providing law enforcement with a false, or fictitious name, while under detainment or under arrest."},{"SAN ANDREAS PENAL CODE":"Accomplice to Impersonation","__EMPTY":"Felony","__EMPTY_1":14,"__EMPTY_2":1050},{"SAN ANDREAS PENAL CODE":"Accessory to Impersonation","__EMPTY":"Felony","__EMPTY_1":12,"__EMPTY_2":840},{"SAN ANDREAS PENAL CODE":"Impersonating a Peace Officer","__EMPTY":"Felony","__EMPTY_1":21,"__EMPTY_2":1575,"__EMPTY_3":"Any person who willfully wears, exhibits, or uses the authorized uniform, insignia, or emblem of a peace officer, or wears a uniform intended to parody or duplicate the authorized uniform of a peace officer and/or any person who willfully and fraudulently introduces the belief that he or she is a peace officer by attempting to perform the duties of a peace officer upon others."},{"SAN ANDREAS PENAL CODE":"Accomplice to Impersonating a Peace Officer","__EMPTY":"Felony","__EMPTY_1":21,"__EMPTY_2":1575},{"SAN ANDREAS PENAL CODE":"Accessory to Impersonating a Peace Officer","__EMPTY":"Felony","__EMPTY_1":17,"__EMPTY_2":1260},{"SAN ANDREAS PENAL CODE":"Impersonating a Judge","__EMPTY":"Felony","__EMPTY_1":21,"__EMPTY_2":1575,"__EMPTY_3":"Impersonates a Judge. Acting as a Judge or introducing themselves to others a judge and attempting to perform judicial duties"},{"SAN ANDREAS PENAL CODE":"Accomplice to Impersonating a Judge","__EMPTY":"Felony","__EMPTY_1":21,"__EMPTY_2":1575},{"SAN ANDREAS PENAL CODE":"Accessory to Impersonating a Judge","__EMPTY":"Felony","__EMPTY_1":17,"__EMPTY_2":1260},{"SAN ANDREAS PENAL CODE":"Vehicle Registration Fraud","__EMPTY":"Felony","__EMPTY_1":21,"__EMPTY_2":1575,"__EMPTY_3":"Person(s) displays a falsified license plate on a motor vehicle. Person(s) manufactures a falsified license plates."},{"SAN ANDREAS PENAL CODE":"Identity Theft","__EMPTY":"Felony","__EMPTY_1":21,"__EMPTY_2":1575,"__EMPTY_3":"A person secures an undeserved financial benefit for themselves. Cause the victim to suffer a loss, which could be financial, emotional or some other type of damage. Escapes criminal liability by using another person's name, birth date or other identifying information."},{"SAN ANDREAS PENAL CODE":"Accomplice to Identity Theft","__EMPTY":"Felony","__EMPTY_1":21,"__EMPTY_2":1575},{"SAN ANDREAS PENAL CODE":"Accessory to Identity Theft","__EMPTY":"Felony","__EMPTY_1":17,"__EMPTY_2":1260},{"SAN ANDREAS PENAL CODE":"Impersonating EMS","__EMPTY":" Felony","__EMPTY_1":21,"__EMPTY_2":1575,"__EMPTY_3":"Impersonates a member of EMS. Acting as EMS or introducing themselves to others as a member of EMS, and attempting to perform EMS duties."},{"SAN ANDREAS PENAL CODE":"Accomplice to Impersonating EMS","__EMPTY":"Felony","__EMPTY_1":21,"__EMPTY_2":1575},{"SAN ANDREAS PENAL CODE":"Accessory to Impersonating EMS","__EMPTY":"Felony","__EMPTY_1":17,"__EMPTY_2":1260},{"SAN ANDREAS PENAL CODE":"Possession of Band of Notes and Small Band of Notes","__EMPTY":"Misdemeanor","__EMPTY_1":0,"__EMPTY_2":0,"__EMPTY_3":"Seize all Band of Notes and Small Band of Notes. No time and fine will be associated with this possession until further investigations can be done."},{"SAN ANDREAS PENAL CODE":"Witness Tampering","__EMPTY":"Felony","__EMPTY_1":"JUDICIAL DISCRETION","__EMPTY_2":"JUDICIAL DISCRETION","__EMPTY_3":"The killing of, attempt to kill, use of physical force, threat of physical force, use of intimidation, or use of threats in an attempt to hinder, delay, or prevent, an individual from producing testimony or evidence before the Court or an attempt to alter or destroy the evidence or testimony to be produced. "},{"SAN ANDREAS PENAL CODE":"Accomplice of Witness Tampering","__EMPTY":"Felony","__EMPTY_1":"JUDICIAL DISCRETION","__EMPTY_2":"JUDICIAL DISCRETION"},{"SAN ANDREAS PENAL CODE":"Accessory of Witness Tampering","__EMPTY":"Felony","__EMPTY_1":"JUDICIAL DISCRETION","__EMPTY_2":"JUDICIAL DISCRETION"},{"SAN ANDREAS PENAL CODE":"Money Laundering","__EMPTY":"Felony","__EMPTY_1":30,"__EMPTY_2":2250,"__EMPTY_3":"The financial and/or property transaction(s) that aims to conceal the ultimate source of illegally obtained money and/or property in any amount. The State must prove that the origin of the money and/or property was obtained illegally. "},{"SAN ANDREAS PENAL CODE":"Accessory to Money Laundering ","__EMPTY":"Felony","__EMPTY_1":5,"__EMPTY_2":500},{"SAN ANDREAS PENAL CODE":"Embezzlement ","__EMPTY":"Felony","__EMPTY_1":50,"__EMPTY_2":3750,"__EMPTY_3":"The fraudulent appropriation of finances by a person to whom the business has been entrusted to, this includes the use of business assets or the finances for non-business, personal, or criminal purposes."},{"SAN ANDREAS PENAL CODE":"Accomplice to Embezzlement","__EMPTY":"Felony","__EMPTY_1":50,"__EMPTY_2":3750},{"SAN ANDREAS PENAL CODE":"Accessory to Embezzlement ","__EMPTY":"Felony","__EMPTY_1":17,"__EMPTY_2":420},{"SAN ANDREAS PENAL CODE":"Misdemeanor Tax Evasion","__EMPTY":"Misdemeanor","__EMPTY_1":"JUDICIAL DISCRETION","__EMPTY_2":"JUDICIAL DISCRETION","__EMPTY_3":"An entity, individual and/or business who attempts to evade any tax imposed by the State of San Andreas under the value up to 20,000$ shall be found guilty of tax evasion and subject to penalty.\nIf convicted under this provision, the entity shall be found subject to the immediate forfeiture and seizure of up to 33% of assets."},{"SAN ANDREAS PENAL CODE":"Felony Tax Evasion","__EMPTY":"Felony","__EMPTY_1":"JUDICIAL DISCRETION","__EMPTY_2":"JUDICIAL DISCRETION","__EMPTY_3":"Asset Freeze Pending Trial\nAn entity, individual and/or business who attempts to evade any tax imposed by the State of San Andreas over the value of 20,000$ shall be found guilty of tax evasion and subject to penalty up to DOJ discretion at trial.\nIf charged the immediate action taken will be asset freezing of the entity, individual and/or business - especially any bank accounts involving the entity, individual and/or business. The asset(s) will be immediately audited by the DIC and District Attorney."},{"SAN ANDREAS PENAL CODE":"TITLE 4. OFFENSES INVOLVING DAMAGE TO PROPERTY                                                                                                                                                                                                                                                 ","__EMPTY":"CLASSIFICATION    ","__EMPTY_1":"SENTENCE (MONTHS)","__EMPTY_2":"FINE","__EMPTY_3":"DESCRIPTION"},{"SAN ANDREAS PENAL CODE":"Burglary","__EMPTY":"Felony","__EMPTY_1":12,"__EMPTY_2":900,"__EMPTY_3":"Any person who breaks and enters any property or attempts to break and enter into a property with the intent either to take and carry away property from within or to commit any misdemeanor or felony therein. See Case Law The People v. Brett Maxwell"},{"SAN ANDREAS PENAL CODE":"Accomplice to Burglary","__EMPTY":"Felony","__EMPTY_1":12,"__EMPTY_2":900},{"SAN ANDREAS PENAL CODE":"Accessory to Burglary","__EMPTY":"Felony","__EMPTY_1":10,"__EMPTY_2":720},{"SAN ANDREAS PENAL CODE":"Felony Trespassing","__EMPTY":"Felony ","__EMPTY_1":12,"__EMPTY_2":900,"__EMPTY_3":"Enters knowingly or remains unlawfully in or upon a government property without permission or the right to do so. Includes power plants."},{"SAN ANDREAS PENAL CODE":"Accomplice to Trespassing","__EMPTY":"Felony ","__EMPTY_1":12,"__EMPTY_2":900},{"SAN ANDREAS PENAL CODE":"Accessory to Trespassing","__EMPTY":"Felony ","__EMPTY_1":10,"__EMPTY_2":720},{"SAN ANDREAS PENAL CODE":"Trespassing","__EMPTY":"Misdemeanor","__EMPTY_1":5,"__EMPTY_2":375,"__EMPTY_3":"Enters knowingly or remains unlawfully upon a property without the permission or the right to do so."},{"SAN ANDREAS PENAL CODE":"Accomplice to Trespassing","__EMPTY":"Misdemeanor","__EMPTY_1":5,"__EMPTY_2":375},{"SAN ANDREAS PENAL CODE":"Accessory to Trespassing","__EMPTY":"Misdemeanor","__EMPTY_1":4,"__EMPTY_2":300},{"SAN ANDREAS PENAL CODE":"Arson","__EMPTY":"Felony ","__EMPTY_1":21,"__EMPTY_2":1575,"__EMPTY_3":"Person maliciously sets fire to a structure, forest land, or other property. To include the use of thermite at banks, vaults, or other locations."},{"SAN ANDREAS PENAL CODE":"Accomplice to Arson","__EMPTY":"Felony","__EMPTY_1":21,"__EMPTY_2":1575},{"SAN ANDREAS PENAL CODE":"Accessory to Arson","__EMPTY":"Felony","__EMPTY_1":17,"__EMPTY_2":1260},{"SAN ANDREAS PENAL CODE":"TITLE 5. OFFENSES AGAINST PUBLIC ADMINISTRATION                                                                                                                                                                                                                                        ","__EMPTY":"CLASSIFICATION    ","__EMPTY_1":"SENTENCE (MONTHS)","__EMPTY_2":"FINE","__EMPTY_3":"DESCRIPTION"},{"SAN ANDREAS PENAL CODE":"Bribery","__EMPTY":"Felony","__EMPTY_1":12,"__EMPTY_2":900,"__EMPTY_3":"Confers, or agrees to confer, any benefit upon a public servant upon an agreement or understanding that such public servant's vote, opinion, judgement, action, decision or exercise of discretion as a public servant will thereby by influenced."},{"SAN ANDREAS PENAL CODE":"Accomplice to Bribery","__EMPTY":"Felony","__EMPTY_1":12,"__EMPTY_2":900},{"SAN ANDREAS PENAL CODE":"Accessory to Bribery","__EMPTY":"Felony","__EMPTY_1":10,"__EMPTY_2":720},{"SAN ANDREAS PENAL CODE":"Contempt of Court","__EMPTY":"Misdemeanor","__EMPTY_1":"JUDICIAL DISCRETION","__EMPTY_2":"JUDICIAL DISCRETION","__EMPTY_3":"The act of being disobedient to or discourteous towards a court of law and its officers in the form of behavior that opposes or defies the authority, justice and dignity of the court. Time/Fine is at Judge discretion."},{"SAN ANDREAS PENAL CODE":"Accomplice to Contempt of Court","__EMPTY":"Misdemeanor","__EMPTY_1":"JUDICIAL DISCRETION","__EMPTY_2":"JUDICIAL DISCRETION"},{"SAN ANDREAS PENAL CODE":"Accessory to Contempt of Court","__EMPTY":"Misdemeanor","__EMPTY_1":"JUDICIAL DISCRETION","__EMPTY_2":"JUDICIAL DISCRETION"},{"SAN ANDREAS PENAL CODE":"Escaping Custody","__EMPTY":"Felony","__EMPTY_1":14,"__EMPTY_2":1050,"__EMPTY_3":"Escapes the custody of law enforcement once that person has been, detained / arrested but before processing occurs."},{"SAN ANDREAS PENAL CODE":"Accomplice to Escaping Custody","__EMPTY":"Felony","__EMPTY_1":14,"__EMPTY_2":1050},{"SAN ANDREAS PENAL CODE":"Accessory to Escaping Custody","__EMPTY":"Felony","__EMPTY_1":12,"__EMPTY_2":800},{"SAN ANDREAS PENAL CODE":"Prison Break","__EMPTY":"Felony","__EMPTY_1":40,"__EMPTY_2":3000,"__EMPTY_3":"Breaks into government buildings, vehicles designated for detainment, or imprisonment with intent to break a prisoner out. Steals a law enforcement vehicle intending to transport an individual/individuals to prison after processing has occurred. \n\nIncludes the act of an inmate or suspect leaving prison through unofficial or illegal ways."},{"SAN ANDREAS PENAL CODE":"Accomplice to Prison Break","__EMPTY":"Felony","__EMPTY_1":40,"__EMPTY_2":3000},{"SAN ANDREAS PENAL CODE":"Accessory to Prison Break","__EMPTY":"Felony","__EMPTY_1":32,"__EMPTY_2":2400},{"SAN ANDREAS PENAL CODE":"Perjury","__EMPTY":"Felony","__EMPTY_1":21,"__EMPTY_2":1575,"__EMPTY_3":"Knowingly lies under oath in judicial proceedings."},{"SAN ANDREAS PENAL CODE":"Accomplice to Perjury","__EMPTY":"Felony","__EMPTY_1":21,"__EMPTY_2":1575},{"SAN ANDREAS PENAL CODE":"Accessory to Perjury","__EMPTY":"Felony","__EMPTY_1":17,"__EMPTY_2":1260},{"SAN ANDREAS PENAL CODE":"Violating a Court Order","__EMPTY":"Felony","__EMPTY_1":28,"__EMPTY_2":2100,"__EMPTY_3":"Willful disobedience of the terms written in a court order. To include a sentence imposed on a citizen, protective, and restraining orders."},{"SAN ANDREAS PENAL CODE":"Accomplice to Violating a Court Order","__EMPTY":"Felony","__EMPTY_1":28,"__EMPTY_2":2100},{"SAN ANDREAS PENAL CODE":"Accessory to Violating a Court Order","__EMPTY":"Felony","__EMPTY_1":23,"__EMPTY_2":1680},{"SAN ANDREAS PENAL CODE":"Failure to Appear","__EMPTY":"Misdemeanor","__EMPTY_1":"JUDICIAL DISCRETION","__EMPTY_2":"JUDICIAL DISCRETION","__EMPTY_3":"Failure to appear in Court when summoned. Judge discretion on time/fine."},{"SAN ANDREAS PENAL CODE":"Accomplice to Failure to Appear","__EMPTY":"Misdemeanor","__EMPTY_1":"JUDICIAL DISCRETION","__EMPTY_2":"JUDICIAL DISCRETION"},{"SAN ANDREAS PENAL CODE":"Accessory to Failure to Appear","__EMPTY":"Misdemeanor","__EMPTY_1":"JUDICIAL DISCRETION","__EMPTY_2":"JUDICIAL DISCRETION"},{"SAN ANDREAS PENAL CODE":"Unauthorized Practice of Law","__EMPTY":"Misdemeanor","__EMPTY_1":5,"__EMPTY_2":375,"__EMPTY_3":"Practices law without a proper bar certification."},{"SAN ANDREAS PENAL CODE":"Accomplice to Unauthorized Practice of Law","__EMPTY":"Misdemeanor","__EMPTY_1":5,"__EMPTY_2":375},{"SAN ANDREAS PENAL CODE":"Accessory to Unauthorized Practice of Law","__EMPTY":"Misdemeanor","__EMPTY_1":4,"__EMPTY_2":300},{"SAN ANDREAS PENAL CODE":"Conspiracy","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525,"__EMPTY_3":"Conspires to commit any crime."},{"SAN ANDREAS PENAL CODE":"Accomplice to Conspiracy","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525},{"SAN ANDREAS PENAL CODE":"Accessory to Conspiracy","__EMPTY":"Misdemeanor","__EMPTY_1":6,"__EMPTY_2":420},{"SAN ANDREAS PENAL CODE":"Attempted Prison Break","__EMPTY":"Felony ","__EMPTY_1":28,"__EMPTY_2":2100,"__EMPTY_3":"Aids in the act of, or attempt to break an individual out of prison, or prison transport after processing has occurred."},{"SAN ANDREAS PENAL CODE":"Accomplice to Attempted Prison Break","__EMPTY":"Felony ","__EMPTY_1":28,"__EMPTY_2":2100},{"SAN ANDREAS PENAL CODE":"Accessory to Attempted Prison Break","__EMPTY":"Felony","__EMPTY_1":23,"__EMPTY_2":1600},{"SAN ANDREAS PENAL CODE":"Parole Violation ","__EMPTY":"Felony","__EMPTY_1":0,"__EMPTY_2":0,"__EMPTY_3":"Person who violates their parole time, set by their previous arrest. This is just a marker for their criminal record. This is NOT a \"Held Until Trial\""},{"SAN ANDREAS PENAL CODE":"Misuse of a 911 System","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525,"__EMPTY_3":"Person makes a request for emergency response when no actual emergency exists, and when the caller does not have a good faith basis to request emergency assistance."},{"SAN ANDREAS PENAL CODE":"Introducing Contraband Into a Government Facility","__EMPTY":"Felony","__EMPTY_1":20,"__EMPTY_2":1500,"__EMPTY_3":"It is unlawful to introduce contraband into or upon the grounds of Bolingbroke Penitentiary, and Parsons Mental health facility.\n\nContraband is described as any weapon, marijuana, oxy, cocaine, crack, meth, or intoxicating beverage. Any explosive, radio, and telephone. Any written or recording device to be used to transmit information."},{"SAN ANDREAS PENAL CODE":"Accomplice to Introducing Contraband Into a Government Facility","__EMPTY":"Felony","__EMPTY_1":20,"__EMPTY_2":1500},{"SAN ANDREAS PENAL CODE":"Accessory to Introducing Contraband Into a Government Facility","__EMPTY":"Felony","__EMPTY_1":16,"__EMPTY_2":1200},{"SAN ANDREAS PENAL CODE":"Concealing an Escaped Prisoner (Patty's Law)","__EMPTY":"Felony","__EMPTY_1":"HUT","__EMPTY_2":"HUT","__EMPTY_3":"Whoever knowingly harbors or conceals any prisoner wanted for a capital level offense after their escape from custody of Bolingbroke State Penitentiary or any other State correctional institution shall be guilty of this offense. This offense shall include but not be limited to providing residence for the prisoner, assisting the prisoner in escape from the authorities, and/or failing to notify the proper authorities of the prisoner's location if the suspect should reasonably know the prisoner is wanted for arrest on capital level offenses. "},{"SAN ANDREAS PENAL CODE":"TITLE 6. OFFENSES AGAINST PUBLIC ORDER                                                                                                                                                                                                                                      ","__EMPTY":"CLASSIFICATION    ","__EMPTY_1":"SENTENCE (MONTHS)","__EMPTY_2":"FINE","__EMPTY_3":"DESCRIPTION"},{"SAN ANDREAS PENAL CODE":"Disobeying a Peace Officer ","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525,"__EMPTY_3":"Willfully refusing or failing to comply with a lawful order, signal, or direction of any peace officer."},{"SAN ANDREAS PENAL CODE":"Accomplice to Disobeying a Peace Officer ","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525},{"SAN ANDREAS PENAL CODE":"Accessory to Disobeying a Peace Officer ","__EMPTY":"Misdemeanor","__EMPTY_1":6,"__EMPTY_2":420},{"SAN ANDREAS PENAL CODE":"Disorderly Conduct","__EMPTY":"Misdemeanor","__EMPTY_1":5,"__EMPTY_2":375,"__EMPTY_3":"Engages in behavior intending to cause public inconvenience."},{"SAN ANDREAS PENAL CODE":"Accomplice to Disorderly Conduct","__EMPTY":"Misdemeanor","__EMPTY_1":5,"__EMPTY_2":375},{"SAN ANDREAS PENAL CODE":"Accessory to Disorderly Conduct","__EMPTY":"Misdemeanor","__EMPTY_1":4,"__EMPTY_2":300},{"SAN ANDREAS PENAL CODE":"Disturbing the Peace","__EMPTY":"Misdemeanor","__EMPTY_1":5,"__EMPTY_2":375,"__EMPTY_3":"Unlawfully fighting, or challenging another person to fight, in a public place. Disturbing another person by loud and unreasonable noise; if this is done willfully and maliciously. Using offensive words in a public place, if the words are likely to provoke an immediate violent reaction."},{"SAN ANDREAS PENAL CODE":"Accomplice to Disturbing the Peace","__EMPTY":"Misdemeanor","__EMPTY_1":5,"__EMPTY_2":375},{"SAN ANDREAS PENAL CODE":"Accessory to Disturbing the Peace","__EMPTY":"Misdemeanor","__EMPTY_1":4,"__EMPTY_2":300},{"SAN ANDREAS PENAL CODE":"False Reporting","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525,"__EMPTY_3":"Reports a false or non-existent crime."},{"SAN ANDREAS PENAL CODE":"Accomplice to False Reporting","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525},{"SAN ANDREAS PENAL CODE":"Accessory to False Reporting","__EMPTY":"Misdemeanor","__EMPTY_1":6,"__EMPTY_2":420},{"SAN ANDREAS PENAL CODE":"Harassment","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525,"__EMPTY_3":"Intimidates or pressures another person aggressively with unwelcome words, deeds, actions, or gestures."},{"SAN ANDREAS PENAL CODE":"Accomplice to Harassment","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525},{"SAN ANDREAS PENAL CODE":"Accessory to Harassment","__EMPTY":"Misdemeanor","__EMPTY_1":6,"__EMPTY_2":420},{"SAN ANDREAS PENAL CODE":"Misdemeanor Obstruction of Justice","__EMPTY":"Misdemeanor","__EMPTY_1":12,"__EMPTY_2":900,"__EMPTY_3":"Recklessly or with criminal negligence hinders the discovery, apprehension, conviction, or punishment of a person who committed a crime, including issuing threats of violence, impeding the administration of justice, or withholding of non-privileged information or evidence from peace officers."},{"SAN ANDREAS PENAL CODE":"Accomplice to Misdemeanor Obstruction of Justice","__EMPTY":"Misdemeanor","__EMPTY_1":12,"__EMPTY_2":900},{"SAN ANDREAS PENAL CODE":"Accessory to Misdemeanor Obstruction of Justice","__EMPTY":"Misdemeanor","__EMPTY_1":10,"__EMPTY_2":720},{"SAN ANDREAS PENAL CODE":"Riot","__EMPTY":"Felony","__EMPTY_1":18,"__EMPTY_2":1350,"__EMPTY_3":"Engages in violent conduct or creates a risk of causing public harm with a group of at least 4 people."},{"SAN ANDREAS PENAL CODE":"Accomplice to Riot","__EMPTY":"Felony","__EMPTY_1":18,"__EMPTY_2":1350},{"SAN ANDREAS PENAL CODE":"Accessory to Riot","__EMPTY":"Felony","__EMPTY_1":15,"__EMPTY_2":1080},{"SAN ANDREAS PENAL CODE":"Vandalism","__EMPTY":"Infraction","__EMPTY_1":0,"__EMPTY_2":250,"__EMPTY_3":"Intentionally causing damage to property they do not own."},{"SAN ANDREAS PENAL CODE":"Accomplice to Vandalism","__EMPTY":"Infraction","__EMPTY_1":0,"__EMPTY_2":250},{"SAN ANDREAS PENAL CODE":"Accessory to \nVandalism","__EMPTY":"Infraction","__EMPTY_1":0,"__EMPTY_2":200},{"SAN ANDREAS PENAL CODE":"Tampering of Evidence","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525,"__EMPTY_3":"Destroy, conceal, or remove a piece of evidence with the purpose of hiding the truth or make an item unavailable for proceeding investigation"},{"SAN ANDREAS PENAL CODE":"Accomplice to Tampering of Evidence","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525},{"SAN ANDREAS PENAL CODE":"Accessory to Tampering of Evidence","__EMPTY":"Misdemeanor","__EMPTY_1":6,"__EMPTY_2":420},{"SAN ANDREAS PENAL CODE":"Vandalism of Government Property","__EMPTY":"Misdemeanor","__EMPTY_1":5,"__EMPTY_2":375,"__EMPTY_3":"Intentionally causing damage to Government Property."},{"SAN ANDREAS PENAL CODE":"Accomplice to Vandalism of Government Property","__EMPTY":"Misdemeanor","__EMPTY_1":5,"__EMPTY_2":375},{"SAN ANDREAS PENAL CODE":"Accessory to Vandalism of Government Property","__EMPTY":"Misdemeanor","__EMPTY_1":4,"__EMPTY_2":300},{"SAN ANDREAS PENAL CODE":"Loitering","__EMPTY":"Infraction","__EMPTY_1":0,"__EMPTY_2":150,"__EMPTY_3":"Intentionally standing or waiting idly without apparent purpose."},{"SAN ANDREAS PENAL CODE":"Accomplice to Loitering","__EMPTY":"Infraction","__EMPTY_1":0,"__EMPTY_2":150},{"SAN ANDREAS PENAL CODE":"Accessory Loitering","__EMPTY":"Infraction","__EMPTY_1":0,"__EMPTY_2":120},{"SAN ANDREAS PENAL CODE":"Stalking","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":250,"__EMPTY_3":"The following, harassing, threatening of another person, to the point where an individual fears for his/her safety."},{"SAN ANDREAS PENAL CODE":"Accomplice to Stalking","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":250},{"SAN ANDREAS PENAL CODE":"Accessory Stalking","__EMPTY":"Misdemeanor","__EMPTY_1":6,"__EMPTY_2":200},{"SAN ANDREAS PENAL CODE":"Animal Cruelty","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525,"__EMPTY_3":"Maliciously and intentionally wounds or kills an animal that was not a present danger to themselves and others and that was not a result of a legally licensed hunting (with a rifle) or fishing operation."},{"SAN ANDREAS PENAL CODE":"Accomplice to Animal Cruelty","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525},{"SAN ANDREAS PENAL CODE":"Accessory to Animal Cruelty","__EMPTY":"Misdemeanor","__EMPTY_1":6,"__EMPTY_2":420},{"SAN ANDREAS PENAL CODE":"Disruption of a Public Utility","__EMPTY":"Felony","__EMPTY_1":28,"__EMPTY_2":2100,"__EMPTY_3":"Disruption of a Public Utility - The attempt, or successful execution of the disruption of any electrical power grid."},{"SAN ANDREAS PENAL CODE":"Accomplice to Disruption of a Public Utility","__EMPTY":"Felony","__EMPTY_1":28,"__EMPTY_2":2100},{"SAN ANDREAS PENAL CODE":"Accessory to Disruption of a Public Utility","__EMPTY":"Felony","__EMPTY_1":23,"__EMPTY_2":1680},{"SAN ANDREAS PENAL CODE":"Felony Obstruction of Justice","__EMPTY":"Felony","__EMPTY_1":24,"__EMPTY_2":1800,"__EMPTY_3":"Intentionally hinders the discovery, apprehension, conviction, or punishment of a person who committed a crime, including intentionally involving oneself in an ongoing criminal act or investigation in such a way that peace officers are impeded from administering justice."},{"SAN ANDREAS PENAL CODE":"Accomplice to Felony Obstruction of Justice","__EMPTY":"Felony","__EMPTY_1":24,"__EMPTY_2":1800},{"SAN ANDREAS PENAL CODE":"Accessory to Felony Obstruction of Justice","__EMPTY":"Felony","__EMPTY_1":20,"__EMPTY_2":1440},{"SAN ANDREAS PENAL CODE":"TITLE 7. OFFENSES AGAINST PUBLIC HEALTH AND MORALS                                                                                                                                                                                                                           ","__EMPTY":"CLASSIFICATION    ","__EMPTY_1":"SENTENCE (MONTHS)","__EMPTY_2":"FINE","__EMPTY_3":"DESCRIPTION"},{"SAN ANDREAS PENAL CODE":"Misdemeanor Possession of Crack","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525,"__EMPTY_3":"Possesses up to 50 grams (10 bags @ 5g per bag) of Crack Cocaine."},{"SAN ANDREAS PENAL CODE":"Misdemeanor Possession of Cocaine","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525,"__EMPTY_3":"Possesses up to 50 grams (10 bags @ 5g per bag) of Cocaine."},{"SAN ANDREAS PENAL CODE":"Misdemeanor Possession of Marijuana","__EMPTY":"Misdemeanor","__EMPTY_1":5,"__EMPTY_2":375,"__EMPTY_3":"Possesses any amount or Marijuana between 1 to 4 ounces, or between 28 grams and 113 grams of Marijuana."},{"SAN ANDREAS PENAL CODE":"Misdemeanor Possession of Controlled Dangerous Substance \"OXY\" / \"METH\"","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525,"__EMPTY_3":"Possesses a controlled dangerous substance without proper prescription from a medical professional. \n\nPossesses methamphetamine. Also known as “Ass Meth”"},{"SAN ANDREAS PENAL CODE":"Sale of Drugs","__EMPTY":"Felony","__EMPTY_1":25,"__EMPTY_2":1875,"__EMPTY_3":"Sale of a controlled dangerous substance, Cocaine, Crack Cocaine, Oxy, Meth, LSD Tabs and Marijuana."},{"SAN ANDREAS PENAL CODE":"Accomplice to Sale of Drugs","__EMPTY":"Felony","__EMPTY_1":25,"__EMPTY_2":1875},{"SAN ANDREAS PENAL CODE":"Accessory to Sale of Drugs","__EMPTY":"Felony","__EMPTY_1":20,"__EMPTY_2":1500},{"SAN ANDREAS PENAL CODE":"Felony Possession of Marijuana ","__EMPTY":"Felony","__EMPTY_1":25,"__EMPTY_2":1875,"__EMPTY_3":"Possesses more than 4 ounces, or greater than 113 grams of Marijuana."},{"SAN ANDREAS PENAL CODE":"Felony Possession of Cocaine","__EMPTY":"Felony","__EMPTY_1":25,"__EMPTY_2":1875,"__EMPTY_3":"Possessing 50+ grams (10 bags @ 5g per bag) of Cocaine."},{"SAN ANDREAS PENAL CODE":"Felony Possession of Crack Cocaine","__EMPTY":"Felony","__EMPTY_1":25,"__EMPTY_2":1875,"__EMPTY_3":"Possesses 50+ grams (10 bags @ 5g per bag) of Crack Cocaine."},{"SAN ANDREAS PENAL CODE":"Felony Possession of a Controlled Dangerous Substance \"OXY / METH\"","__EMPTY":"Felony","__EMPTY_1":25,"__EMPTY_2":1875,"__EMPTY_3":"Possesses a controlled dangerous substance. 15+ units of OXY. \n\nPossesses methamphetamine. 15+ units of METH. Also known as \"Ass Meth\""},{"SAN ANDREAS PENAL CODE":"Possession of Drug Paraphernalia ","__EMPTY":"Misdemeanor","__EMPTY_1":5,"__EMPTY_2":375,"__EMPTY_3":"Any item that is used in the manufacturing, production, distribution, sale, or consumption of drugs. This is to include marijuana seeds, and scales that are used to weigh drugs."},{"SAN ANDREAS PENAL CODE":"Felony Possession with intent to Distribute","__EMPTY":"Felony","__EMPTY_1":150,"__EMPTY_2":12250,"__EMPTY_3":"Any person who is found to have large quantities of drugs on their person, vehicle, and or property with intent to distribute. Intent to distribute can be inferred through circumstances surrounding the discovery of the drugs or a pattern of behavior of the suspect such as large sums of money, high-grade weaponry, or other paraphernalia used in the measuring/weighing or breaking down of large quantities to smaller quantities"},{"SAN ANDREAS PENAL CODE":"Cultivation of Marijuana","__EMPTY":"Felony","__EMPTY_1":25,"__EMPTY_2":1875,"__EMPTY_3":"Person possesses 3 or more marijuana plants in a single location."},{"SAN ANDREAS PENAL CODE":"Accomplice to Cultivation of Marijuana","__EMPTY":"Felony","__EMPTY_1":25,"__EMPTY_2":1875},{"SAN ANDREAS PENAL CODE":"Accessory to Cultivation of Marijuana","__EMPTY":"Felony","__EMPTY_1":20,"__EMPTY_2":1500},{"SAN ANDREAS PENAL CODE":"Littering","__EMPTY":"Infraction","__EMPTY_1":0,"__EMPTY_2":250,"__EMPTY_3":"The act of throwing objects on the ground in a disobedient manner. Leaving trash and other items on the ground."},{"SAN ANDREAS PENAL CODE":"Accomplish to Littering","__EMPTY":"Infraction","__EMPTY_1":0,"__EMPTY_2":250},{"SAN ANDREAS PENAL CODE":"Accessory to Littering","__EMPTY":"Infraction","__EMPTY_1":0,"__EMPTY_2":200},{"SAN ANDREAS PENAL CODE":"Public Intoxication ","__EMPTY":"Infraction","__EMPTY_1":0,"__EMPTY_2":150,"__EMPTY_3":"A person who is under the influence of Alcohol or a Controlled Dangerous Substance, in a public place."},{"SAN ANDREAS PENAL CODE":"Public Indecency","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525,"__EMPTY_3":"A lewd caress or indecent fondling of the body. \n\nPublic place shall include jails, and correctional institutions of the state."},{"SAN ANDREAS PENAL CODE":"Desecration of a Human Corpse","__EMPTY":"Felony","__EMPTY_1":18,"__EMPTY_2":1350,"__EMPTY_3":"Desecration of a human corpse means any act committed after the death of a human being including, but not limited to, dismemberment, disfigurement, mutilation, burning, or any act committed to cause the dead body to be devoured, scattered or dissipated; except, those procedures performed by a state agency or licensed authority in due course of its duties and responsibilities. This includes the removal of a corpse from the custody of the morgue."},{"SAN ANDREAS PENAL CODE":"Accomplice to Desecration of a Human Corpse","__EMPTY":"Felony","__EMPTY_1":18,"__EMPTY_2":1350},{"SAN ANDREAS PENAL CODE":"Accessory to Desecration of a Human Corpse","__EMPTY":"Felony","__EMPTY_1":15,"__EMPTY_2":1080},{"SAN ANDREAS PENAL CODE":"Practicing Medicine Without a License","__EMPTY":"Misdemeanor","__EMPTY_1":12,"__EMPTY_2":1125,"__EMPTY_3":"Practicing medicine without a proper license. Treating citizens for any medical, or health related issue without proper documentation. Law Enforcement is exempt only during their qualified duties. "},{"SAN ANDREAS PENAL CODE":"Accomplice to Practicing Medicine Without a License","__EMPTY":"Misdemeanor","__EMPTY_1":12,"__EMPTY_2":1125},{"SAN ANDREAS PENAL CODE":"Accessory to Practicing Medicine Without a License","__EMPTY":"Misdemeanor","__EMPTY_1":10,"__EMPTY_2":900},{"SAN ANDREAS PENAL CODE":"Misdemeanor Possession of LSD tabs","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525,"__EMPTY_3":"Possesses up to 10 LSD tabs."},{"SAN ANDREAS PENAL CODE":"Felony Possession of LSD Tabs","__EMPTY":"Felony","__EMPTY_1":25,"__EMPTY_2":1875,"__EMPTY_3":"Possesses 11 or more LSD tabs."},{"SAN ANDREAS PENAL CODE":"Illegal Exhumation","__EMPTY":"Felony","__EMPTY_1":"HUT","__EMPTY_2":"HUT","__EMPTY_3":"The removal of a body without authorization from where it lies in state, or it's final resting place."},{"SAN ANDREAS PENAL CODE":"Accomplice to Illegal Exhumation","__EMPTY":"Felony","__EMPTY_1":"HUT","__EMPTY_2":"HUT"},{"SAN ANDREAS PENAL CODE":"Accessory to Illegal Exhumation","__EMPTY":"Felony","__EMPTY_1":"HUT","__EMPTY_2":"HUT"},{"SAN ANDREAS PENAL CODE":"Drug Trafficking","__EMPTY":"Felony","__EMPTY_1":"HUT","__EMPTY_2":"HUT","__EMPTY_3":"Any person who is found guilty of Felony Possession with Intent to Distribute and which meets one or more of the following requirements: \n(1) The suspect shows a pattern of drug distribution or felony possession of controlled dangerous substances, demonstrable through three or more provable instances. \n(2)Proof or evidence that the suspect has manufactured or cultivated a controlled dangerous substance; \n(3)The suspect has sold, transferred, or distributed a controlled dangerous substance to an individual who may be summoned or subpoenaed to appear in court."},{"SAN ANDREAS PENAL CODE":"Accomplice to Drug Trafficking","__EMPTY":"Felony","__EMPTY_1":"HUT","__EMPTY_2":"HUT"},{"SAN ANDREAS PENAL CODE":"Accessory to Drug Trafficking","__EMPTY":"Felony","__EMPTY_1":"HUT","__EMPTY_2":"HUT"},{"SAN ANDREAS PENAL CODE":"Human Trafficking","__EMPTY":"Felony","__EMPTY_1":"HUT","__EMPTY_2":"HUT","__EMPTY_3":"The unlawful act of forcefully transporting or coercing individuals into performing an act or service, being that of forced labor or otherwise, without that individual's consent. "},{"SAN ANDREAS PENAL CODE":"Accomplice to Human Trafficking","__EMPTY":"Felony","__EMPTY_1":"HUT","__EMPTY_2":"HUT"},{"SAN ANDREAS PENAL CODE":"Accessory to Human Trafficking","__EMPTY":"Felony","__EMPTY_1":"HUT","__EMPTY_2":"HUT"},{"SAN ANDREAS PENAL CODE":"Prostitution","__EMPTY":"Felony","__EMPTY_1":70,"__EMPTY_2":5000,"__EMPTY_3":"Engaging in sexual activity with someone for payment or aiding in the act of prostitution by providing an individual with the means to the successful sale of sexual activity. "},{"SAN ANDREAS PENAL CODE":"Accomplice to Prostitution","__EMPTY":"Felony","__EMPTY_1":70,"__EMPTY_2":5000},{"SAN ANDREAS PENAL CODE":"Accessory to Prostitution","__EMPTY":"Felony","__EMPTY_1":56,"__EMPTY_2":4000},{"SAN ANDREAS PENAL CODE":"Felony Possession of Human Remains","__EMPTY":"Felony","__EMPTY_1":30,"__EMPTY_2":2250,"__EMPTY_3":"Possessing either the vital organs or detached body parts of another person. Person is not a working medical professional on the grounds of dedicated hospitals or mortuaries."},{"SAN ANDREAS PENAL CODE":"Accomplice to Felony Possession of Human Remains","__EMPTY":"Felony","__EMPTY_1":30,"__EMPTY_2":2250},{"SAN ANDREAS PENAL CODE":"Accessory to Felony Possession of Human Remains","__EMPTY":"Felony","__EMPTY_1":5,"__EMPTY_2":500},{"SAN ANDREAS PENAL CODE":"TITLE 8. OFFENSES PUBLIC SAFETY                                                                                                                                                                                                                      ","__EMPTY":"CLASSIFICATION    ","__EMPTY_1":"SENTENCE (MONTHS)","__EMPTY_2":"FINE","__EMPTY_3":"DESCRIPTION"},{"SAN ANDREAS PENAL CODE":"Criminal Possession of a Firearm [Class 1]","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525,"__EMPTY_3":"Possess a weapon without a proper license or a weapon which is not registered to the individual possessing it."},{"SAN ANDREAS PENAL CODE":"Criminal Possession of a Firearm [Class 2]","__EMPTY":"Felony","__EMPTY_1":28,"__EMPTY_2":2100,"__EMPTY_3":"Possess a Class 2 weapon. Possesses semi-automatic to automatic firearms, and shotguns."},{"SAN ANDREAS PENAL CODE":"Criminal Possession of a Government-Issue Firearm","__EMPTY":"Felony","__EMPTY_1":210,"__EMPTY_2":22500,"__EMPTY_3":"It is illegal to possess a government-owned or issued firearm, without being a duly sworn Peace Officer who is currently on-duty or off duty. This includes the firearms that Law Enforcement Officers purchase for their sworn daily duties."},{"SAN ANDREAS PENAL CODE":"Criminal Possession of a Firearm [Class 3]","__EMPTY":"Felony","__EMPTY_1":35,"__EMPTY_2":2625,"__EMPTY_3":"Possesses a Class 3 weapon. LMG, RPG, DMR's Excluding hunting rifle purchased at the sporting and survival store in Paleto"},{"SAN ANDREAS PENAL CODE":"Possession of Explosives","__EMPTY":"Felony","__EMPTY_1":"HUT","__EMPTY_2":"HUT","__EMPTY_3":"Possesses explosives on his or her person. Includes transport of explosives."},{"SAN ANDREAS PENAL CODE":"Criminal Sale of a Firearm [Class 1]","__EMPTY":"Felony","__EMPTY_1":12,"__EMPTY_2":900,"__EMPTY_3":"The unlawful sale, or purchase, of a Class 1 firearm, when a person does not own a proper weapon license."},{"SAN ANDREAS PENAL CODE":"Accomplice to Criminal Sale of a Firearm [Class 1]","__EMPTY":"Felony","__EMPTY_1":12,"__EMPTY_2":900},{"SAN ANDREAS PENAL CODE":"Accessory to Criminal Sale of a Firearm [Class 1]","__EMPTY":"Felony","__EMPTY_1":10,"__EMPTY_2":720},{"SAN ANDREAS PENAL CODE":"Criminal Sale of an illegal weapon ","__EMPTY":"Felony","__EMPTY_1":35,"__EMPTY_2":2625,"__EMPTY_3":"The unlawful sale of a Class 2 or Class 3 weapon"},{"SAN ANDREAS PENAL CODE":"Accomplice to Criminal Sale of an illegal weapon ","__EMPTY":"Felony","__EMPTY_1":35,"__EMPTY_2":2625},{"SAN ANDREAS PENAL CODE":"Accessory to Criminal Sale of an illegal weapon ","__EMPTY":"Felony","__EMPTY_1":28,"__EMPTY_2":2100},{"SAN ANDREAS PENAL CODE":"Criminal Use of a Firearm","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525,"__EMPTY_3":"Discharges a firearm for no legal reason, or using a firearm in the commission to aid in a crime."},{"SAN ANDREAS PENAL CODE":"Accomplice to Criminal Use of a Firearm","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525},{"SAN ANDREAS PENAL CODE":"Accessory to Criminal Use of a Firearm","__EMPTY":"Misdemeanor","__EMPTY_1":6,"__EMPTY_2":420},{"SAN ANDREAS PENAL CODE":"Brandishing non Firearm","__EMPTY":"Misdemeanor","__EMPTY_1":5,"__EMPTY_2":375,"__EMPTY_3":"It is unlawful for you to draw or exhibit a deadly weapon in a rude, angry, or threatening way in the presence of another person and not in defense of self or others"},{"SAN ANDREAS PENAL CODE":"Accomplice to Brandishing non Firearm","__EMPTY":"Misdemeanor","__EMPTY_1":5,"__EMPTY_2":375},{"SAN ANDREAS PENAL CODE":"Accessory to Brandishing non Firearm","__EMPTY":"Misdemeanor","__EMPTY_1":4,"__EMPTY_2":300},{"SAN ANDREAS PENAL CODE":"Resisting Arrest","__EMPTY":"Misdemeanor","__EMPTY_1":5,"__EMPTY_2":375,"__EMPTY_3":"Flees from a Peace Officer to avoid being apprehended, detained, or arrested while on foot, or a passenger in a vehicle."},{"SAN ANDREAS PENAL CODE":"Accomplice to Resisting Arrest","__EMPTY":"Misdemeanor","__EMPTY_1":5,"__EMPTY_2":375},{"SAN ANDREAS PENAL CODE":"Accessory to Resisting Arrest","__EMPTY":"Misdemeanor","__EMPTY_1":4,"__EMPTY_2":300},{"SAN ANDREAS PENAL CODE":"Jaywalking","__EMPTY":"Infraction","__EMPTY_1":0,"__EMPTY_2":150,"__EMPTY_3":"Crosses a road without the use of a crosswalk, or without a marked crossing light."},{"SAN ANDREAS PENAL CODE":"Terrorism ","__EMPTY":"Felony","__EMPTY_1":"HUT","__EMPTY_2":"HUT","__EMPTY_3":"The unlawful use of Extreme Violence and Intimidation against the Civilian Population that would pursue political aims, compromise medical neutrality, or in the name of religious ideology. The unlawful use of Extreme Violence and Intimidation against Government Entities that would pursue the disruption, destabilization or destruction of those entities for political or religious aims."},{"SAN ANDREAS PENAL CODE":"Accomplice to Terrorism","__EMPTY":"Felony","__EMPTY_1":"HUT","__EMPTY_2":"HUT"},{"SAN ANDREAS PENAL CODE":"Accessory toTerrorism","__EMPTY":"Felony","__EMPTY_1":"HUT","__EMPTY_2":"HUT"},{"SAN ANDREAS PENAL CODE":"Weapons Trafficking","__EMPTY":"Felony","__EMPTY_1":"HUT","__EMPTY_2":"HUT","__EMPTY_3":"The unlawful transportation of a large quantity of Class 1, Class 2, Class 3 firearms, molotov cocktails, and/or rocket propelled grenade launchers,  with the intent to distribute. Intent to distribute can be inferred through circumstances surrounding the discovery of the firearms or a pattern of behavior of the suspects, including large sums of money, and/or the possession of six or more firearms."},{"SAN ANDREAS PENAL CODE":"Accomplice to Weapons Trafficking","__EMPTY":"Felony","__EMPTY_1":"HUT","__EMPTY_2":"HUT"},{"SAN ANDREAS PENAL CODE":"Accessory to Weapons Trafficking","__EMPTY":"Felony","__EMPTY_1":"HUT","__EMPTY_2":"HUT"},{"SAN ANDREAS PENAL CODE":"Criminal Possession of a Taser","__EMPTY":"Misdemeanor","__EMPTY_1":21,"__EMPTY_2":1575,"__EMPTY_3":"It is illegal to possess a government-owned or issued Taser or Beanbag Shotgun, without being a duly sworn Peace Officer, who is currently on-duty or off-duty. This includes the Tasers or Beanbag Shotgun that Law Enforcement Officers purchase for their sworn daily duties. This excludes individuals who have been granted permission, in writing, to carry a Taser or Beanbag Shotgun."},{"SAN ANDREAS PENAL CODE":"Flying into Restricted Airspace","__EMPTY":"Felony","__EMPTY_1":28,"__EMPTY_2":2100,"__EMPTY_3":"The unauthorized flight into, or landing in restricted airspace. The restricted areas are as follows. Aircraft carrier, any and all power plants, Fort Zancudo. This includes landing on Pillbox Medical Center, and any Law Enforcement building or property. Certified pilots will lose their license for any of of the above listed. LEO and EMS are exempt."},{"SAN ANDREAS PENAL CODE":"Accomplice to Flying into Restricted Airspace","__EMPTY":"Felony","__EMPTY_1":28,"__EMPTY_2":2100},{"SAN ANDREAS PENAL CODE":"Accessory to Flying into Restricted Airspace","__EMPTY":"Felony","__EMPTY_1":23,"__EMPTY_2":1680},{"SAN ANDREAS PENAL CODE":"Piloting Without a Proper License","__EMPTY":"Felony","__EMPTY_1":28,"__EMPTY_2":2100,"__EMPTY_3":"Operating (or attempting to operate) an aircraft without the proper license. This includes, Helicopters, and Fixed Wing Aircraft."},{"SAN ANDREAS PENAL CODE":"Accomplice to Piloting Without a Proper License","__EMPTY":"Felony","__EMPTY_1":28,"__EMPTY_2":2100},{"SAN ANDREAS PENAL CODE":"Accessory to Piloting Without a Proper License","__EMPTY":"Felony","__EMPTY_1":23,"__EMPTY_2":1680},{"SAN ANDREAS PENAL CODE":"Criminal Possession of Government-issued Taser","__EMPTY":"Felony","__EMPTY_1":21,"__EMPTY_2":1575,"__EMPTY_3":"It is illegal to possess a government-owned or issued Taser, without being a duly sworn Peace Officer who is currently on-duty or off duty. This includes the Tasers that Law Enforcement Officers purchase for their sworn daily duties."},{"SAN ANDREAS PENAL CODE":"Criminal Possession of Government-issued Flashbang","__EMPTY":"Felony","__EMPTY_1":42,"__EMPTY_2":4500,"__EMPTY_3":"It is illegal to possess a government-owned or issued Flashbang, without being a duly sworn Peace Officer who is currently on-duty or off duty. This includes the Flashbangs that Law Enforcement Officers purchase for their sworn daily duties."},{"SAN ANDREAS PENAL CODE":"Criminal Possession of a Government Issued Baton","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525,"__EMPTY_3":"It is illegal to possess a government-owned or issued Baton, without being a duly sworn Peace Officer who is currently on-duty or off duty. This includes the Batons that Law Enforcement Officers purchase for their sworn daily duties."},{"SAN ANDREAS PENAL CODE":"Possession of a Silencer / Suppressor","__EMPTY":"Felony","__EMPTY_1":14,"__EMPTY_2":900,"__EMPTY_3":"It is illegal to possess a silencer / suppressor. No person shall possess any type of device that alters the sound of a firearm."},{"SAN ANDREAS PENAL CODE":"Possession of a Molotov","__EMPTY":"Felony ","__EMPTY_1":35,"__EMPTY_2":2625,"__EMPTY_3":"Person possesses a Molotov and or Moly device."},{"SAN ANDREAS PENAL CODE":"Criminal Use of Explosives","__EMPTY":"Felony","__EMPTY_1":35,"__EMPTY_2":2625,"__EMPTY_3":"A person is guilty of criminal use of explosives if they intentionally place, use, or attempt to use explosives against any real person or property and detonate said explosives, directly or indirectly. This shall include the use of tanker trucks, cars ignited in gasoline, or tanks/barrels full of combustible liquid for the purpose of causing an explosion. This charge may be issued in addition to Attempted Murder."},{"SAN ANDREAS PENAL CODE":"Accomplice to Criminal Use of Explosives","__EMPTY":"Felony","__EMPTY_1":35,"__EMPTY_2":2625},{"SAN ANDREAS PENAL CODE":"Accessory to Criminal Use of Explosives","__EMPTY":"Felony","__EMPTY_1":28,"__EMPTY_2":2100},{"SAN ANDREAS PENAL CODE":"Criminal Possession of a Government Issued Equipment","__EMPTY":"Felony","__EMPTY_1":15,"__EMPTY_2":1125,"__EMPTY_3":"It is illegal to possess a government-owned or issued equipment without being an on duty State employee. Specifically, the possession of one or more IFAKs."},{"SAN ANDREAS PENAL CODE":"Misdemeanor Possession of Moonshine","__EMPTY":"Misdemeanor","__EMPTY_1":9,"__EMPTY_2":675,"__EMPTY_3":"Possesses a produced or manufactured substance known as Moonshine up to 15 units. "},{"SAN ANDREAS PENAL CODE":"Felony Possession of Moonshine","__EMPTY_1":25,"__EMPTY_2":1875,"__EMPTY_3":"Possesses a produced or manufactured product of Moonshine above 15+ units."},{"SAN ANDREAS PENAL CODE":"TITLE 9. OFFENSES INVOLVING OPERATION OF A VEHICLE / GENERAL CITATIONS                                                                                                                                                                                                                                      ","__EMPTY":"CLASSIFICATION    ","__EMPTY_1":"SENTENCE (MONTHS)","__EMPTY_2":"FINE","__EMPTY_3":"DESCRIPTION"},{"SAN ANDREAS PENAL CODE":"Driving While Intoxicated","__EMPTY":"Misdemeanor","__EMPTY_1":5,"__EMPTY_2":375,"__EMPTY_3":"Points added to license: 20 - Drives while affected by drug or alcohol intoxication. Licenses is suspended "},{"SAN ANDREAS PENAL CODE":"Hit and Run","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525,"__EMPTY_3":"Points added to license: 2 - Leaving a scene of an accident with property damage, without identifying yourself to the parties involved."},{"SAN ANDREAS PENAL CODE":"Accomplice to Hit and Run","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525,"__EMPTY_3":"Points added to license: 2"},{"SAN ANDREAS PENAL CODE":"Accessory to Hit and Run","__EMPTY":"Misdemeanor","__EMPTY_1":6,"__EMPTY_2":420,"__EMPTY_3":"Points added to license: 2"},{"SAN ANDREAS PENAL CODE":"Felony Hit and Run","__EMPTY":"Felony","__EMPTY_1":14,"__EMPTY_2":1050,"__EMPTY_3":"Points added to license: 3 - Leaving a scene of an accident that resulted in injury or death involving property damage, without identifying yourself to the parties involved."},{"SAN ANDREAS PENAL CODE":"Accomplice to Felony Hit and Run","__EMPTY":"Felony","__EMPTY_1":14,"__EMPTY_2":1050,"__EMPTY_3":"Points added to license: 3"},{"SAN ANDREAS PENAL CODE":"Accessory to Felony Hit and Run","__EMPTY":"Felony","__EMPTY_1":12,"__EMPTY_2":840,"__EMPTY_3":"Points added to license: 3"},{"SAN ANDREAS PENAL CODE":"Evading","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525,"__EMPTY_3":"Points added to license: 2 - Flees from a Peace Officer in a vehicle to avoid being apprehended, detained, or arrested."},{"SAN ANDREAS PENAL CODE":"Accomplice to Evading","__EMPTY":"Misdemeanor","__EMPTY_1":7,"__EMPTY_2":525,"__EMPTY_3":"Points added to license: 2"},{"SAN ANDREAS PENAL CODE":"Accessory to Evading","__EMPTY":"Misdemeanor","__EMPTY_1":6,"__EMPTY_2":420,"__EMPTY_3":"Points added to license: 2"},{"SAN ANDREAS PENAL CODE":"Reckless Evading","__EMPTY":"Felony","__EMPTY_1":18,"__EMPTY_2":1350,"__EMPTY_3":"Points added to license: 3 - Dangerously flees from a police vehicle while operating a motor vehicle to avoid being apprehended, detained, or arrested. Crossing into oncoming lanes of traffic, causing damage to property, putting lives in danger."},{"SAN ANDREAS PENAL CODE":"Accomplice to Reckless Evading","__EMPTY":"Felony","__EMPTY_1":18,"__EMPTY_2":1350,"__EMPTY_3":"Points added to license: 3"},{"SAN ANDREAS PENAL CODE":"Accessory to Reckless Evading","__EMPTY":"Felony","__EMPTY_1":15,"__EMPTY_2":1080,"__EMPTY_3":"Points added to license: 3"},{"SAN ANDREAS PENAL CODE":"Failure to Yield to Emergency Vehicle","__EMPTY":"Infraction","__EMPTY_1":0,"__EMPTY_2":150,"__EMPTY_3":"Points added to license: 1 - Does not pull to the side of the road when an emergency vehicle is trying to pass with sirens and or lights enabled."},{"SAN ANDREAS PENAL CODE":"Failure to Obey Traffic Control Devices","__EMPTY":"Infraction","__EMPTY_1":0,"__EMPTY_2":150,"__EMPTY_3":"Points added to license: 1 - Does not obey a sign or signal defined as regulatory."},{"SAN ANDREAS PENAL CODE":"Negligent Driving","__EMPTY":"Infraction","__EMPTY_1":0,"__EMPTY_2":250,"__EMPTY_3":"Points added to license: 2 - Drives in a way that is negligent with no regard to basic traffic rules."},{"SAN ANDREAS PENAL CODE":"Reckless Driving","__EMPTY":"Felony","__EMPTY_1":12,"__EMPTY_2":900,"__EMPTY_3":"Points added to license: 3 - Drives in a way that is careless and with gross disregard for human life."},{"SAN ANDREAS PENAL CODE":"Third Degree Speeding","__EMPTY":"Infraction","__EMPTY_1":0,"__EMPTY_2":250,"__EMPTY_3":"Points added to license: 1 - Speeds in excess of 0 mph to 35 mph. "},{"SAN ANDREAS PENAL CODE":"Second Degree Speeding","__EMPTY":"Infraction","__EMPTY_1":0,"__EMPTY_2":500,"__EMPTY_3":"Points added to license: 2 - Speeds in excess of 36 mph to 55 mph. Add 2 points."},{"SAN ANDREAS PENAL CODE":"First Degree Speeding","__EMPTY":"Infraction","__EMPTY_1":0,"__EMPTY_2":750,"__EMPTY_3":"Points added to license: 3 - Speeds in excess of more than 55 mph. Add 3 points."},{"SAN ANDREAS PENAL CODE":"Operating a Motor Vehicle on a Suspended or Revoked License","__EMPTY":"Felony","__EMPTY_1":14,"__EMPTY_2":1050,"__EMPTY_3":"Points added to license: 3 - Person operates a motor vehicle on a suspended and revoked license. Vehicle is to be State Impounded, and the operator of the vehicle arrested for not having the proper license to drive legally."},{"SAN ANDREAS PENAL CODE":"Illegal Passing","__EMPTY":"Infraction","__EMPTY_1":0,"__EMPTY_2":250,"__EMPTY_3":"Points added to license: 1 - Passing another vehicle by a shoulder, median, or solid lines. Passing must be completely made without interfering with safe operation of any approaching vehicle from the opposite direction."},{"SAN ANDREAS PENAL CODE":"Driving on the Wrong Side of The Road","__EMPTY":"Infraction","__EMPTY_1":0,"__EMPTY_2":250,"__EMPTY_3":"Points added to license: 1 - Driving on the left side of the road, against opposing traffic."},{"SAN ANDREAS PENAL CODE":"Illegal Turn","__EMPTY":"Infraction","__EMPTY_1":0,"__EMPTY_2":250,"__EMPTY_3":"Points added to license: 1 - Performing a turn at a stop sign or red light without coming to a full and complete stop, or failure to yield to pedestrians. Making a left-hand turn were signs posted prohibit such a turn."},{"SAN ANDREAS PENAL CODE":"Failure to Stop","__EMPTY":"Infraction","__EMPTY_1":0,"__EMPTY_2":250,"__EMPTY_3":"Points added to license: 1 - Failure to come to a complete and full stop at a posted stop sign or red light. Right on red is permitted when a full stop is completed and after yielding to traffic and pedestrians."},{"SAN ANDREAS PENAL CODE":"Unauthorized Parking","__EMPTY":"Infraction","__EMPTY_1":0,"__EMPTY_2":400,"__EMPTY_3":"Points added to license: 1 - Parks in an area that is unsafe or on government property. Parking on a sidewalk, to include ANY portion of the tire touching the curb. Parking in the wrong direction of traffic. Parking on a red line. Parking in front of a fire hydrant. Parking vehicle across multiple parking spaces. Vehicle is subject to tow. \n\nGovernment vehicles with lights and/or sirens on are exempt from this statute. Further, a vehicle may be driven onto a curb or sidewalk for the purposes of immediately parking that vehicle within a garage. "},{"SAN ANDREAS PENAL CODE":"Riding on a Sidewalk","__EMPTY":"Infraction","__EMPTY_1":0,"__EMPTY_2":250,"__EMPTY_3":"Points added to license: 0 - A bicyclist is required to follow normal traffic laws and must stay off sidewalks for safety purposes."},{"SAN ANDREAS PENAL CODE":"Operating a Motor Vehicle Without Proper Identification ","__EMPTY":"Infraction","__EMPTY_1":0,"__EMPTY_2":250,"__EMPTY_3":"Points added to license: 2 - Person has a valid driver's license but is unable to provide a valid citizen identification to law enforcement upon request. Vehicle is to be impounded by law enforcement. This law is to ensure that citizens provide proper identification to law enforcement while operating a motor vehicle."},{"SAN ANDREAS PENAL CODE":"Unauthorized Operation of an Off-Road Vehicle","__EMPTY":"Misdemeanor","__EMPTY_1":10,"__EMPTY_2":750,"__EMPTY_3":"Points added to license: 2 - It is unlawful to operate an off-road, or off highway vehicle on city streets, highways, county roads, and sidewalks. Off-road vehicles are classified as ATV's, Dirt Bikes,  Farm Tractors, Golf Carts, and  Dune Buggies  that don't have a visible license plate displayed. Officer may use discretion if the person is transporting from PDM after purchasing."},{"SAN ANDREAS PENAL CODE":"Improper Window Tint","__EMPTY":"Misdemeanor","__EMPTY_1":0,"__EMPTY_2":250,"__EMPTY_3":"Points added to license: 0 - Operating a vehicle with tint that obscures the view from the outside. Window tint must be completely be dark to where Law Enforcement can't see citizens in the vehicle.  Law Enforcement may use discretion to give a verbal warning, or written violation. Vehicle may be impounded. **Government vehicles are exempt. To include, PD, EMS, and DOJ vehicles. Lawyer vehicles are not DOJ vehicles**"},{"SAN ANDREAS PENAL CODE":"Street Racing","__EMPTY":"Felony","__EMPTY_1":21,"__EMPTY_2":1575,"__EMPTY_3":"Points added to license: 4 - A person shall not engage in a motor vehicle speed contest on a highway or public roadway of any kind. Any individual who organizes or partakes in a motor vehicle speed contest. This includes utilizing any public road throughout the state as a means for automotive racing as a sport and/or for material gain. \n\nAs used in this section, a motor vehicle speed contest includes a motor vehicle race against (1) another vehicle; (2) a clock; or (3) any other timing device."},{"SAN ANDREAS PENAL CODE":"Accomplice to Street Racing","__EMPTY":"Felony","__EMPTY_1":21,"__EMPTY_2":1575,"__EMPTY_3":"Points added to license: 4"},{"SAN ANDREAS PENAL CODE":"Accessory to Street Racing","__EMPTY":"Felony","__EMPTY_1":17,"__EMPTY_2":1260,"__EMPTY_3":"Points added to license: 4"},{"SAN ANDREAS PENAL CODE":"Failure to Signal","__EMPTY":"Infraction","__EMPTY_1":0,"__EMPTY_2":100,"__EMPTY_3":"Points added to license: 0 - Does not use a turn signal when necessary."},{"SAN ANDREAS PENAL CODE":"Repossession of Exclusive vehicles","__EMPTY_1":"HUT","__EMPTY_2":"HUT ","__EMPTY_3":"A person who has bought a vehicle from PDM or Tuner Shop which are in the Category of Exclusive vehicles (ex. Vehicles which are approved by the Senators to be sold), will be repossessed by the DOJ if the person who has bought the vehicle violated the terms and condition laid by the Senate.\nTerms and Conditions.\n1. Exclusive Vehicles can be only sold three months from the date of purchase.\n2. Vehicles bought on Loan with a formal agreement can be sold after the Loan is repaid and the condition is first being fulfilled.\n3. If a person cannot pay the Loan taken for the vehicle, then DOJ will Confiscate the vehicle and pay to the concerned party."},{"SAN ANDREAS PENAL CODE":"TITLE 10.  Offenses involving Natural Resources                                                                                                                                                                                                                                  ","__EMPTY":"CLASSIFICATION    ","__EMPTY_1":"SENTENCE (MONTHS)","__EMPTY_2":"FINE","__EMPTY_3":"DESCRIPTION"},{"SAN ANDREAS PENAL CODE":"Poaching ","__EMPTY":"Felony","__EMPTY_1":18,"__EMPTY_2":1350,"__EMPTY_3":"No person shall either individually or in association with one or more other persons, willfully bait, trap, hunt, injure, maim, kill, otherwise harm, or maintain possession of the pelt, carcass, or any part of any animal named on the restricted hunting or fishing lists maintained by the State Department of Natural Resources"},{"SAN ANDREAS PENAL CODE":"Accomplice to Poaching","__EMPTY_1":15,"__EMPTY_2":1080},{"SAN ANDREAS PENAL CODE":"Hunting/Fishing Without a License","__EMPTY":"Misdemeanor","__EMPTY_1":5,"__EMPTY_2":375,"__EMPTY_3":"Hunting/Fishing in a public area without proper licensure issued by the State.  All illegally obtained carcasses are to be confiscated and destoryed in accordance with Park Ranger SOPs."},{"SAN ANDREAS PENAL CODE":"Hunting in an Unregulated Area","__EMPTY":"Infraction","__EMPTY_1":0,"__EMPTY_2":500,"__EMPTY_3":"Hunting outside of the Hunting Area/Zone as designated by the State of San Andreas. Offenders are subject to search for any animals or animal parts acquired by hunting outside of the designated hunting area/zone.\n\nAfter three or more offenses, individuals are subject to removal of their Hunting License. "}]
+[
+  {
+    "offense": "Unlawful Imprisonment of a Government Employee",
+    "classification": "Felony",
+    "sentence": "20 months",
+    "licensePoints": "N/A",
+    "description": "Restricting a Government Employee's freedom of movement without legal justification."
+  },
+  {
+    "offense": "First Degree Murder",
+    "classification": "Capital Offense",
+    "sentence": "HUT",
+    "licensePoints": "N/A",
+    "description": "Knowingly or intentionally killing another human being with premeditated intent."
+  },
+  {
+    "offense": "Second Degree Murder",
+    "classification": "Felony",
+    "sentence": "Life",
+    "licensePoints": "N/A",
+    "description": "Knowingly or intentionally killing another human being without premeditated intent."
+  },
+  {
+    "offense": "Attempted Murder",
+    "classification": "Felony",
+    "sentence": "30 months",
+    "licensePoints": "N/A",
+    "description": "Attempting to kill another person with intent to cause death or serious bodily harm."
+  },
+  {
+    "offense": "Manslaughter",
+    "classification": "Felony",
+    "sentence": "25 months",
+    "licensePoints": "N/A",
+    "description": "Killing another person without malice or premeditation, often during the commission of an unlawful act."
+  },
+  {
+    "offense": "Aggravated Assault",
+    "classification": "Felony",
+    "sentence": "18 months",
+    "licensePoints": "N/A",
+    "description": "Assault resulting in serious bodily injury or involving a deadly weapon."
+  },
+  {
+    "offense": "Assault with Deadly Weapon",
+    "classification": "Felony",
+    "sentence": "20 months",
+    "licensePoints": "N/A",
+    "description": "Attacking another person with a deadly weapon with intent to cause harm."
+  },
+  {
+    "offense": "Simple Assault",
+    "classification": "Felony",
+    "sentence": "12 months",
+    "licensePoints": "N/A",
+    "description": "Non-aggravated attack on another person causing minor or no injury."
+  },
+  {
+    "offense": "Kidnapping",
+    "classification": "Felony",
+    "sentence": "Life",
+    "licensePoints": "N/A",
+    "description": "Unlawfully seizing and carrying away another person with intent to harm or ransom."
+  },
+  {
+    "offense": "Human Trafficking",
+    "classification": "Felony",
+    "sentence": "Life",
+    "licensePoints": "N/A",
+    "description": "Recruiting, transporting, or obtaining persons through force, fraud, or coercion for exploitation."
+  },
+  {
+    "offense": "Rape",
+    "classification": "Felony",
+    "sentence": "Life",
+    "licensePoints": "N/A",
+    "description": "Non-consensual sexual intercourse with another person by force, threat, or without consent."
+  },
+  {
+    "offense": "Sexual Assault",
+    "classification": "Felony",
+    "sentence": "20 months",
+    "licensePoints": "N/A",
+    "description": "Non-consensual sexual contact or behavior without penetration."
+  },
+  {
+    "offense": "Child Abuse",
+    "classification": "Felony",
+    "sentence": "25 months",
+    "licensePoints": "N/A",
+    "description": "Physical, emotional, or sexual abuse inflicted upon a minor by a caregiver or authority figure."
+  },
+  {
+    "offense": "Child Endangerment",
+    "classification": "Felony",
+    "sentence": "18 months",
+    "licensePoints": "N/A",
+    "description": "Actions by an adult that put a child at risk of serious harm or death."
+  },
+  {
+    "offense": "Child Sexual Abuse",
+    "classification": "Felony",
+    "sentence": "Life",
+    "licensePoints": "N/A",
+    "description": "Sexual contact or exploitation of a minor."
+  },
+  {
+    "offense": "Contributing to the Delinquency of a Minor",
+    "classification": "Felony",
+    "sentence": "15 months",
+    "licensePoints": "N/A",
+    "description": "Encouraging or enabling a minor to engage in illegal or immoral behavior."
+  },
+  {
+    "offense": "Robbery",
+    "classification": "Felony",
+    "sentence": "18 months",
+    "licensePoints": "N/A",
+    "description": "Taking property from another person by force, threat, or intimidation."
+  },
+  {
+    "offense": "Armed Robbery",
+    "classification": "Felony",
+    "sentence": "25 months",
+    "licensePoints": "N/A",
+    "description": "Robbery committed while armed with a deadly weapon."
+  },
+  {
+    "offense": "Grand Theft",
+    "classification": "Felony",
+    "sentence": "15 months",
+    "licensePoints": "N/A",
+    "description": "Theft of property valued above a statutory threshold, usually $950."
+  },
+  {
+    "offense": "Grand Theft Auto",
+    "classification": "Felony",
+    "sentence": "18 months",
+    "licensePoints": "N/A",
+    "description": "Unlawful taking of a motor vehicle with intent to permanently deprive the owner of it."
+  },
+  {
+    "offense": "Carjacking",
+    "classification": "Felony",
+    "sentence": "22 months",
+    "licensePoints": "N/A",
+    "description": "Forcibly stealing a motor vehicle from another person while they are in or near the vehicle."
+  },
+  {
+    "offense": "Vehicle Hijacking",
+    "classification": "Felony",
+    "sentence": "20 months",
+    "licensePoints": "N/A",
+    "description": "Unlawfully taking control of a vehicle that is in motion or occupied by force."
+  },
+  {
+    "offense": "Burglary",
+    "classification": "Felony",
+    "sentence": "16 months",
+    "licensePoints": "N/A",
+    "description": "Unlawfully entering a building or structure with intent to commit theft or felony."
+  },
+  {
+    "offense": "Breaking and Entering",
+    "classification": "Felony",
+    "sentence": "14 months",
+    "licensePoints": "N/A",
+    "description": "Illegally entering a building or residence without permission or consent."
+  },
+  {
+    "offense": "Shoplifting",
+    "classification": "Felony",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Stealing merchandise from a retail establishment."
+  },
+  {
+    "offense": "Receiving Stolen Property",
+    "classification": "Felony",
+    "sentence": "12 months",
+    "licensePoints": "N/A",
+    "description": "Knowingly receiving property that has been stolen."
+  },
+  {
+    "offense": "Embezzlement",
+    "classification": "Felony",
+    "sentence": "18 months",
+    "licensePoints": "N/A",
+    "description": "Unlawfully taking money or property entrusted to one's care, typically by an employee."
+  },
+  {
+    "offense": "Fraud",
+    "classification": "Felony",
+    "sentence": "15 months",
+    "licensePoints": "N/A",
+    "description": "Deliberately deceiving another person for unlawful gain or advantage."
+  },
+  {
+    "offense": "Wire Fraud",
+    "classification": "Felony",
+    "sentence": "18 months",
+    "licensePoints": "N/A",
+    "description": "Fraud perpetrated using electronic communications like phone, internet, or email."
+  },
+  {
+    "offense": "Identity Theft",
+    "classification": "Felony",
+    "sentence": "16 months",
+    "licensePoints": "N/A",
+    "description": "Unlawfully obtaining and using another person's identity for fraudulent purposes."
+  },
+  {
+    "offense": "Forgery",
+    "classification": "Felony",
+    "sentence": "13 months",
+    "licensePoints": "N/A",
+    "description": "Creating or altering documents with intent to deceive or defraud."
+  },
+  {
+    "offense": "Counterfeiting",
+    "classification": "Felony",
+    "sentence": "20 months",
+    "licensePoints": "N/A",
+    "description": "Manufacturing or distributing fake currency or official documents."
+  },
+  {
+    "offense": "Money Laundering",
+    "classification": "Felony",
+    "sentence": "18 months",
+    "licensePoints": "N/A",
+    "description": "Concealing the origins of illegally obtained money to make it appear legitimate."
+  },
+  {
+    "offense": "Possession of Methamphetamine - First Degree",
+    "classification": "Felony",
+    "sentence": "20 months",
+    "licensePoints": "N/A",
+    "description": "Unlawful possession of methamphetamine in large quantities for distribution."
+  },
+  {
+    "offense": "Possession of Methamphetamine - Second Degree",
+    "classification": "Felony",
+    "sentence": "15 months",
+    "licensePoints": "N/A",
+    "description": "Unlawful possession of methamphetamine in amounts above threshold for personal use."
+  },
+  {
+    "offense": "Possession of Cocaine - First Degree",
+    "classification": "Felony",
+    "sentence": "20 months",
+    "licensePoints": "N/A",
+    "description": "Unlawful possession of cocaine in large quantities for distribution."
+  },
+  {
+    "offense": "Possession of Cocaine - Second Degree",
+    "classification": "Felony",
+    "sentence": "15 months",
+    "licensePoints": "N/A",
+    "description": "Unlawful possession of cocaine in amounts above threshold for personal use."
+  },
+  {
+    "offense": "Possession of Heroin - First Degree",
+    "classification": "Felony",
+    "sentence": "20 months",
+    "licensePoints": "N/A",
+    "description": "Unlawful possession of heroin in large quantities for distribution."
+  },
+  {
+    "offense": "Possession of Heroin - Second Degree",
+    "classification": "Felony",
+    "sentence": "15 months",
+    "licensePoints": "N/A",
+    "description": "Unlawful possession of heroin in amounts above threshold for personal use."
+  },
+  {
+    "offense": "Possession of Marijuana - First Degree",
+    "classification": "Felony",
+    "sentence": "15 months",
+    "licensePoints": "N/A",
+    "description": "Unlawful possession of marijuana in large quantities for distribution."
+  },
+  {
+    "offense": "Possession of Marijuana - Second Degree",
+    "classification": "Felony",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Unlawful possession of marijuana in amounts above threshold for personal use."
+  },
+  {
+    "offense": "Possession of PCP",
+    "classification": "Felony",
+    "sentence": "18 months",
+    "licensePoints": "N/A",
+    "description": "Unlawful possession of phencyclidine (PCP)."
+  },
+  {
+    "offense": "Possession of LSD",
+    "classification": "Felony",
+    "sentence": "18 months",
+    "licensePoints": "N/A",
+    "description": "Unlawful possession of lysergic acid diethylamide (LSD)."
+  },
+  {
+    "offense": "Cultivation of Marijuana - First Degree",
+    "classification": "Felony",
+    "sentence": "25 months",
+    "licensePoints": "N/A",
+    "description": "Large-scale illegal cultivation of marijuana plants for distribution."
+  },
+  {
+    "offense": "Cultivation of Marijuana - Second Degree",
+    "classification": "Felony",
+    "sentence": "18 months",
+    "licensePoints": "N/A",
+    "description": "Illegal cultivation of marijuana plants in smaller quantities."
+  },
+  {
+    "offense": "Manufacture of Methamphetamine - First Degree",
+    "classification": "Felony",
+    "sentence": "25 months",
+    "licensePoints": "N/A",
+    "description": "Large-scale illegal production of methamphetamine."
+  },
+  {
+    "offense": "Manufacture of Methamphetamine - Second Degree",
+    "classification": "Felony",
+    "sentence": "20 months",
+    "licensePoints": "N/A",
+    "description": "Smaller-scale illegal production of methamphetamine."
+  },
+  {
+    "offense": "Manufacturing Controlled Substances",
+    "classification": "Felony",
+    "sentence": "22 months",
+    "licensePoints": "N/A",
+    "description": "Illegal production of any controlled substance."
+  },
+  {
+    "offense": "Sale of Methamphetamine - First Degree",
+    "classification": "Felony",
+    "sentence": "25 months",
+    "licensePoints": "N/A",
+    "description": "Selling large quantities of methamphetamine."
+  },
+  {
+    "offense": "Sale of Methamphetamine - Second Degree",
+    "classification": "Felony",
+    "sentence": "18 months",
+    "licensePoints": "N/A",
+    "description": "Selling methamphetamine in smaller quantities."
+  },
+  {
+    "offense": "Sale of Cocaine - First Degree",
+    "classification": "Felony",
+    "sentence": "25 months",
+    "licensePoints": "N/A",
+    "description": "Selling large quantities of cocaine."
+  },
+  {
+    "offense": "Sale of Cocaine - Second Degree",
+    "classification": "Felony",
+    "sentence": "18 months",
+    "licensePoints": "N/A",
+    "description": "Selling cocaine in smaller quantities."
+  },
+  {
+    "offense": "Sale of Heroin - First Degree",
+    "classification": "Felony",
+    "sentence": "25 months",
+    "licensePoints": "N/A",
+    "description": "Selling large quantities of heroin."
+  },
+  {
+    "offense": "Sale of Heroin - Second Degree",
+    "classification": "Felony",
+    "sentence": "18 months",
+    "licensePoints": "N/A",
+    "description": "Selling heroin in smaller quantities."
+  },
+  {
+    "offense": "Drug Trafficking - First Degree",
+    "classification": "Capital Offense",
+    "sentence": "HUT",
+    "licensePoints": "N/A",
+    "description": "Large-scale distribution of controlled substances across state or international lines."
+  },
+  {
+    "offense": "Drug Trafficking - Second Degree",
+    "classification": "Felony",
+    "sentence": "30 months",
+    "licensePoints": "N/A",
+    "description": "Distribution of controlled substances in significant quantities."
+  },
+  {
+    "offense": "Drug Trafficking - Third Degree",
+    "classification": "Felony",
+    "sentence": "22 months",
+    "licensePoints": "N/A",
+    "description": "Distribution of controlled substances in moderate quantities."
+  },
+  {
+    "offense": "Possession of Drug Paraphernalia",
+    "classification": "Felony",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Possession of items used to manufacture, distribute, or consume controlled substances."
+  },
+  {
+    "offense": "Distribution of Controlled Substances",
+    "classification": "Felony",
+    "sentence": "20 months",
+    "licensePoints": "N/A",
+    "description": "Selling or providing controlled substances to others."
+  },
+  {
+    "offense": "Criminal Possession of a Weapon - Class 1",
+    "classification": "Felony",
+    "sentence": "25 months",
+    "licensePoints": "N/A",
+    "description": "Possession of particularly dangerous weapons with criminal intent."
+  },
+  {
+    "offense": "Criminal Possession of a Weapon - Class 2",
+    "classification": "Felony",
+    "sentence": "20 months",
+    "licensePoints": "N/A",
+    "description": "Possession of dangerous firearms or weapons."
+  },
+  {
+    "offense": "Criminal Possession of a Weapon - Class 3",
+    "classification": "Felony",
+    "sentence": "16 months",
+    "licensePoints": "N/A",
+    "description": "Possession of regulated weapons without proper authorization."
+  },
+  {
+    "offense": "Criminal Possession of a Weapon - Class 4",
+    "classification": "Felony",
+    "sentence": "12 months",
+    "licensePoints": "N/A",
+    "description": "Possession of weapons without required licensing or permits."
+  },
+  {
+    "offense": "Criminal Possession of a Weapon - Class 5",
+    "classification": "Felony",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Possession of concealed weapons without permit."
+  },
+  {
+    "offense": "Criminal Sale of a Weapon - Class 1",
+    "classification": "Felony",
+    "sentence": "25 months",
+    "licensePoints": "N/A",
+    "description": "Selling particularly dangerous weapons illegally."
+  },
+  {
+    "offense": "Criminal Sale of a Weapon - Class 2",
+    "classification": "Felony",
+    "sentence": "20 months",
+    "licensePoints": "N/A",
+    "description": "Selling firearms or dangerous weapons without proper authorization."
+  },
+  {
+    "offense": "Illegal Firearms Distribution",
+    "classification": "Felony",
+    "sentence": "22 months",
+    "licensePoints": "N/A",
+    "description": "Distributing firearms through illegal channels."
+  },
+  {
+    "offense": "Weapon Trafficking - First Degree",
+    "classification": "Capital Offense",
+    "sentence": "HUT",
+    "licensePoints": "N/A",
+    "description": "Large-scale trafficking of illegal weapons."
+  },
+  {
+    "offense": "Weapon Trafficking - Second Degree",
+    "classification": "Felony",
+    "sentence": "28 months",
+    "licensePoints": "N/A",
+    "description": "Distribution of weapons in significant quantities."
+  },
+  {
+    "offense": "Weapon Trafficking - Third Degree",
+    "classification": "Felony",
+    "sentence": "22 months",
+    "licensePoints": "N/A",
+    "description": "Distribution of weapons in smaller quantities."
+  },
+  {
+    "offense": "Arson",
+    "classification": "Felony",
+    "sentence": "20 months",
+    "licensePoints": "N/A",
+    "description": "Intentionally setting fire to a building, vehicle, or property."
+  },
+  {
+    "offense": "Arson with Intent to Harm",
+    "classification": "Felony",
+    "sentence": "25 months",
+    "licensePoints": "N/A",
+    "description": "Setting fire with intent to cause injury or death."
+  },
+  {
+    "offense": "Reckless Endangerment",
+    "classification": "Felony",
+    "sentence": "15 months",
+    "licensePoints": "N/A",
+    "description": "Acting with reckless disregard for the safety of others."
+  },
+  {
+    "offense": "Negligent Discharge of a Firearm",
+    "classification": "Felony",
+    "sentence": "15 months",
+    "licensePoints": "N/A",
+    "description": "Carelessly firing a weapon causing danger or harm."
+  },
+  {
+    "offense": "Inciting a Riot",
+    "classification": "Felony",
+    "sentence": "18 months",
+    "licensePoints": "N/A",
+    "description": "Deliberately encouraging a large group to engage in violent or chaotic behavior."
+  },
+  {
+    "offense": "Rioting",
+    "classification": "Felony",
+    "sentence": "16 months",
+    "licensePoints": "N/A",
+    "description": "Participating in a violent public disturbance with three or more people."
+  },
+  {
+    "offense": "Unlawful Assembly",
+    "classification": "Felony",
+    "sentence": "12 months",
+    "licensePoints": "N/A",
+    "description": "Assembling with others with intent to commit an unlawful act or breach the peace."
+  },
+  {
+    "offense": "Looting",
+    "classification": "Felony",
+    "sentence": "14 months",
+    "licensePoints": "N/A",
+    "description": "Stealing goods during a public disturbance or emergency."
+  },
+  {
+    "offense": "Bribery",
+    "classification": "Felony",
+    "sentence": "20 months",
+    "licensePoints": "N/A",
+    "description": "Offering or giving money or favors to influence an official's actions."
+  },
+  {
+    "offense": "Corruption",
+    "classification": "Capital Offense",
+    "sentence": "HUT",
+    "licensePoints": "N/A",
+    "description": "Widespread illegal activities by public officials involving bribery and abuse of power."
+  },
+  {
+    "offense": "Government Employee Theft",
+    "classification": "Felony",
+    "sentence": "18 months",
+    "licensePoints": "N/A",
+    "description": "A government employee stealing public funds or property."
+  },
+  {
+    "offense": "Impersonation of a Government Official",
+    "classification": "Felony",
+    "sentence": "18 months",
+    "licensePoints": "N/A",
+    "description": "Falsely representing oneself as a government official to gain authority."
+  },
+  {
+    "offense": "Impersonation of a Law Enforcement Officer",
+    "classification": "Felony",
+    "sentence": "20 months",
+    "licensePoints": "N/A",
+    "description": "Falsely pretending to be a police officer or law enforcement agent."
+  },
+  {
+    "offense": "Jail Break",
+    "classification": "Felony",
+    "sentence": "25 months",
+    "licensePoints": "N/A",
+    "description": "Escaping from custody or a correctional facility."
+  },
+  {
+    "offense": "Resisting Arrest",
+    "classification": "Felony",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Forcibly resisting or obstructing a law enforcement officer during an arrest."
+  },
+  {
+    "offense": "Evading Police",
+    "classification": "Felony",
+    "sentence": "12 months",
+    "licensePoints": "N/A",
+    "description": "Attempting to elude law enforcement officers."
+  },
+  {
+    "offense": "Reckless Evading",
+    "classification": "Felony",
+    "sentence": "15 months",
+    "licensePoints": "5",
+    "description": "Evading police with reckless disregard for public safety."
+  },
+  {
+    "offense": "Contempt of Court",
+    "classification": "Felony",
+    "sentence": "12 months",
+    "licensePoints": "N/A",
+    "description": "Willfully disobeying or showing disrespect to a court or judge."
+  },
+  {
+    "offense": "Perjury",
+    "classification": "Felony",
+    "sentence": "14 months",
+    "licensePoints": "N/A",
+    "description": "Deliberately providing false testimony under oath in court."
+  },
+  {
+    "offense": "Witness Intimidation",
+    "classification": "Felony",
+    "sentence": "18 months",
+    "licensePoints": "N/A",
+    "description": "Threatening or harassing a witness to prevent them from testifying."
+  },
+  {
+    "offense": "Obstruction of Justice",
+    "classification": "Felony",
+    "sentence": "16 months",
+    "licensePoints": "N/A",
+    "description": "Interfering with a legal investigation or prosecution."
+  },
+  {
+    "offense": "Cannibalism",
+    "classification": "Felony",
+    "sentence": "Life",
+    "licensePoints": "N/A",
+    "description": "Consuming human flesh."
+  },
+  {
+    "offense": "Desecration of a Corpse",
+    "classification": "Felony",
+    "sentence": "18 months",
+    "licensePoints": "N/A",
+    "description": "Treating a dead body with disrespect or abuse."
+  },
+  {
+    "offense": "Torture",
+    "classification": "Capital Offense",
+    "sentence": "HUT",
+    "licensePoints": "N/A",
+    "description": "Deliberately inflicting severe pain or suffering on another person."
+  },
+  {
+    "offense": "Mayhem",
+    "classification": "Felony",
+    "sentence": "22 months",
+    "licensePoints": "N/A",
+    "description": "Violently attacking someone causing disfigurement or disability."
+  },
+  {
+    "offense": "Vigilantism",
+    "classification": "Felony",
+    "sentence": "18 months",
+    "licensePoints": "N/A",
+    "description": "Taking law enforcement into one's own hands without legal authority."
+  },
+  {
+    "offense": "Insurrection",
+    "classification": "Capital Offense",
+    "sentence": "HUT",
+    "licensePoints": "N/A",
+    "description": "Attempting to overthrow or resist government authority by force."
+  },
+  {
+    "offense": "Treason",
+    "classification": "Capital Offense",
+    "sentence": "HUT",
+    "licensePoints": "N/A",
+    "description": "Betraying one's country by engaging in acts of war or aiding enemies."
+  },
+  {
+    "offense": "Extortion",
+    "classification": "Felony",
+    "sentence": "18 months",
+    "licensePoints": "N/A",
+    "description": "Obtaining money or property through coercion, blackmail, or threats."
+  },
+  {
+    "offense": "Blackmail",
+    "classification": "Felony",
+    "sentence": "16 months",
+    "licensePoints": "N/A",
+    "description": "Threatening to reveal damaging information unless demands are met."
+  },
+  {
+    "offense": "Malfeasance",
+    "classification": "Felony",
+    "sentence": "18 months",
+    "licensePoints": "N/A",
+    "description": "Wrongful conduct by a government official or public employee."
+  },
+  {
+    "offense": "Misfeasance",
+    "classification": "Felony",
+    "sentence": "12 months",
+    "licensePoints": "N/A",
+    "description": "Improper performance of a lawful official duty."
+  },
+  {
+    "offense": "Nonfeasance",
+    "classification": "Felony",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Failure to perform an official duty."
+  },
+  {
+    "offense": "Stalking",
+    "classification": "Felony",
+    "sentence": "14 months",
+    "licensePoints": "N/A",
+    "description": "Repeatedly following, harassing, or threatening another person."
+  },
+  {
+    "offense": "Harassment",
+    "classification": "Felony",
+    "sentence": "12 months",
+    "licensePoints": "N/A",
+    "description": "Engaging in repeated unwanted contact that causes fear or distress."
+  },
+  {
+    "offense": "Threatening",
+    "classification": "Felony",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Making threats of violence or harm against another person."
+  },
+  {
+    "offense": "False Imprisonment",
+    "classification": "Felony",
+    "sentence": "16 months",
+    "licensePoints": "N/A",
+    "description": "Intentionally restricting another person's freedom of movement."
+  },
+  {
+    "offense": "Trespassing",
+    "classification": "Felony",
+    "sentence": "10 months",
+    "licensePoints": "N/A",
+    "description": "Entering or remaining on property without permission."
+  },
+  {
+    "offense": "Vandalism",
+    "classification": "Felony",
+    "sentence": "11 months",
+    "licensePoints": "N/A",
+    "description": "Intentionally damaging or destroying property belonging to others."
+  },
+  {
+    "offense": "Street Racing",
+    "classification": "Felony",
+    "sentence": "15 months",
+    "licensePoints": "10",
+    "description": "Participating in an unsanctioned auto race on a public road, highway, or freeway."
+  },
+  {
+    "offense": "Vehicular Manslaughter",
+    "classification": "Felony",
+    "sentence": "18 months",
+    "licensePoints": "N/A",
+    "description": "Killing another person through reckless or negligent operation of a vehicle."
+  },
+  {
+    "offense": "DUI - Causing Injury",
+    "classification": "Felony",
+    "sentence": "15 months",
+    "licensePoints": "N/A",
+    "description": "Driving under the influence and causing injury to another person."
+  },
+  {
+    "offense": "Hit and Run",
+    "classification": "Felony",
+    "sentence": "14 months",
+    "licensePoints": "N/A",
+    "description": "Leaving the scene of a traffic accident without providing identification or assistance."
+  }
+]

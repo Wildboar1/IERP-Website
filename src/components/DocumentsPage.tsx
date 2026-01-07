@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import { ScrollArea } from "./ui/scroll-area";
@@ -10,1044 +11,293 @@ import shortForms from "@data/short-forms.json";
 import codeCommunications from "@data/code-communications.json";
 
 export function DocumentsPage() {
+  const [penalSearchTerm, setPenalSearchTerm] = useState("");
   return (
-    <div className="max-w-7xl mx-auto px-8 py-12">
-      <div className="mb-8">
-        <h1 className="mb-2">Legal Documents</h1>
-        <p className="text-muted-foreground">Official laws, codes, and standard operating procedures</p>
-      </div>
-
-      <Tabs defaultValue="penal" className="w-full">
-        <TabsList className="grid w-full grid-cols-8 mb-8">
-          <TabsTrigger value="penal" className="flex items-center gap-2">
-            <Scale className="w-4 h-4" />
-            Penal Codes
-          </TabsTrigger>
-          <TabsTrigger value="10codes" className="flex items-center gap-2">
-            <Radio className="w-4 h-4" />
-            10-Codes
-          </TabsTrigger>
-          <TabsTrigger value="codecomms" className="flex items-center gap-2">
-            <AlertCircle className="w-4 h-4" />
-            Code Comms
-          </TabsTrigger>
-          <TabsTrigger value="shortforms" className="flex items-center gap-2">
-            <Zap className="w-4 h-4" />
-            Short Forms
-          </TabsTrigger>
-          <TabsTrigger value="amendments" className="flex items-center gap-2">
-            <FileText className="w-4 h-4" />
-            Amendments
-          </TabsTrigger>
-          <TabsTrigger value="cases" className="flex items-center gap-2">
-            <BookOpen className="w-4 h-4" />
-            Case Laws
-          </TabsTrigger>
-          <TabsTrigger value="sop" className="flex items-center gap-2">
-            <Shield className="w-4 h-4" />
-            Police SOP
-          </TabsTrigger>
-          <TabsTrigger value="subdepts" className="flex items-center gap-2">
-            <Users className="w-4 h-4" />
-            Sub Departments
-          </TabsTrigger>
-        </TabsList>
-
-        {/* Penal Codes */}
-       <TabsContent value="penal">
-  <Card>
-    <CardHeader>
-      <CardTitle>San Andreas Penal Codes</CardTitle>
-      <CardDescription>
-        Official criminal offenses, classifications, and penalties
-      </CardDescription>
-    </CardHeader>
-
-    <CardContent>
-      <ScrollArea className="h-[600px] pr-4">
-        <Accordion type="single" collapsible className="w-full">
-
-          {/* TITLE 1 */}
-           <AccordionItem value="title-1">
-            <AccordionTrigger className="text-lg font-semibold">
-              TITLE 1. OFFENSES AGAINST PERSONS
-            </AccordionTrigger>
-            <AccordionContent>
-              <div className="space-y-4">
-                
-                <div className="border-l-4 border-blue-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Assault & Battery</h3>
-                    <Badge variant="destructive">Misdemeanor</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    Openly threatens violence or injury upon an individual either orally or through their actions and acts upon that threat.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 11 months</span>
-                    <span className="font-medium">Fine: $825</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-blue-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Accomplice of Assault & Battery</h3>
-                    <Badge variant="destructive">Misdemeanor</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    All persons that help in the commission of a crime are guilt of such crime.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 11 months</span>
-                    <span className="font-medium">Fine: $825</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-blue-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Accessory of Assault & Battery</h3>
-                    <Badge variant="destructive">Misdemeanor</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    An accessory is generally not present at the actual crime, and may be subject to lesser penalties then an accomplice or principal.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 9 months</span>
-                    <span className="font-medium">Fine: $660</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Unlawful Imprisonment</h3>
-                    <Badge variant="destructive">Felony</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    Restricts a person's movement within any area without justification or consent.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 11 months</span>
-                    <span className="font-medium">Fine: $825</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Accomplice of Unlawful Imprisonment</h3>
-                    <Badge variant="destructive">Felony</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    All persons that help in the commission of a crime are guilt of such crime.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 11 months</span>
-                    <span className="font-medium">Fine: $825</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Accessory of Unlawful Imprisonment</h3>
-                    <Badge variant="destructive">Felony</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    An accessory is generally not present at the actual crime, and may be subject to lesser penalties then an accomplice or principal.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 9 months</span>
-                    <span className="font-medium">Fine: $660</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Kidnapping</h3>
-                    <Badge variant="destructive">Felony</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    Abducts another person and holds them against their will.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 14 months</span>
-                    <span className="font-medium">Fine: $1,050</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Accomplice of Kidnapping</h3>
-                    <Badge variant="destructive">Felony</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    All persons that help in the commission of a crime are guilt of such crime.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 14 months</span>
-                    <span className="font-medium">Fine: $1,050</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Accessory of Kidnapping</h3>
-                    <Badge variant="destructive">Felony</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    An accessory is generally not present at the actual crime, and may be subject to lesser penalties then an accomplice or principal.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 12 months</span>
-                    <span className="font-medium">Fine: $840</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Kidnapping a Government Employee</h3>
-                    <Badge variant="destructive">Felony</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    Abducts a government employee and holds them against their will.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 25 months</span>
-                    <span className="font-medium">Fine: $1,875</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Accomplice to Kidnapping of a Government Employee</h3>
-                    <Badge variant="destructive">Felony</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    All persons that help in the commission of a crime are guilt of such crime.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 25 months</span>
-                    <span className="font-medium">Fine: $1,875</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Accessory to Kidnapping of a Government Employee</h3>
-                    <Badge variant="destructive">Felony</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    An accessory is generally not present at the actual crime, and may be subject to lesser penalties then an accomplice or principal.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 20 months</span>
-                    <span className="font-medium">Fine: $1,500</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Assault with a Deadly Weapon</h3>
-                    <Badge variant="destructive">Felony</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    Attempts to commit a violent injury upon another person with a deadly weapon. A weapon is described as a firearm or any type of melee item, also including motor vehicles.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 21 months</span>
-                    <span className="font-medium">Fine: $1,575</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Accomplice of Assault with a Deadly Weapon</h3>
-                    <Badge variant="destructive">Felony</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    All persons that help in the commission of a crime are guilt of such crime.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 21 months</span>
-                    <span className="font-medium">Fine: $1,575</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Accessory of Assault with a Deadly Weapon</h3>
-                    <Badge variant="destructive">Felony</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    An accessory is generally not present at the actual crime, and may be subject to lesser penalties then an accomplice or principal.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 17 months</span>
-                    <span className="font-medium">Fine: $1,260</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Manslaughter</h3>
-                    <Badge variant="destructive">Felony</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    The accidental, criminally negligent, or criminally reckless killing of another person.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 150 months</span>
-                    <span className="font-medium">Fine: $11,250</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Accomplice of Manslaughter</h3>
-                    <Badge variant="destructive">Felony</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    All persons that help in the commission of a crime are guilt of such crime.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 150 months</span>
-                    <span className="font-medium">Fine: $11,250</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Accessory of Manslaughter</h3>
-                    <Badge variant="destructive">Felony</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    An accessory is generally not present at the actual crime, and may be subject to lesser penalties then an accomplice or principal.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 120 months</span>
-                    <span className="font-medium">Fine: $9,000</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Attempted 2nd Degree Murder</h3>
-                    <Badge variant="destructive">Felony</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    The attempt to unlawfully kill that doesn't involve malice aforethought—intent to seriously harm or kill, or extreme, reckless disregard for life. Heat of passion, callous disregard for human life.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 25 months</span>
-                    <span className="font-medium">Fine: $1,875</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Accomplice of Attempted 2nd Degree Murder</h3>
-                    <Badge variant="destructive">Felony</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    All persons that help in the commission of a crime are guilt of such crime.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 25 months</span>
-                    <span className="font-medium">Fine: $1,875</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Accessory of Attempted 2nd Degree Murder</h3>
-                    <Badge variant="destructive">Felony</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    An accessory is generally not present at the actual crime, and may be subject to lesser penalties then an accomplice or principal.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 20 months</span>
-                    <span className="font-medium">Fine: $1,500</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">2nd Degree Murder</h3>
-                    <Badge variant="destructive">Felony</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    The act of unlawfully killing that doesn't involve malice aforethought—intent to seriously harm or kill, or extreme, reckless disregard for life. Heat of passion, callous disregard for human life.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 300 months</span>
-                    <span className="font-medium">Fine: $22,500</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Accomplice of 2nd Degree Murder</h3>
-                    <Badge variant="destructive">Felony</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    All persons that help in the commission of a crime are guilt of such crime.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 300 months</span>
-                    <span className="font-medium">Fine: $22,500</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Accessory of 2nd Degree Murder</h3>
-                    <Badge variant="destructive">Felony</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    An accessory is generally not present at the actual crime, and may be subject to lesser penalties then an accomplice or principal.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 240 months</span>
-                    <span className="font-medium">Fine: $18,000</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Attempted 1st Degree Murder</h3>
-                    <Badge variant="destructive">Felony</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    The attempt to unlawfully kill another human without justification or valid excuse, with malice aforethought / premeditation.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 35 months</span>
-                    <span className="font-medium">Fine: $2,625</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Accomplice of Attempted 1st Degree Murder</h3>
-                    <Badge variant="destructive">Felony</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    All persons that help in the commission of a crime are guilt of such crime.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 35 months</span>
-                    <span className="font-medium">Fine: $2,625</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Accessory of Attempted 1st Degree Murder</h3>
-                    <Badge variant="destructive">Felony</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    An accessory is generally not present at the actual crime, and may be subject to lesser penalties then an accomplice or principal.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 28 months</span>
-                    <span className="font-medium">Fine: $2,100</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">1st Degree Murder</h3>
-                    <Badge variant="destructive">Felony</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    The unlawful killing of another human without justification or valid excuse, with malice aforethought / premeditation.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: HUT</span>
-                    <span className="font-medium">Fine: HUT</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Accomplice of 1st Degree Murder</h3>
-                    <Badge variant="destructive">Felony</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    All persons that help in the commission of a crime are guilt of such crime.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: HUT</span>
-                    <span className="font-medium">Fine: HUT</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Accessory of 1st Degree Murder</h3>
-                    <Badge variant="destructive">Felony</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    An accessory is generally not present at the actual crime, and may be subject to lesser penalties then an accomplice or principal.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: HUT</span>
-                    <span className="font-medium">Fine: HUT</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-blue-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Criminal Threats</h3>
-                    <Badge variant="destructive">Misdemeanor</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    A "criminal threat" is when you threaten to kill or physically harm someone.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 14 months</span>
-                    <span className="font-medium">Fine: $1,050</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-blue-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Accomplice of Criminal Threats</h3>
-                    <Badge variant="destructive">Misdemeanor</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    All persons that help in the commission of a crime are guilt of such crime.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 14 months</span>
-                    <span className="font-medium">Fine: $1,050</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-blue-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Accessory of Criminal Threats</h3>
-                    <Badge variant="destructive">Misdemeanor</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    An accessory is generally not present at the actual crime, and may be subject to lesser penalties then an accomplice or principal.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">Sentence: 12 months</span>
-                    <span className="font-medium">Fine: $840</span>
-                  </div>
-                </div>
-
-                <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-base">Attempted Murder of a Government Employee</h3>
-                    <Badge variant="destructive">Felony</Badge>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                    The attempt to murder a government employee. A government employee is listed as a Law Enforcement Officer, Emergency Medical Services personnel, Doctor, District Attorney / Assistant District Attorney, and Judge.
-                  </p>
-                  <div className="flex gap-4 text-sm">
-                    <span className="font-medium">SentenceContinue11:35 PM: 45 months</span>
-<span className="font-medium">Fine: $3,375</span>
-</div>
-</div>
-            <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Accomplice of Attempted Murder of a Government Employee</h3>
-                <Badge variant="destructive">Felony</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                All persons that help in the commission of a crime are guilt of such crime.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 45 months</span>
-                <span className="font-medium">Fine: $3,375</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Accessory of Attempted Murder of a Government Employee</h3>
-                <Badge variant="destructive">Felony</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                An accessory is generally not present at the actual crime, and may be subject to lesser penalties then an accomplice or principal.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 36 months</span>
-                <span className="font-medium">Fine: $2,700</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Murder of a Government Employee</h3>
-                <Badge variant="destructive">Felony</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                The intentional act that leads to the death of a Government Employee. A government employee is listed as a Law Enforcement Officer, Emergency Medical Services personnel, Doctor, District Attorney / Assistant District Attorney, and Judge.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: HUT</span>
-                <span className="font-medium">Fine: HUT</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Accomplice of Murder of a Government Employee</h3>
-                <Badge variant="destructive">Felony</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                All persons that help in the commission of a crime are guilt of such crime.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: HUT</span>
-                <span className="font-medium">Fine: HUT</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Accessory of Murder of a Government Employee</h3>
-                <Badge variant="destructive">Felony</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                An accessory is generally not present at the actual crime, and may be subject to lesser penalties then an accomplice or principal.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: HUT</span>
-                <span className="font-medium">Fine: HUT</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Gang Related Shooting</h3>
-                <Badge variant="destructive">Felony</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                Any individual who, with one or more members of their "gang" engages in a shooting/shootout with two or more members of other gangs.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 75 months</span>
-                <span className="font-medium">Fine: $500</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Accomplice of a Gang Related Shooting</h3>
-                <Badge variant="destructive">Felony</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                All persons that help in the commission of a crime are guilt of such crime.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 75 months</span>
-                <span className="font-medium">Fine: $500</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Accessory of a Gang Related Shooting</h3>
-                <Badge variant="destructive">Felony</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                An accessory is generally not present at the actual crime, and may be subject to lesser penalties then an accomplice or principal.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 60 months</span>
-                <span className="font-medium">Fine: $400</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Reckless Endangerment</h3>
-                <Badge variant="destructive">Felony</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                Person creates a substantial risk of serious physical injury to another person. The accused person isn't required to intend the resulting or potential harm, but must have acted in a way that showed a disregard for the foreseeable consequences.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 11 months</span>
-                <span className="font-medium">Fine: $825</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Accomplice of Reckless Endangerment</h3>
-                <Badge variant="destructive">Felony</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                All persons that help in the commission of a crime are guilt of such crime.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 11 months</span>
-                <span className="font-medium">Fine: $825</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Accessory of Reckless Endangerment</h3>
-                <Badge variant="destructive">Felony</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                An accessory is generally not present at the actual crime, and may be subject to lesser penalties then an accomplice or principal.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 9 months</span>
-                <span className="font-medium">Fine: $660</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-blue-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Brandishing of a Firearm</h3>
-                <Badge variant="destructive">Misdemeanor</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                Displaying a firearm in public without a legal reason. "Open Carry" is not a legal reason to have a weapon in your hand. To open carry, the weapon must be holstered.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 7 months</span>
-                <span className="font-medium">Fine: $525</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Forcer's Law</h3>
-                <Badge variant="destructive">Felony</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                See Case law.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: HUT</span>
-                <span className="font-medium">Fine: HUT</span>
-              </div>
-            </div>
-
-          </div>
-        </AccordionContent>
-      </AccordionItem>
-
-      <AccordionItem value="title-2">
-        <AccordionTrigger className="text-lg font-semibold">
-          TITLE 2. OFFENSES INVOLVING THEFT
-        </AccordionTrigger>
-        <AccordionContent>
-          <div className="space-y-4">
-
-            <div className="border-l-4 border-gray-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Petty Theft</h3>
-                <Badge variant="secondary">Infraction</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                Steals property in the value of less than $1,000 from another person.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 0 months</span>
-                <span className="font-medium">Fine: $250</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-gray-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Accomplice to Petty Theft</h3>
-                <Badge variant="secondary">Infraction</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                All persons that help in the commission of a crime are guilt of such crime.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 0 months</span>
-                <span className="font-medium">Fine: $250</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-gray-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Accessory to Petty Theft</h3>
-                <Badge variant="secondary">Infraction</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                An accessory is generally not present at the actual crime, and may be subject to lesser penalties then an accomplice or principal.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 0 months</span>
-                <span className="font-medium">Fine: $200</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-blue-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Grand Theft</h3>
-                <Badge variant="destructive">Misdemeanor</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                Steals property in the value of more than $1,000 from another person.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 5 months</span>
-                <span className="font-medium">Fine: $375</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-blue-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Accomplice of Grand Theft</h3>
-                <Badge variant="destructive">Misdemeanor</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                All persons that help in the commission of a crime are guilt of such crime.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 5 months</span>
-                <span className="font-medium">Fine: $375</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-blue-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Accessory of Grand Theft</h3>
-                <Badge variant="destructive">Misdemeanor</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                An accessory is generally not present at the actual crime, and may be subject to lesser penalties then an accomplice or principal.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 4 months</span>
-                <span className="font-medium">Fine: $300</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-blue-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Joyriding</h3>
-                <Badge variant="destructive">Misdemeanor</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                The taking or operating of a vehicle without the owner's consent, without the intent to deprive the owner of the vehicle.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 7 months</span>
-                <span className="font-medium">Fine: $525</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-blue-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Accomplice to Joyriding</h3>
-                <Badge variant="destructive">Misdemeanor</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                All persons that help in the commission of a crime are guilt of such crime.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 7 months</span>
-                <span className="font-medium">Fine: $525</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-blue-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Accessory to Joyriding</h3>
-                <Badge variant="destructive">Misdemeanor</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                An accessory is generally not present at the actual crime, and may be subject to lesser penalties then an accomplice or principal.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 6 months</span>
-                <span className="font-medium">Fine: $420</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Grand Theft Auto</h3>
-                <Badge variant="destructive">Felony</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                Unlawfully taking a vehicle belonging to another, or driving the vehicle without the owner's consent, with the intent to permanently deprive the owner of the vehicle.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 14 months</span>
-                <span className="font-medium">Fine: $1,050</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Accomplice to Grand Theft Auto</h3>
-                <Badge variant="destructive">Felony</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                All persons that help in the commission of a crime are guilt of such crime.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 14 months</span>
-                <span className="font-medium">Fine: $1,050</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Accessory to Grand Theft Auto</h3>
-                <Badge variant="destructive">Felony</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                An accessory is generally not present at the actual crime, and may be subject to lesser penalties then an accomplice or principal.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 12 months</span>
-                <span className="font-medium">Fine: $840</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-blue-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Tampering with a Vehicle</h3>
-                <Badge variant="destructive">Misdemeanor</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                No person shall either individually or in association with one or more other persons, willfully tamper with a vehicle.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 7 months</span>
-                <span className="font-medium">Fine: $525</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-blue-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Accomplice to Tampering with a Vehicle</h3>
-                <Badge variant="destructive">Misdemeanor</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                All persons that help in the commission of a crime are guilt of such crime.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 7 months</span>
-                <span className="font-medium">Fine: $525</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-blue-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Accessory to Tampering with a Vehicle</h3>
-                <Badge variant="destructive">Misdemeanor</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                An accessory is generally not present at the actual crime, and may be subject to lesser penalties then an accomplice or principal.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 6 months</span>
-                <span className="font-medium">Fine: $420</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-blue-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Receiving Stolen Property in the Third Degree</h3>
-                <Badge variant="destructive">Misdemeanor</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                A person who bought, received, sold or participated in selling, concealed or withheld property that was stolen.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 7 months</span>
-                <span className="font-medium">Fine: $525</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-blue-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Receiving Stolen Property in the Second Degree</h3>
-                <Badge variant="destructive">Misdemeanor</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                A person who bought, received, sold or participated in selling, concealed or withheld property that was stolen.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 12 months</span>
-                <span className="font-medium">Fine: $900</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Receiving Stolen Property in the First Degree</h3>
-                <Badge variant="destructive">Felony</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                A person who bought, received, sold or participated in selling, concealed or withheld property that was stolen.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 14 months</span>
-                <span className="font-medium">Fine: $1,050</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Robbery</h3>
-                <Badge variant="destructive">Felony</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                The taking or carrying away with the intent to steal any thing of value in the care, custody, control, or possession of a person or entity.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 25 months</span>
-                <span className="font-medium">Fine: $1,875</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Accomplice to Robbery</h3>
-                <Badge variant="destructive">Felony</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                All persons that help in the commission of a crime are guilt of such crime.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 25 months</span>
-                <span className="font-medium">Fine: $1,875</span>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-red-500 pl-4 py-2 bg-gray-50 dark:bg-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-base">Accessory to Robbery</h3>
-                <Badge variant="destructive">Felony</Badge>
-              </div>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                An accessory is generally not present at the actual crime, and may be subject to lesser penalties then an accomplice or principal.
-              </p>
-              <div className="flex gap-4 text-sm">
-                <span className="font-medium">Sentence: 20 months</span>
-                <span className="font-medium">Fine: $1,500</span>
-              </div>
-            </div>
-
-            </div>
-          </AccordionContent>
-        </AccordionItem>
-        </Accordion>
-      </ScrollArea>
-    </CardContent>
-  </Card>
-</TabsContent>
-
-        {/* 10-Codes */}
-        <TabsContent value="10codes">
+    <div id="root">
+      <div className="group/sidebar-wrapper flex min-h-svh w-full has-[[data-variant=inset]]:bg-sidebar">
+        <div id="app-root" className="min-h-screen bg-background text-foreground relative">
+          {/* ... existing sidebar and header code ... */}
+          
+          <div className="flex-1 flex flex-col min-w-0 relative z-10 md:ml-64 app-main will-change-transform">
+            <main className="flex-1 animate-fade-in">
+              <div className="min-h-screen p-6">
+                <div className="max-w-6xl mx-auto">
+                  <div className="mb-8">
+                    <div className="flex items-center space-x-3 mb-4">
+                      <div className="p-2 bg-primary/10 rounded-lg">
+                        <Scale className="h-6 w-6 text-primary" />
+                      </div>
+                      <div>
+                        <h1 className="font-heading text-3xl font-bold">Legal Documents</h1>
+                        <p className="text-muted-foreground">Official laws, codes, and standard operating procedures</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <Tabs defaultValue="penal" className="w-full">
+                    <TabsList className="grid w-full grid-cols-8 mb-8">
+                      <TabsTrigger value="penal" className="flex items-center gap-2">
+                        <Scale className="w-4 h-4" />
+                        Penal Codes
+                      </TabsTrigger>
+                      <TabsTrigger value="10codes" className="flex items-center gap-2">
+                        <Radio className="w-4 h-4" />
+                        10-Codes
+                      </TabsTrigger>
+                      <TabsTrigger value="codecomms" className="flex items-center gap-2">
+                        <AlertCircle className="w-4 h-4" />
+                        Code Comms
+                      </TabsTrigger>
+                      <TabsTrigger value="shortforms" className="flex items-center gap-2">
+                        <Zap className="w-4 h-4" />
+                        Short Forms
+                      </TabsTrigger>
+                      <TabsTrigger value="amendments" className="flex items-center gap-2">
+                        <FileText className="w-4 h-4" />
+                        Amendments
+                      </TabsTrigger>
+                      <TabsTrigger value="cases" className="flex items-center gap-2">
+                        <BookOpen className="w-4 h-4" />
+                        Case Laws
+                      </TabsTrigger>
+                      <TabsTrigger value="sop" className="flex items-center gap-2">
+                        <Shield className="w-4 h-4" />
+                        Police SOP
+                      </TabsTrigger>
+                      <TabsTrigger value="subdepts" className="flex items-center gap-2">
+                        <Users className="w-4 h-4" />
+                        Sub Departments
+                      </TabsTrigger>
+                    </TabsList>
+
+                    {/* Penal Codes - Now with simplified content */}
+                    <TabsContent value="penal">
+                      <Card>
+                        <CardHeader>
+                          <CardTitle>San Andreas Penal Codes</CardTitle>
+                          <CardDescription>
+                            Official criminal offenses, classifications, and penalties
+                          </CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="space-y-6">
+                            <div className="immersive-card border-primary/20 bg-gradient-to-br from-primary/5 to-transparent p-6">
+                              <h3 className="font-semibold tracking-tight gradient-text font-heading text-2xl flex items-center space-x-3 mb-4">
+                                <AlertCircle className="h-6 w-6 text-primary" />
+                                <span>Criminal Classification System</span>
+                              </h3>
+                              <p className="text-lg leading-relaxed mb-4">
+                                Criminal offenses are classified into three main categories based on their severity and potential punishment. Understanding these classifications is crucial for law enforcement officers to apply appropriate procedures and determine the correct level of response.
+                              </p>
+                              <div className="grid md:grid-cols-3 gap-4 mt-6">
+                                <div className="text-center p-4 bg-card/50 rounded-lg border border-border">
+                                  <div className="font-semibold text-red-500 mb-1">Felony</div>
+                                  <div className="text-sm text-muted-foreground">Most Serious</div>
+                                </div>
+                                <div className="text-center p-4 bg-card/50 rounded-lg border border-border">
+                                  <div className="font-semibold text-orange-500 mb-1">Misdemeanor</div>
+                                  <div className="text-sm text-muted-foreground">Moderate</div>
+                                </div>
+                                <div className="text-center p-4 bg-card/50 rounded-lg border border-border">
+                                  <div className="font-semibold text-yellow-500 mb-1">Infraction</div>
+                                  <div className="text-sm text-muted-foreground">Minor</div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div className="grid gap-6">
+                              <Card className="border-red-200 bg-red-50/10">
+                                <CardHeader>
+                                  <div className="flex items-center justify-between">
+                                    <div className="flex items-center gap-3">
+                                      <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center">
+                                        <Scale className="h-8 w-8 text-white" />
+                                      </div>
+                                      <div>
+                                        <CardTitle>Felony</CardTitle>
+                                        <Badge variant="destructive">High Severity</Badge>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </CardHeader>
+                                <CardContent>
+                                  <p className="text-sm text-muted-foreground mb-4">
+                                    Serious crimes punishable by imprisonment for more than one year or capital punishment. Maximum sentence: Life/HUT.
+                                  </p>
+                                  <div>
+                                    <h4 className="font-semibold mb-2">Examples:</h4>
+                                    <div className="flex flex-wrap gap-2">
+                                      {['Murder', 'Kidnapping', 'Armed Robbery', 'Drug Trafficking'].map((crime) => (
+                                        <Badge key={crime} variant="outline">{crime}</Badge>
+                                      ))}
+                                    </div>
+                                  </div>
+                                </CardContent>
+                              </Card>
+
+                              <Card className="border-orange-200 bg-orange-50/10">
+                                <CardHeader>
+                                  <div className="flex items-center justify-between">
+                                    <div className="flex items-center gap-3">
+                                      <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center">
+                                        <Scale className="h-8 w-8 text-white" />
+                                      </div>
+                                      <div>
+                                        <CardTitle>Misdemeanor</CardTitle>
+                                        <Badge>Medium Severity</Badge>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </CardHeader>
+                                <CardContent>
+                                  <p className="text-sm text-muted-foreground mb-4">
+                                    Lesser offenses typically punishable by less than one year in jail. Maximum sentence: 30 months.
+                                  </p>
+                                  <div>
+                                    <h4 className="font-semibold mb-2">Examples:</h4>
+                                    <div className="flex flex-wrap gap-2">
+                                      {['Assault', 'Petty Theft', 'DUI', 'Trespassing'].map((crime) => (
+                                        <Badge key={crime} variant="outline">{crime}</Badge>
+                                      ))}
+                                    </div>
+                                  </div>
+                                </CardContent>
+                              </Card>
+
+                              <Card className="border-yellow-200 bg-yellow-50/10">
+                                <CardHeader>
+                                  <div className="flex items-center justify-between">
+                                    <div className="flex items-center gap-3">
+                                      <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-yellow-500 to-yellow-600 flex items-center justify-center">
+                                        <FileText className="h-8 w-8 text-white" />
+                                      </div>
+                                      <div>
+                                        <CardTitle>Infraction</CardTitle>
+                                        <Badge variant="secondary">Low Severity</Badge>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </CardHeader>
+                                <CardContent>
+                                  <p className="text-sm text-muted-foreground mb-4">
+                                    Minor violations typically punishable by fines rather than imprisonment.
+                                  </p>
+                                  <div>
+                                    <h4 className="font-semibold mb-2">Examples:</h4>
+                                    <div className="flex flex-wrap gap-2">
+                                      {['Speeding', 'Parking Violations', 'Jaywalking', 'Littering'].map((crime) => (
+                                        <Badge key={crime} variant="outline">{crime}</Badge>
+                                      ))}
+                                    </div>
+                                  </div>
+                                </CardContent>
+                              </Card>
+                            </div>
+
+                            <Card className="border-orange-200 bg-orange-50/10">
+                              <CardHeader>
+                                <CardTitle className="text-xl flex items-center gap-2">
+                                  <AlertCircle className="h-5 w-5 text-orange-600" />
+                                  Important Legal Notes
+                                </CardTitle>
+                              </CardHeader>
+                              <CardContent>
+                                <div className="space-y-3 text-sm">
+                                  <p><strong>HUT (Held Until Trial):</strong> Reserved for the most serious offenses where bail is typically denied.</p>
+                                  <p><strong>Capital Offense:</strong> Crimes that may be punishable by life imprisonment or other severe penalties.</p>
+                                  <p><strong>Sentence Modifications:</strong> Actual sentences may vary based on circumstances, criminal history, and judicial discretion.</p>
+                                  <p><strong>License Points:</strong> Apply only to vehicle-related offenses and affect driving privileges.</p>
+                                </div>
+                              </CardContent>
+                            </Card>
+
+                            <Card>
+                              <CardHeader>
+                                <CardTitle>Comprehensive Felony Offenses</CardTitle>
+                                <CardDescription>
+                                  Complete reference of 124 criminal statutes with detailed information
+                                </CardDescription>
+                              </CardHeader>
+                              <CardContent>
+                                <div className="space-y-4">
+                                  <div>
+                                    <input
+                                      type="text"
+                                      placeholder="Search offenses by name or description..."
+                                      value={penalSearchTerm}
+                                      onChange={(e) => setPenalSearchTerm(e.target.value)}
+                                      className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                                    />
+                                  </div>
+
+                                  <div className="overflow-x-auto">
+                                    <table className="w-full text-sm">
+                                      <thead>
+                                        <tr className="border-b border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800">
+                                          <th className="text-left px-4 py-3 font-semibold">Offense</th>
+                                          <th className="text-left px-4 py-3 font-semibold">Classification</th>
+                                          <th className="text-left px-4 py-3 font-semibold">Sentence</th>
+                                          <th className="text-left px-4 py-3 font-semibold">License Points</th>
+                                          <th className="text-left px-4 py-3 font-semibold">Description</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        {penalCodes
+                                          .filter(
+                                            (offense) =>
+                                              offense.offense.toLowerCase().includes(penalSearchTerm.toLowerCase()) ||
+                                              offense.description.toLowerCase().includes(penalSearchTerm.toLowerCase())
+                                          )
+                                          .map((offense, index) => (
+                                            <tr
+                                              key={index}
+                                              className="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
+                                            >
+                                              <td className="px-4 py-3 font-medium text-gray-900 dark:text-white">
+                                                {offense.offense}
+                                              </td>
+                                              <td className="px-4 py-3">
+                                                <Badge
+                                                  variant={offense.classification === "Capital Offense" ? "destructive" : "default"}
+                                                  className={offense.classification === "Capital Offense" ? "" : "bg-red-600 hover:bg-red-700"}
+                                                >
+                                                  {offense.classification}
+                                                </Badge>
+                                              </td>
+                                              <td className="px-4 py-3 text-gray-700 dark:text-gray-300">
+                                                {offense.sentence}
+                                              </td>
+                                              <td className="px-4 py-3 text-gray-700 dark:text-gray-300">
+                                                {offense.licensePoints}
+                                              </td>
+                                              <td className="px-4 py-3 text-gray-700 dark:text-gray-300 max-w-md">
+                                                {offense.description}
+                                              </td>
+                                            </tr>
+                                          ))}
+                                      </tbody>
+                                    </table>
+                                  </div>
+
+                                  {penalCodes.filter(
+                                    (offense) =>
+                                      offense.offense.toLowerCase().includes(penalSearchTerm.toLowerCase()) ||
+                                      offense.description.toLowerCase().includes(penalSearchTerm.toLowerCase())
+                                  ).length === 0 && (
+                                    <div className="text-center py-8 text-gray-500 dark:text-gray-400">
+                                      No offenses found matching your search.
+                                    </div>
+                                  )}
+                                </div>
+                              </CardContent>
+                            </Card>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </TabsContent>
+
+                    {/* 10-Codes */}
+                    <TabsContent value="10codes">
           <Card>
             <CardHeader>
               <CardTitle>10-Codes</CardTitle>
@@ -1071,6 +321,7 @@ export function DocumentsPage() {
                   }}
                 />
                 <select
+                  aria-label="Filter 10-codes by category"
                   className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800"
                   onChange={(e) => {
                     const category = e.target.value;
@@ -1152,6 +403,7 @@ export function DocumentsPage() {
                   }}
                 />
                 <select
+                  aria-label="Filter code communications by priority"
                   className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800"
                   onChange={(e) => {
                     const priority = e.target.value;
