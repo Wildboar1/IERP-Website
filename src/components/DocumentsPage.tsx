@@ -7,6 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./
 import { FileText, Scale, BookOpen, Shield, Users, Radio, Zap, AlertCircle } from "lucide-react";
 import penalCodes from "@data/penal-codes.json";
 import misdemeanorCharges from "@data/misdemeanor-charges.json";
+import infractionCharges from "@data/infractions-charges.json";
 import tenCodes from "@data/10-codes.json";
 import shortForms from "@data/short-forms.json";
 import codeCommunications from "@data/code-communications.json";
@@ -17,7 +18,7 @@ export function DocumentsPage() {
   const [felonyFilter, setFelonyFilter] = useState("all");
   const [misdemeanorFilter, setMisdemeanorFilter] = useState("all");
   const [infractionFilter, setInfractionFilter] = useState("all");
-  const [misdemSearchTerm, setMisdemSearchTerm] = useState("");
+  const [chargeTypeFilter, setChargeTypeFilter] = useState("all");
   return (
     <div id="root">
       <div className="group/sidebar-wrapper flex min-h-svh w-full has-[[data-variant=inset]]:bg-sidebar">
@@ -41,14 +42,10 @@ export function DocumentsPage() {
                   </div>
 
                   <Tabs defaultValue="penal" className="w-full">
-                    <TabsList className="grid w-full grid-cols-8 mb-8">
+                    <TabsList className="grid w-full grid-cols-7 mb-8">
                       <TabsTrigger value="penal" className="flex items-center gap-2">
                         <Scale className="w-4 h-4" />
                         Penal Codes
-                      </TabsTrigger>
-                      <TabsTrigger value="misdemeanor" className="flex items-center gap-2">
-                        <Scale className="w-4 h-4" />
-                        Misdemeanor
                       </TabsTrigger>
                       <TabsTrigger value="10codes" className="flex items-center gap-2">
                         <Radio className="w-4 h-4" />
@@ -73,10 +70,6 @@ export function DocumentsPage() {
                       <TabsTrigger value="sop" className="flex items-center gap-2">
                         <Shield className="w-4 h-4" />
                         Police SOP
-                      </TabsTrigger>
-                      <TabsTrigger value="subdepts" className="flex items-center gap-2">
-                        <Users className="w-4 h-4" />
-                        Sub Departments
                       </TabsTrigger>
                     </TabsList>
 
@@ -229,18 +222,29 @@ export function DocumentsPage() {
                                 </CardDescription>
                               </CardHeader>
                               <CardContent>
-                                <div className="space-y-4">
-                                  <div>
-                                    <input
-                                      type="text"
-                                      placeholder="Search offenses by name or description..."
-                                      value={penalSearchTerm}
-                                      onChange={(e) => setPenalSearchTerm(e.target.value)}
-                                      className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-                                    />
-                                  </div>
+<div className="grid gap-4">
+                                    <div>
+                                      <input
+                                        type="text"
+                                        placeholder="Search offenses by name or description..."
+                                        value={penalSearchTerm}
+                                        onChange={(e) => setPenalSearchTerm(e.target.value)}
+                                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                                      />
+                                    </div>
 
-                                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                    <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+                                      <select
+                                        value={chargeTypeFilter}
+                                        onChange={(e) => setChargeTypeFilter(e.target.value)}
+                                        className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                                      >
+                                        <option value="all">All Charge Types</option>
+                                        <option value="felony">Felonies Only</option>
+                                        <option value="misdemeanor">Misdemeanors Only</option>
+                                        <option value="infraction">Infractions Only</option>
+                                      </select>
+
                                     <select
                                       value={crimetype}
                                       onChange={(e) => setCrimetype(e.target.value)}
@@ -296,12 +300,17 @@ export function DocumentsPage() {
                                         </tr>
                                       </thead>
                                       <tbody>
-                                        {penalCodes
+                                        {[...penalCodes, ...misdemeanorCharges, ...infractionCharges]
                                           .filter((offense) => {
                                             // Check search term match
                                             const matchesSearch = offense.offense.toLowerCase().includes(penalSearchTerm.toLowerCase()) ||
                                                                  offense.description.toLowerCase().includes(penalSearchTerm.toLowerCase());
                                             if (!matchesSearch) return false;
+
+                                            // Charge type filter
+                                            if (chargeTypeFilter === "felony" && (offense.classification !== "Felony" && offense.classification !== "Capital Offense")) return false;
+                                            if (chargeTypeFilter === "misdemeanor" && offense.classification !== "Misdemeanor") return false;
+                                            if (chargeTypeFilter === "infraction" && offense.classification !== "Infraction") return false;
                                             
                                             // Apply felony filter
                                             if (felonyFilter !== "all") {
@@ -327,8 +336,15 @@ export function DocumentsPage() {
                                               </td>
                                               <td className="px-4 py-3">
                                                 <Badge
-                                                  variant={offense.classification === "Capital Offense" ? "destructive" : "default"}
-                                                  className={offense.classification === "Capital Offense" ? "" : "bg-red-600 hover:bg-red-700"}
+                                                  className={
+                                                    offense.classification === "Capital Offense"
+                                                      ? "bg-red-700 hover:bg-red-800"
+                                                      : offense.classification === "Felony"
+                                                      ? "bg-red-600 hover:bg-red-700"
+                                                      : offense.classification === "Misdemeanor"
+                                                      ? "bg-orange-500 hover:bg-orange-600"
+                                                      : "bg-yellow-500 hover:bg-yellow-600"
+                                                  }
                                                 >
                                                   {offense.classification}
                                                 </Badge>
@@ -376,89 +392,6 @@ export function DocumentsPage() {
                     </TabsContent>
 
                     {/* Misdemeanor Charges */}
-                    <TabsContent value="misdemeanor">
-                      <Card>
-                        <CardHeader>
-                          <CardTitle>San Andreas Misdemeanor Charges</CardTitle>
-                          <CardDescription>
-                            Lesser offenses typically punishable by less than one year in jail
-                          </CardDescription>
-                        </CardHeader>
-
-                        <CardContent>
-                          <div className="space-y-4">
-                            <div>
-                              <input
-                                type="text"
-                                placeholder="Search offenses by name or description..."
-                                value={misdemSearchTerm}
-                                onChange={(e) => setMisdemSearchTerm(e.target.value)}
-                                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-                              />
-                            </div>
-
-                            <div className="overflow-x-auto">
-                              <table className="w-full text-sm">
-                                <thead>
-                                  <tr className="border-b border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800">
-                                    <th className="text-left px-4 py-3 font-semibold">Offense</th>
-                                    <th className="text-left px-4 py-3 font-semibold">Classification</th>
-                                    <th className="text-left px-4 py-3 font-semibold">Sentence</th>
-                                    <th className="text-left px-4 py-3 font-semibold">License Points</th>
-                                    <th className="text-left px-4 py-3 font-semibold">Description</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  {misdemeanorCharges
-                                    .filter((offense) =>
-                                      offense.offense.toLowerCase().includes(misdemSearchTerm.toLowerCase()) ||
-                                      offense.description.toLowerCase().includes(misdemSearchTerm.toLowerCase())
-                                    )
-                                    .map((offense, index) => (
-                                      <tr
-                                        key={index}
-                                        className="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
-                                      >
-                                        <td className="px-4 py-3 font-medium text-gray-900 dark:text-white">
-                                          {offense.offense}
-                                        </td>
-                                        <td className="px-4 py-3">
-                                          <Badge
-                                            variant={offense.classification === "Infraction" ? "secondary" : "default"}
-                                            className={offense.classification === "Infraction" ? "" : "bg-orange-500 hover:bg-orange-600"}
-                                          >
-                                            {offense.classification}
-                                          </Badge>
-                                        </td>
-                                        <td className="px-4 py-3 text-gray-700 dark:text-gray-300">
-                                          {offense.sentence}
-                                        </td>
-                                        <td className="px-4 py-3 text-gray-700 dark:text-gray-300">
-                                          {offense.licensePoints}
-                                        </td>
-                                        <td className="px-4 py-3 text-gray-700 dark:text-gray-300 max-w-md">
-                                          {offense.description}
-                                        </td>
-                                      </tr>
-                                    ))}
-                                </tbody>
-                              </table>
-                            </div>
-
-                            {misdemeanorCharges.filter(
-                              (offense) =>
-                                offense.offense.toLowerCase().includes(misdemSearchTerm.toLowerCase()) ||
-                                offense.description.toLowerCase().includes(misdemSearchTerm.toLowerCase())
-                            ).length === 0 && (
-                              <div className="text-center py-8 text-gray-500 dark:text-gray-400">
-                                No offenses found matching your search.
-                              </div>
-                            )}
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </TabsContent>
-
                     {/* 10-Codes */}
                     <TabsContent value="10codes">
           <Card>

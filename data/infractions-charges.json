@@ -1,0 +1,240 @@
+[
+  {
+    "offense": "Littering",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "N/A",
+    "description": "Discarding items in a non-acceptable container, leaving trash on the ground."
+  },
+  {
+    "offense": "Anti-Mask Law -> Unauthorized Face Covering",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "N/A",
+    "description": "Wearing a face covering in a government building that obstructs identification and refusing to remove it when asked during a lawful investigation."
+  },
+  {
+    "offense": "Operating without a Permit",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "N/A",
+    "description": "Operating an event without prior approval, licensure, or permit from an authorized Government Entity."
+  },
+  {
+    "offense": "Disturbing the Peace",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "N/A",
+    "description": "Unlawfully fighting or challenging another in a public place, disturbing by loud noise, or using offensive words likely to provoke violence."
+  },
+  {
+    "offense": "Loitering on Government Properties",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "N/A",
+    "description": "Intentionally standing or waiting idly without apparent purpose on government properties."
+  },
+  {
+    "offense": "Public Intoxication",
+    "classification": "Infraction",
+    "sentence": "5 months",
+    "licensePoints": "N/A",
+    "description": "Being under the influence of Alcohol or a Controlled Dangerous Substance in a public place."
+  },
+  {
+    "offense": "Failure to Yield to Emergency Vehicle",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "2",
+    "description": "Failing to pull to the side of the road or safely move out of the way and reduce speed when an emergency vehicle is active."
+  },
+  {
+    "offense": "Failure to Obey Traffic Control Device",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "1",
+    "description": "Failure to obey any erected or maintained sign, including regulatory and warning signs, or pavement markings."
+  },
+  {
+    "offense": "Nonfunctional Vehicle -> Illegal Vehicle Modifications",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "2",
+    "description": "Driving a nonfunctional or unsafe vehicle, such as with smashed windows, illegal tint, or missing doors."
+  },
+  {
+    "offense": "Negligent Driving",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "2",
+    "description": "Driving in a way that is negligent, demonstrating a lack of proper regard or attention to safety, with no regard to basic traffic rules."
+  },
+  {
+    "offense": "Third Degree Speeding",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "2",
+    "description": "Speeding in excess of 1 mph to 30 mph over the posted limit."
+  },
+  {
+    "offense": "Second Degree Speeding",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "4",
+    "description": "Speeding in excess of 31 mph to 60 mph over the posted limit."
+  },
+  {
+    "offense": "First Degree Speeding",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "8",
+    "description": "Speeding in excess of more than 61+ mph over the posted limit."
+  },
+  {
+    "offense": "Unlicensed Operation of Vehicle",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "2",
+    "description": "Operating a vehicle without a proper license, or with a suspended/revoked license, or without a valid physical government identification card."
+  },
+  {
+    "offense": "Illegal U-Turn",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "1",
+    "description": "Turning around at an intersection marked against U-turns, or changing direction in the middle of a roadway by crossing a yellow line."
+  },
+  {
+    "offense": "Illegal Passing",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "2",
+    "description": "Passing another vehicle by a shoulder, median, or solid lines, or interfering with safe operation of an approaching vehicle."
+  },
+  {
+    "offense": "Failure to Maintain Lane",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "2",
+    "description": "Failure to maintain control of a vehicle within an appropriate lane of travel."
+  },
+  {
+    "offense": "Illegal Turn",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "1",
+    "description": "Performing a turn at a stop sign or red light without a full stop, failing to yield, making a left-hand turn where prohibited, turning from an opposite lane, or turning against a 'turn only lane' indication."
+  },
+  {
+    "offense": "Failure to Stop",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "1",
+    "description": "Failing to bring all wheels to a complete stop before moving forward, or failing to yield to oncoming traffic at a 4-way stop."
+  },
+  {
+    "offense": "Unauthorized Parking",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "N/A",
+    "description": "Parking in a fire lane, emergency lane, red curb, blocking a fire hydrant, parking unsafely, impeding traffic, failing to park within marked lines, or parking in a 'No Parking' zone or handicap spot without authorization."
+  },
+  {
+    "offense": "Driving without Headlights or Signals",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "2",
+    "description": "Failing to use headlights to see safely in low light or allow other vehicles to see you."
+  },
+  {
+    "offense": "Unlawful Operation of an Unroadworthy Vehicle",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "3",
+    "description": "Operating a vehicle that does not have a visible license plate."
+  },
+  {
+    "offense": "Jaywalking",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "N/A",
+    "description": "Crossing a roadway at any place except in a designated crosswalk while minding traffic control signal devices."
+  },
+  {
+    "offense": "Illegal Vehicle Modification",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "2",
+    "description": "Any modification applied to a vehicle that would unlawfully alter performance and/or any body modifications that would render the vehicle unsafe or unroadworthy."
+  },
+  {
+    "offense": "Improper Use of a Horn",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "1",
+    "description": "Using a horn when not reasonably necessary for safe operation, or using it in excess."
+  },
+  {
+    "offense": "Driving an Unregistered Vehicle",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "1",
+    "description": "Illegally operating a motor vehicle on a public roadway that is not registered to the State of San Andreas."
+  },
+  {
+    "offense": "Failure to Maintain Aircraft Radio",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "N/A",
+    "description": "Maintaining radio frequency Radio 919.1 at all times during flights."
+  },
+  {
+    "offense": "Failure to Register Flight with Authorities",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "N/A",
+    "description": "Failure to report recreational flight via 311 prior to takeoff."
+  },
+  {
+    "offense": "Landing in an Unsafe Area",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "N/A",
+    "description": "Helicopter landing in undesignated areas, or less than 75m from any roadway, residence, or built-up structure; fixed-wing aircraft landing only on designated runways; pontoon aircraft landing on waterways but 75m from bridges, vessels, or swimming areas."
+  },
+  {
+    "offense": "Flying too Low",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "N/A",
+    "description": "Maintaining minimum altitudes of 1500 ft over city limits and 750 ft over county areas."
+  },
+  {
+    "offense": "Flying an Unregistered Aircraft",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "N/A",
+    "description": "Piloting any aircraft which does not have a valid registration, excluding rental aircrafts with tail number prefix 'RENT' and 'PEG'."
+  },
+  {
+    "offense": "Hunting In Restricted Areas",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "N/A",
+    "description": "Hunting outside of the defined boundaries of the hunting area."
+  },
+  {
+    "offense": "Unlicensed Hunting or Fishing",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "N/A",
+    "description": "Performing the act of hunting or fishing without being in possession of the appropriate license(s)."
+  },
+  {
+    "offense": "Hunting Outside of Hunting Hours",
+    "classification": "Infraction",
+    "sentence": "Fine/Citation",
+    "licensePoints": "N/A",
+    "description": "Hunting outside of the window of 05:00 and 19:30."
+  }
+]
