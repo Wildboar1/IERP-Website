@@ -1,0 +1,342 @@
+[
+  {
+    "abbreviation": "APB",
+    "meaning": "All Points Bulletin",
+    "category": "Communication"
+  },
+  {
+    "abbreviation": "AOS",
+    "meaning": "Arrest On Sight",
+    "category": "Status"
+  },
+  {
+    "abbreviation": "ATL",
+    "meaning": "Attempting To Locate",
+    "category": "Status"
+  },
+  {
+    "abbreviation": "BAC",
+    "meaning": "Blood Alcohol Concentration",
+    "category": "Information"
+  },
+  {
+    "abbreviation": "BAT",
+    "meaning": "Breath Alcohol Test",
+    "category": "Procedure"
+  },
+  {
+    "abbreviation": "BCSO",
+    "meaning": "Blaine County Sheriffs Office",
+    "category": "Organization"
+  },
+  {
+    "abbreviation": "BOLO",
+    "meaning": "Be on a Lookout",
+    "category": "Communication"
+  },
+  {
+    "abbreviation": "CERT",
+    "meaning": "Community Emergency Response Team",
+    "category": "Organization"
+  },
+  {
+    "abbreviation": "CDS",
+    "meaning": "Controlled Dangerous Substance",
+    "category": "Information"
+  },
+  {
+    "abbreviation": "CSU",
+    "meaning": "Crime Scene Unit",
+    "category": "Organization"
+  },
+  {
+    "abbreviation": "CTS",
+    "meaning": "Critical Traffic Stop",
+    "category": "Procedure"
+  },
+  {
+    "abbreviation": "CI",
+    "meaning": "Confidential Informant",
+    "category": "Information"
+  },
+  {
+    "abbreviation": "DOA",
+    "meaning": "Dead On Arrival / Drug Observation Agency",
+    "category": "Status"
+  },
+  {
+    "abbreviation": "DOJ",
+    "meaning": "Department of Justice",
+    "category": "Organization"
+  },
+  {
+    "abbreviation": "DRT",
+    "meaning": "Dead Right There",
+    "category": "Status"
+  },
+  {
+    "abbreviation": "DV",
+    "meaning": "Domestic Violence",
+    "category": "Incident"
+  },
+  {
+    "abbreviation": "EMS",
+    "meaning": "Emergency Medical Services",
+    "category": "Organization"
+  },
+  {
+    "abbreviation": "EOW",
+    "meaning": "End Of Watch (officer killed on duty)",
+    "category": "Status"
+  },
+  {
+    "abbreviation": "FIB",
+    "meaning": "Federal Investigation Bureau",
+    "category": "Organization"
+  },
+  {
+    "abbreviation": "FI",
+    "meaning": "Field Interview",
+    "category": "Procedure"
+  },
+  {
+    "abbreviation": "FIR",
+    "meaning": "First Investigation Report",
+    "category": "Document"
+  },
+  {
+    "abbreviation": "FTD",
+    "meaning": "Field Training Department",
+    "category": "Organization"
+  },
+  {
+    "abbreviation": "FTO",
+    "meaning": "Field Training Officer",
+    "category": "Organization"
+  },
+  {
+    "abbreviation": "GO",
+    "meaning": "General Order",
+    "category": "Document"
+  },
+  {
+    "abbreviation": "GOA",
+    "meaning": "Gone On Arrival",
+    "category": "Status"
+  },
+  {
+    "abbreviation": "GTA",
+    "meaning": "Grand Theft Auto",
+    "category": "Incident"
+  },
+  {
+    "abbreviation": "GSR",
+    "meaning": "Gun Shot Residue",
+    "category": "Information"
+  },
+  {
+    "abbreviation": "HIT",
+    "meaning": "High-Intensity Target",
+    "category": "Status"
+  },
+  {
+    "abbreviation": "HOJ",
+    "meaning": "Home of Justice",
+    "category": "Organization"
+  },
+  {
+    "abbreviation": "HUT",
+    "meaning": "Held Until Trial",
+    "category": "Status"
+  },
+  {
+    "abbreviation": "IAA",
+    "meaning": "Internal Affairs Agency",
+    "category": "Organization"
+  },
+  {
+    "abbreviation": "ID",
+    "meaning": "Identification",
+    "category": "Information"
+  },
+  {
+    "abbreviation": "IFAKS",
+    "meaning": "Individual First Aid Kits",
+    "category": "Equipment"
+  },
+  {
+    "abbreviation": "K9",
+    "meaning": "Canine Unit",
+    "category": "Organization"
+  },
+  {
+    "abbreviation": "KOS",
+    "meaning": "Kill On Sight",
+    "category": "Status"
+  },
+  {
+    "abbreviation": "LS",
+    "meaning": "Los Santos",
+    "category": "Location"
+  },
+  {
+    "abbreviation": "LSPD",
+    "meaning": "Los Santos Police Department",
+    "category": "Organization"
+  },
+  {
+    "abbreviation": "MDT",
+    "meaning": "Mobile Data Terminal",
+    "category": "Equipment"
+  },
+  {
+    "abbreviation": "MIA",
+    "meaning": "Missing In Action",
+    "category": "Status"
+  },
+  {
+    "abbreviation": "MO",
+    "meaning": "Modus Operandi",
+    "category": "Information"
+  },
+  {
+    "abbreviation": "NB",
+    "meaning": "Note Bene (Note Well)",
+    "category": "Communication"
+  },
+  {
+    "abbreviation": "NCIC",
+    "meaning": "National Crime Information Center",
+    "category": "Organization"
+  },
+  {
+    "abbreviation": "NOTICE",
+    "meaning": "Notice Of Traffic Incident Causing Emergency",
+    "category": "Document"
+  },
+  {
+    "abbreviation": "OC",
+    "meaning": "Oleoresin Capsicum (Pepper Spray)",
+    "category": "Equipment"
+  },
+  {
+    "abbreviation": "OIS",
+    "meaning": "Officer Involved Shooting",
+    "category": "Incident"
+  },
+  {
+    "abbreviation": "PIT",
+    "meaning": "Pursuit Immobilization/Intervention Technique",
+    "category": "Procedure"
+  },
+  {
+    "abbreviation": "PD",
+    "meaning": "Police Department",
+    "category": "Organization"
+  },
+  {
+    "abbreviation": "PO",
+    "meaning": "Police Officer",
+    "category": "Organization"
+  },
+  {
+    "abbreviation": "POI",
+    "meaning": "Person of Interest",
+    "category": "Information"
+  },
+  {
+    "abbreviation": "RA",
+    "meaning": "Rescue Ambulance",
+    "category": "Organization"
+  },
+  {
+    "abbreviation": "RO",
+    "meaning": "Registered Owner",
+    "category": "Information"
+  },
+  {
+    "abbreviation": "RTB",
+    "meaning": "Returning To Base",
+    "category": "Status"
+  },
+  {
+    "abbreviation": "RTO",
+    "meaning": "Radio Traffic Only",
+    "category": "Communication"
+  },
+  {
+    "abbreviation": "SASP",
+    "meaning": "San Andreas State Police",
+    "category": "Organization"
+  },
+  {
+    "abbreviation": "SO",
+    "meaning": "Sheriff's Office",
+    "category": "Organization"
+  },
+  {
+    "abbreviation": "SOP",
+    "meaning": "Standard Operating Procedure",
+    "category": "Document"
+  },
+  {
+    "abbreviation": "SRO",
+    "meaning": "School Resource Officer",
+    "category": "Organization"
+  },
+  {
+    "abbreviation": "SWAT",
+    "meaning": "Special Weapons and Tactics",
+    "category": "Organization"
+  },
+  {
+    "abbreviation": "TA",
+    "meaning": "Traffic Accident",
+    "category": "Incident"
+  },
+  {
+    "abbreviation": "TO",
+    "meaning": "Training Officer",
+    "category": "Organization"
+  },
+  {
+    "abbreviation": "TVI",
+    "meaning": "Tactical Vehicle Intervention",
+    "category": "Procedure"
+  },
+  {
+    "abbreviation": "UOI",
+    "meaning": "Unusual Occurrence Investigation",
+    "category": "Procedure"
+  },
+  {
+    "abbreviation": "UTL",
+    "meaning": "Unable to Locate",
+    "category": "Status"
+  },
+  {
+    "abbreviation": "VCB",
+    "meaning": "Visual Contact Broken",
+    "category": "Status"
+  },
+  {
+    "abbreviation": "VO",
+    "meaning": "Victim's Officer",
+    "category": "Organization"
+  },
+  {
+    "abbreviation": "WARN",
+    "meaning": "Warning, Alert, Response Network",
+    "category": "System"
+  },
+  {
+    "abbreviation": "WI",
+    "meaning": "Witness Interview",
+    "category": "Procedure"
+  },
+  {
+    "abbreviation": "WO",
+    "meaning": "Warning Order",
+    "category": "Document"
+  }
+]

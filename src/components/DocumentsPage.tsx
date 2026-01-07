@@ -3,9 +3,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import { ScrollArea } from "./ui/scroll-area";
 import { Badge } from "./ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
-import { FileText, Scale, BookOpen, Shield, Users, Radio } from "lucide-react";
+import { FileText, Scale, BookOpen, Shield, Users, Radio, Zap } from "lucide-react";
 import penalCodes from "@data/penal-codes.json";
 import tenCodes from "@data/10-codes.json";
+import shortForms from "@data/short-forms.json";
 
 export function DocumentsPage() {
   return (
@@ -16,7 +17,7 @@ export function DocumentsPage() {
       </div>
 
       <Tabs defaultValue="penal" className="w-full">
-        <TabsList className="grid w-full grid-cols-6 mb-8">
+        <TabsList className="grid w-full grid-cols-7 mb-8">
           <TabsTrigger value="penal" className="flex items-center gap-2">
             <Scale className="w-4 h-4" />
             Penal Codes
@@ -24,6 +25,10 @@ export function DocumentsPage() {
           <TabsTrigger value="10codes" className="flex items-center gap-2">
             <Radio className="w-4 h-4" />
             10-Codes
+          </TabsTrigger>
+          <TabsTrigger value="shortforms" className="flex items-center gap-2">
+            <Zap className="w-4 h-4" />
+            Short Forms
           </TabsTrigger>
           <TabsTrigger value="amendments" className="flex items-center gap-2">
             <FileText className="w-4 h-4" />
@@ -1108,6 +1113,76 @@ export function DocumentsPage() {
                         </Badge>
                       </div>
                       <p className="text-sm font-medium mb-3">{item.description}</p>
+                      <Badge variant="outline">{item.category}</Badge>
+                    </div>
+                  ))}
+                </div>
+              </ScrollArea>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        {/* Short Forms */}
+        <TabsContent value="shortforms">
+          <Card>
+            <CardHeader>
+              <CardTitle>Short Forms</CardTitle>
+              <CardDescription>Common abbreviations used in law enforcement communication</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-6 flex gap-4">
+                <input
+                  type="text"
+                  placeholder="Search abbreviations..."
+                  className="flex-1 px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800"
+                  id="shortformsSearch"
+                  onChange={(e) => {
+                    const query = e.target.value.toLowerCase();
+                    const items = document.querySelectorAll('[data-shortform-item]');
+                    items.forEach(item => {
+                      const abbr = item.getAttribute('data-abbr')?.toLowerCase() || '';
+                      const meaning = item.getAttribute('data-meaning')?.toLowerCase() || '';
+                      item.style.display = abbr.includes(query) || meaning.includes(query) ? 'block' : 'none';
+                    });
+                  }}
+                />
+                <select
+                  className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800"
+                  onChange={(e) => {
+                    const category = e.target.value;
+                    const items = document.querySelectorAll('[data-shortform-item]');
+                    items.forEach(item => {
+                      const itemCategory = item.getAttribute('data-category');
+                      item.style.display = category === 'All' || itemCategory === category ? 'block' : 'none';
+                    });
+                  }}
+                >
+                  <option value="All">All Categories</option>
+                  <option value="Communication">Communication</option>
+                  <option value="Organization">Organization</option>
+                  <option value="Procedure">Procedure</option>
+                  <option value="Incident">Incident</option>
+                  <option value="Legal">Legal</option>
+                  <option value="Medical">Medical</option>
+                  <option value="Personnel">Personnel</option>
+                  <option value="Investigation">Investigation</option>
+                  <option value="Equipment">Equipment</option>
+                  <option value="General">General</option>
+                </select>
+              </div>
+              <ScrollArea className="h-[600px] pr-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {shortForms.map((item, index) => (
+                    <div
+                      key={index}
+                      data-shortform-item
+                      data-abbr={item.abbreviation}
+                      data-meaning={item.meaning}
+                      data-category={item.category}
+                      className="border rounded-lg p-4 bg-gray-50 dark:bg-gray-800 hover:shadow-md transition-shadow"
+                    >
+                      <h3 className="font-mono text-lg font-bold text-amber-600 dark:text-amber-400 mb-2">{item.abbreviation}</h3>
+                      <p className="text-sm font-medium mb-3">{item.meaning}</p>
                       <Badge variant="outline">{item.category}</Badge>
                     </div>
                   ))}
