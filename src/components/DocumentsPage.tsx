@@ -234,7 +234,7 @@ export function DocumentsPage() {
                                     </div>
 
                                     <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-                                      <select
+                                      <select title="Document Type Selector"
                                         value={chargeTypeFilter}
                                         onChange={(e) => setChargeTypeFilter(e.target.value)}
                                         className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
@@ -245,7 +245,7 @@ export function DocumentsPage() {
                                         <option value="infraction">Infractions Only</option>
                                       </select>
 
-                                    <select
+                                    <select title="Document Type Selector"
                                       value={crimetype}
                                       onChange={(e) => setCrimetype(e.target.value)}
                                       className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
@@ -257,7 +257,7 @@ export function DocumentsPage() {
                                       <option value="other">Other Crimes</option>
                                     </select>
 
-                                    <select
+                                    <select title="Document Type Selector"
                                       value={felonyFilter}
                                       onChange={(e) => setFelonyFilter(e.target.value)}
                                       className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
@@ -267,7 +267,7 @@ export function DocumentsPage() {
                                       <option value="felony">Standard Felony</option>
                                     </select>
 
-                                    <select
+                                    <select title="Document Type Selector"
                                       value={misdemeanorFilter}
                                       onChange={(e) => setMisdemeanorFilter(e.target.value)}
                                       className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
@@ -277,7 +277,7 @@ export function DocumentsPage() {
                                       <option value="hide">Exclude Misdemeanors</option>
                                     </select>
 
-                                    <select
+                                    <select title="Document Type Selector"
                                       value={infractionFilter}
                                       onChange={(e) => setInfractionFilter(e.target.value)}
                                       className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
@@ -416,7 +416,7 @@ export function DocumentsPage() {
                     });
                   }}
                 />
-                <select
+                <select title="Document Type Selector"
                   aria-label="Filter 10-codes by category"
                   className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800"
                   onChange={(e) => {
@@ -498,7 +498,7 @@ export function DocumentsPage() {
                     });
                   }}
                 />
-                <select
+                <select title="Document Type Selector"
                   aria-label="Filter code communications by priority"
                   className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800"
                   onChange={(e) => {
@@ -515,7 +515,7 @@ export function DocumentsPage() {
                   <option value="Medium">Medium</option>
                   <option value="High">High</option>
                 </select>
-                <select
+                <select title="Shortform Category Selector"
                   className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800"
                   onChange={(e) => {
                     const type = e.target.value;
@@ -596,6 +596,8 @@ export function DocumentsPage() {
                   }}
                 />
                 <select
+                  title="Shortform Category Selector"
+                  aria-label="Shortform Category Selector"
                   className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800"
                   onChange={(e) => {
                     const category = e.target.value;

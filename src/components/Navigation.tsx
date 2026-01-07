@@ -1,5 +1,5 @@
 import { Button } from "./ui/button";
-import { Home, FileText, ClipboardList, LogOut, LogIn, Settings, Sun, Moon, Laptop } from "lucide-react";
+import { Home, FileText, ClipboardList, LogOut, LogIn, Settings, Sun, Moon, Laptop, Shield, Landmark, MapPin, Crown, BadgeCheck } from "lucide-react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
 import { useTheme } from "../context/ThemeContext";
 import { useAuth } from "../context/AuthContext";
@@ -106,22 +106,14 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end">
-                  <DropdownMenuItem onClick={() => setTheme("light")}>
-                    <Sun className="w-4 h-4" /> Light
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => setTheme("dark")}>
-                    <Moon className="w-4 h-4" /> Dark
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => setTheme("dark-warm")}>Dark (Warm)</DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => setTheme("dark-mono")}>Dark (Mono)</DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => setTheme("dark-ocean")}>Dark (Ocean)</DropdownMenuItem>
-                  <div className="h-px my-1 bg-border" />
-                  <DropdownMenuItem onClick={() => { setTheme("dark-warm"); onNavigate("theme-warm"); }}>Open Warm Theme Page</DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => { setTheme("dark-mono"); onNavigate("theme-mono"); }}>Open Mono Theme Page</DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => { setTheme("dark-ocean"); onNavigate("theme-ocean"); }}>Open Ocean Theme Page</DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => setTheme("system")}>
-                    <Laptop className="w-4 h-4" /> System
-                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setTheme("dark")}> <Moon className="w-4 h-4" /> Dark </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setTheme("light")}> <Sun className="w-4 h-4" /> Light </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setTheme("lspd")}> <Landmark className="w-4 h-4" /> LSPD </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setTheme("saspr")}> <MapPin className="w-4 h-4" /> SASPR </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setTheme("bcso")}> <Shield className="w-4 h-4" /> BCSO </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setTheme("police-red")}> <Crown className="w-4 h-4" /> Police Red </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setTheme("sasp")}> <BadgeCheck className="w-4 h-4" /> SASP </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setTheme("system")}> <Laptop className="w-4 h-4" /> System </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
               {isAuthenticated && user ? (

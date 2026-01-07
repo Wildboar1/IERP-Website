@@ -1,3 +1,52 @@
+.dark.theme-lspd {
+  --primary: #3b82f6; /* LSPD blue */
+  --primary-foreground: #fff;
+  --accent: #1e293b;
+  --accent-foreground: #fff;
+  --ring: #3b82f6;
+  --sidebar-primary: #3b82f6;
+  --sidebar-primary-foreground: #fff;
+}
+
+.dark.theme-saspr {
+  --primary: #22d3ee; /* SASPR cyan */
+  --primary-foreground: #fff;
+  --accent: #164e63;
+  --accent-foreground: #fff;
+  --ring: #22d3ee;
+  --sidebar-primary: #22d3ee;
+  --sidebar-primary-foreground: #fff;
+}
+
+.dark.theme-bcso {
+  --primary: #fbbf24; /* BCSO gold */
+  --primary-foreground: #222;
+  --accent: #78350f;
+  --accent-foreground: #fff;
+  --ring: #fbbf24;
+  --sidebar-primary: #fbbf24;
+  --sidebar-primary-foreground: #222;
+}
+
+.dark.theme-police-red {
+  --primary: #ef4444; /* Police Red */
+  --primary-foreground: #fff;
+  --accent: #7f1d1d;
+  --accent-foreground: #fff;
+  --ring: #ef4444;
+  --sidebar-primary: #ef4444;
+  --sidebar-primary-foreground: #fff;
+}
+
+.dark.theme-sasp {
+  --primary: #a3e635; /* SASP green */
+  --primary-foreground: #222;
+  --accent: #365314;
+  --accent-foreground: #fff;
+  --ring: #a3e635;
+  --sidebar-primary: #a3e635;
+  --sidebar-primary-foreground: #222;
+}
 @custom-variant dark (&:is(.dark *));
 
 :root {
