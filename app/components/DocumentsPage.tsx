@@ -3,8 +3,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import { ScrollArea } from "./ui/scroll-area";
 import { Badge } from "./ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
-import { FileText, Scale, BookOpen, Shield, Users } from "lucide-react";
+import { FileText, Scale, BookOpen, Shield, Users, Radio } from "lucide-react";
 import penalCodes from "@data/penal-codes.json";
+import tenCodes from "@data/10-codes.json";
 
 export function DocumentsPage() {
   return (
@@ -15,10 +16,14 @@ export function DocumentsPage() {
       </div>
 
       <Tabs defaultValue="penal" className="w-full">
-        <TabsList className="grid w-full grid-cols-5 mb-8">
+        <TabsList className="grid w-full grid-cols-6 mb-8">
           <TabsTrigger value="penal" className="flex items-center gap-2">
             <Scale className="w-4 h-4" />
             Penal Codes
+          </TabsTrigger>
+          <TabsTrigger value="10codes" className="flex items-center gap-2">
+            <Radio className="w-4 h-4" />
+            10-Codes
           </TabsTrigger>
           <TabsTrigger value="amendments" className="flex items-center gap-2">
             <FileText className="w-4 h-4" />
@@ -1031,6 +1036,86 @@ export function DocumentsPage() {
   </Card>
 </TabsContent>
 
+        {/* 10-Codes */}
+        <TabsContent value="10codes">
+          <Card>
+            <CardHeader>
+              <CardTitle>10-Codes</CardTitle>
+              <CardDescription>Essential radio communication codes for law enforcement</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-6 flex gap-4">
+                <input
+                  type="text"
+                  placeholder="Search 10-codes..."
+                  className="flex-1 px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800"
+                  id="tencodesSearch"
+                  onChange={(e) => {
+                    const query = e.target.value.toLowerCase();
+                    const items = document.querySelectorAll('[data-tencode-item]');
+                    items.forEach(item => {
+                      const code = item.getAttribute('data-code')?.toLowerCase() || '';
+                      const desc = item.getAttribute('data-desc')?.toLowerCase() || '';
+                      item.style.display = code.includes(query) || desc.includes(query) ? 'block' : 'none';
+                    });
+                  }}
+                />
+                <select
+                  className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800"
+                  onChange={(e) => {
+                    const category = e.target.value;
+                    const items = document.querySelectorAll('[data-tencode-item]');
+                    items.forEach(item => {
+                      const itemCategory = item.getAttribute('data-category');
+                      item.style.display = category === 'All' || itemCategory === category ? 'block' : 'none';
+                    });
+                  }}
+                >
+                  <option value="All">All Categories</option>
+                  <option value="Communication">Communication</option>
+                  <option value="Status">Status</option>
+                  <option value="Emergency">Emergency</option>
+                  <option value="Incident">Incident</option>
+                  <option value="Information">Information</option>
+                  <option value="Assignment">Assignment</option>
+                  <option value="Movement">Movement</option>
+                  <option value="Assistance">Assistance</option>
+                </select>
+              </div>
+              <ScrollArea className="h-[600px] pr-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {tenCodes.map((item, index) => (
+                    <div
+                      key={index}
+                      data-tencode-item
+                      data-code={item.code}
+                      data-desc={item.description}
+                      data-category={item.category}
+                      className="border rounded-lg p-4 bg-gray-50 dark:bg-gray-800 hover:shadow-md transition-shadow"
+                    >
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="font-mono text-lg font-bold text-blue-600 dark:text-blue-400">{item.code}</h3>
+                        <Badge
+                          variant={
+                            item.priority === 'High'
+                              ? 'destructive'
+                              : item.priority === 'Medium'
+                              ? 'default'
+                              : 'secondary'
+                          }
+                        >
+                          {item.priority}
+                        </Badge>
+                      </div>
+                      <p className="text-sm font-medium mb-3">{item.description}</p>
+                      <Badge variant="outline">{item.category}</Badge>
+                    </div>
+                  ))}
+                </div>
+              </ScrollArea>
+            </CardContent>
+          </Card>
+        </TabsContent>
 
         {/* Amendments */}
          <TabsContent value="amendments">
