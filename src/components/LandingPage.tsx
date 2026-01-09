@@ -4,6 +4,7 @@ import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 import { GlobalFeedbackSection } from "./ui/global-feedback-section";
 import { FileText, ClipboardList, LayoutDashboard, Sun, Palette, Moon } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface LandingPageProps {
   onNavigateToDocuments: () => void;
@@ -162,36 +163,36 @@ export function LandingPage({ onNavigateToDocuments }: LandingPageProps) {
       {/* Card Grid Section */}
       <section className="max-w-5xl mx-auto w-full px-4 pb-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          <a href="/documents" className="group rounded-xl bg-card/80 hover:bg-primary/10 border border-border p-6 flex flex-col items-center transition shadow">
+          <Link to="/documents" className="group rounded-xl bg-card/80 hover:bg-primary/10 border border-border p-6 flex flex-col items-center transition shadow">
             <FileText className="w-10 h-10 mb-3 text-primary group-hover:scale-110 transition" />
             <div className="font-bold text-lg mb-1">Legal Documents</div>
             <div className="text-sm text-muted-foreground text-center">All laws, codes, and official procedures for the server.</div>
-          </a>
-          <a href="/applications" className="group rounded-xl bg-card/80 hover:bg-primary/10 border border-border p-6 flex flex-col items-center transition shadow">
+          </Link>
+          <Link to="/applications" className="group rounded-xl bg-card/80 hover:bg-primary/10 border border-border p-6 flex flex-col items-center transition shadow">
             <ClipboardList className="w-10 h-10 mb-3 text-primary group-hover:scale-110 transition" />
             <div className="font-bold text-lg mb-1">Applications</div>
             <div className="text-sm text-muted-foreground text-center">Submit and manage your law enforcement or legal applications.</div>
-          </a>
-          <a href="/admin" className="group rounded-xl bg-card/80 hover:bg-primary/10 border border-border p-6 flex flex-col items-center transition shadow">
+          </Link>
+          <Link to="/admin" className="group rounded-xl bg-card/80 hover:bg-primary/10 border border-border p-6 flex flex-col items-center transition shadow">
             <LayoutDashboard className="w-10 h-10 mb-3 text-primary group-hover:scale-110 transition" />
             <div className="font-bold text-lg mb-1">Admin Dashboard</div>
             <div className="text-sm text-muted-foreground text-center">Admin tools and management for staff and server leaders.</div>
-          </a>
-          <a href="/theme-warm" className="group rounded-xl bg-card/80 hover:bg-primary/10 border border-border p-6 flex flex-col items-center transition shadow">
+          </Link>
+          <Link to="/theme-warm" className="group rounded-xl bg-card/80 hover:bg-primary/10 border border-border p-6 flex flex-col items-center transition shadow">
             <Sun className="w-10 h-10 mb-3 text-primary group-hover:scale-110 transition" />
             <div className="font-bold text-lg mb-1">Warm Theme</div>
             <div className="text-sm text-muted-foreground text-center">Switch to a warm, immersive color palette.</div>
-          </a>
-          <a href="/theme-mono" className="group rounded-xl bg-card/80 hover:bg-primary/10 border border-border p-6 flex flex-col items-center transition shadow">
+          </Link>
+          <Link to="/theme-mono" className="group rounded-xl bg-card/80 hover:bg-primary/10 border border-border p-6 flex flex-col items-center transition shadow">
             <Palette className="w-10 h-10 mb-3 text-primary group-hover:scale-110 transition" />
             <div className="font-bold text-lg mb-1">Mono Theme</div>
             <div className="text-sm text-muted-foreground text-center">Try a clean, monochrome look for the site.</div>
-          </a>
-          <a href="/theme-ocean" className="group rounded-xl bg-card/80 hover:bg-primary/10 border border-border p-6 flex flex-col items-center transition shadow">
+          </Link>
+          <Link to="/theme-ocean" className="group rounded-xl bg-card/80 hover:bg-primary/10 border border-border p-6 flex flex-col items-center transition shadow">
             <Moon className="w-10 h-10 mb-3 text-primary group-hover:scale-110 transition" />
             <div className="font-bold text-lg mb-1">Ocean Theme</div>
             <div className="text-sm text-muted-foreground text-center">Experience a cool, ocean-inspired interface.</div>
-          </a>
+          </Link>
         </div>
       </section>
     </div>

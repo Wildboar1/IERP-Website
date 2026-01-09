@@ -1,5 +1,6 @@
 import React from "react";
-import { FileText, Home, ClipboardList, Settings, Palette, Sun, Moon, LayoutDashboard } from "lucide-react";
+import { FileText, Home, ClipboardList, Settings, Palette, Sun, Moon, LayoutDashboard, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   return (
@@ -9,33 +10,36 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         <div className="flex items-center gap-2 mb-6">
           <img src="/ierp-bgremoved.png" alt="IERP Logo" className="h-10 w-10" />
           <div>
-            <h1 className="text-lg font-bold leading-tight">IERP Guide</h1>
+            <h1 className="text-lg font-bold leading-tight">IERP Everywhere</h1>
             <p className="text-xs text-muted-foreground">Law Enforcement Roleplay</p>
           </div>
         </div>
         <nav className="flex-1 space-y-1">
-          <a href="/" className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent">
+          <Link to="/" className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent">
             <Home className="w-5 h-5" /> Home
-          </a>
-          <a href="/documents" className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent">
+          </Link>
+          <Link to="/documents" className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent">
             <FileText className="w-5 h-5" /> Legal Documents
-          </a>
-          <a href="/applications" className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent">
+          </Link>
+          <Link to="/applications" className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent">
             <ClipboardList className="w-5 h-5" /> Applications
-          </a>
-          <a href="/admin" className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent">
+          </Link>
+          <Link to="/department-officials" className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent">
+            <Users className="w-5 h-5" /> Department Officials
+          </Link>
+          <Link to="/admin" className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent">
             <LayoutDashboard className="w-5 h-5" /> Admin Dashboard
-          </a>
+          </Link>
           <div className="mt-4 mb-1 text-xs text-muted-foreground font-semibold px-3">Themes</div>
-          <a href="/theme-warm" className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent">
+          <Link to="/theme-warm" className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent">
             <Sun className="w-5 h-5" /> Warm Theme
-          </a>
-          <a href="/theme-mono" className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent">
+          </Link>
+          <Link to="/theme-mono" className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent">
             <Palette className="w-5 h-5" /> Mono Theme
-          </a>
-          <a href="/theme-ocean" className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent">
+          </Link>
+          <Link to="/theme-ocean" className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent">
             <Moon className="w-5 h-5" /> Ocean Theme
-          </a>
+          </Link>
         </nav>
         <div className="mt-auto text-xs text-muted-foreground">Made by ...</div>
       </aside>
