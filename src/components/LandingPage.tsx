@@ -3,6 +3,7 @@ import { EmployeeCard } from "./EmployeeCard";
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 import { GlobalFeedbackSection } from "./ui/global-feedback-section";
+import { FileText, ClipboardList, LayoutDashboard, Sun, Palette, Moon } from "lucide-react";
 
 interface LandingPageProps {
   onNavigateToDocuments: () => void;
