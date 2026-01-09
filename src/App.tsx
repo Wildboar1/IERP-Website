@@ -11,6 +11,7 @@ import { AuthProvider, useAuth } from "./context/AuthContext";
 import { ThemeProvider } from "./context/ThemeContext";
 import { Card } from "./components/ui/card";
 import { Footer } from "./components/ui/footer";
+import { AppShell } from "./components/AppShell";
 
 function AppContent() {
   const [currentPage, setCurrentPage] = useState<
@@ -64,30 +65,24 @@ function AppContent() {
   }
 
   return (
-    <div className="min-h-screen w-full flex flex-col bg-gradient-to-br from-background to-[#1e293b] text-foreground">
-      <div className="flex-1 flex flex-col">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxyYWRpYWxHcmFkaWVudCBpZD0iYSIgY3g9IjUwJSIgY3k9IjUwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmNjY2NiIgc3RvcC1vcGFjaXR5PSIwLjEiLz48c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzAwZGRkZCIgc3RvcC1vcGFjaXR5PSIwLjEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM2NjAwZmYiIHN0b3Atb3BhY2l0eT0iMC4xIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNhKSIvPjwvc3ZnPg==')] opacity-50"></div>
-        <div className="relative z-10 flex-1 flex flex-col">
-          <Navigation currentPage={currentPage} onNavigate={setCurrentPage} />
-          {currentPage === "home" ? (
-            <LandingPage onNavigateToDocuments={() => setCurrentPage("documents")} />
-          ) : currentPage === "documents" ? (
-            <DocumentsPage />
-          ) : currentPage === "applications" ? (
-            <ApplicationsPage />
-          ) : currentPage === "theme-warm" ? (
-            <ThemeWarmPage />
-          ) : currentPage === "theme-mono" ? (
-            <ThemeMonoPage />
-          ) : currentPage === "theme-ocean" ? (
-            <ThemeOceanPage />
-          ) : (
-            <AdminDashboard />
-          )}
-        </div>
-      </div>
+    <AppShell>
+      {currentPage === "home" ? (
+        <LandingPage onNavigateToDocuments={() => setCurrentPage("documents")} />
+      ) : currentPage === "documents" ? (
+        <DocumentsPage />
+      ) : currentPage === "applications" ? (
+        <ApplicationsPage />
+      ) : currentPage === "theme-warm" ? (
+        <ThemeWarmPage />
+      ) : currentPage === "theme-mono" ? (
+        <ThemeMonoPage />
+      ) : currentPage === "theme-ocean" ? (
+        <ThemeOceanPage />
+      ) : (
+        <AdminDashboard />
+      )}
       <Footer />
-    </div>
+    </AppShell>
   );
 }
 
