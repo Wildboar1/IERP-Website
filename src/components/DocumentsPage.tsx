@@ -115,8 +115,8 @@ export function DocumentsPage() {
   });
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-background to-[#1e293b] text-foreground flex flex-col">
-      <div className="max-w-6xl mx-auto p-6">
+    <div className="min-h-screen bg-gradient-to-br from-background to-[#1e293b] text-foreground flex flex-col">
+      <div>
         <div className="mb-8">
           <div className="flex items-center space-x-3 mb-4">
             <div className="p-2 bg-primary/10 rounded-lg">
@@ -208,17 +208,17 @@ export function DocumentsPage() {
                       placeholder="Search offenses by name or description..."
                       value={penalSearchTerm}
                       onChange={(e) => setPenalSearchTerm(e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                      className="w-full py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                     />
                   </div>
 
                   {/* Filters */}
-                  <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-5 gap-4 w-full">
                     <select
                       title="Charge Type"
                       value={chargeTypeFilter}
                       onChange={(e) => setChargeTypeFilter(e.target.value)}
-                      className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                      className="py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white w-full"
                     >
                       <option value="all">All Charge Types</option>
                       <option value="felony">Felonies Only</option>
@@ -358,14 +358,14 @@ export function DocumentsPage() {
                   <input
                     type="text"
                     placeholder="Search 10-codes..."
-                    className="flex-1 px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800"
+                    className="flex-1 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800"
                     value={tenCodeSearch}
                     onChange={(e) => setTenCodeSearch(e.target.value)}
                   />
                   <select
                     title="Category Selector"
                     aria-label="Filter 10-codes by category"
-                    className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800"
+                    className="py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800"
                     value={tenCodeCategory}
                     onChange={(e) => setTenCodeCategory(e.target.value)}
                   >
@@ -475,7 +475,7 @@ export function DocumentsPage() {
                     <option value="Administrative">Administrative</option>
                   </select>
                 </div>
-                <ScrollArea className="h-[600px] pr-4">
+                <ScrollArea className="h-[600px]">
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {codeCommunications
                       .filter((item) => {

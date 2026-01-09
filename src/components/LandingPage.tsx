@@ -146,14 +146,14 @@ export function LandingPage({ onNavigateToDocuments }: LandingPageProps) {
     <div className="min-h-screen w-full bg-gradient-to-br from-background to-[#1e293b] text-foreground flex flex-col">
       {/* Hero Section */}
       <div
-        className="relative bg-cover bg-center py-20 px-8"
+        className="relative bg-cover bg-center py-20"
         style={{
           backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/2.webp')`
         }}
       >
-        <div className="max-w-7xl mx-auto text-center text-foreground">
-          <h1 className="mb-4 text-foreground">Indian Empire Roleplay</h1>
-          <p className="text-xl mb-8">Law Enforcement & Justice System</p>
+        <div className="text-foreground">
+          <h1 className="mb-4 text-foreground text-left">Indian Empire Roleplay</h1>
+          <p className="text-xl mb-8 text-left">Law Enforcement & Justice System</p>
           <Button size="lg" onClick={onNavigateToDocuments} className="bg-card text-card-foreground hover:bg-accent hover:text-accent-foreground">
             View Legal Documents
           </Button>
@@ -161,7 +161,7 @@ export function LandingPage({ onNavigateToDocuments }: LandingPageProps) {
       </div>
 
       <main className="flex-1">
-        <div className="max-w-7xl mx-auto px-8 py-12">
+        <div className="py-12">
           {/* Departments Section */}
           <section className="mb-16">
             <h2 className="mb-8">Departments</h2>
