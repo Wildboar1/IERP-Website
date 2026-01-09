@@ -116,7 +116,7 @@ export function DocumentsPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background to-[#1e293b] text-foreground flex flex-col">
-      <div>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full">
         <div className="mb-8">
           <div className="flex items-center space-x-3 mb-4">
             <div className="p-2 bg-primary/10 rounded-lg">
@@ -133,8 +133,8 @@ export function DocumentsPage() {
           </div>
         </div>
 
-        <Tabs defaultValue="penal" className="w-full">
-          <TabsList className="grid w-full grid-cols-7 mb-8">
+        <Tabs defaultValue="penal">
+          <TabsList className="grid grid-cols-7 mb-8">
             <TabsTrigger value="penal" className="flex items-center gap-2">
               <Scale className="w-4 h-4" />
               Penal Codes
