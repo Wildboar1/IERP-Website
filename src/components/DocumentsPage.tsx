@@ -213,7 +213,7 @@ export function DocumentsPage() {
                   </div>
 
                   {/* Filters */}
-                  <div className="grid grid-cols-1 md:grid-cols-5 gap-4 w-full">
+                  <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
                     <select
                       title="Charge Type"
                       value={chargeTypeFilter}
