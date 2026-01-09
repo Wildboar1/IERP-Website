@@ -1,8 +1,26 @@
 import React from "react";
 import { FileText, Home, ClipboardList, Settings, Palette, Sun, Moon, LayoutDashboard, Users } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+} from "./ui/dropdown-menu";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export function AppShell({ children }: { children: React.ReactNode }) {
+  // Theme state (for demo, replace with context or global state as needed)
+  const [theme, setTheme] = useState("lspd");
+
+  const handleThemeChange = (themeKey: string) => {
+    setTheme(themeKey);
+    // TODO: Integrate with actual theme switching logic (context, CSS vars, etc.)
+    document.body.setAttribute("data-theme", themeKey);
+  };
+
   return (
     <div className="min-h-screen flex bg-background text-foreground">
       {/* Sidebar */}
@@ -10,7 +28,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         <div className="flex items-center gap-2 mb-6">
           <img src="/ierp-bgremoved.png" alt="IERP Logo" className="h-10 w-10" />
           <div>
-            <h1 className="text-lg font-bold leading-tight">IERP Everywhere</h1>
+            <h1 className="text-lg font-bold leading-tight">IERP Law</h1>
             <p className="text-xs text-muted-foreground">Law Enforcement Roleplay</p>
           </div>
         </div>
@@ -30,16 +48,6 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           <Link to="/admin" className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent">
             <LayoutDashboard className="w-5 h-5" /> Admin Dashboard
           </Link>
-          <div className="mt-4 mb-1 text-xs text-muted-foreground font-semibold px-3">Themes</div>
-          <Link to="/theme-warm" className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent">
-            <Sun className="w-5 h-5" /> Warm Theme
-          </Link>
-          <Link to="/theme-mono" className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent">
-            <Palette className="w-5 h-5" /> Mono Theme
-          </Link>
-          <Link to="/theme-ocean" className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent">
-            <Moon className="w-5 h-5" /> Ocean Theme
-          </Link>
         </nav>
         <div className="mt-auto text-xs text-muted-foreground">Made by ...</div>
       </aside>
@@ -56,7 +64,25 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           </div>
           <div className="flex items-center gap-4">
             <button className="btn btn-sm">Start Learning</button>
-            <button className="btn btn-sm">Theme</button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="btn btn-sm flex items-center gap-2">
+                  <Palette className="w-4 h-4" />
+                  {theme === "lspd" && "LSPD"}
+                  {theme === "warm" && "Warm"}
+                  {theme === "mono" && "Mono"}
+                  {theme === "ocean" && "Ocean"}
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuLabel>Theme</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={() => handleThemeChange("lspd")}>LSPD</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => handleThemeChange("warm")}>Warm</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => handleThemeChange("mono")}>Mono</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => handleThemeChange("ocean")}>Ocean</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </header>
         {/* Main content */}
