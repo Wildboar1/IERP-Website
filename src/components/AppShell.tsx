@@ -22,7 +22,20 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <div className="min-h-screen flex bg-background text-foreground">
+    <div className="min-h-screen flex flex-col bg-background text-foreground">
+      {/* Maintenance Banner */}
+      <div className="w-full bg-yellow-400 text-black py-3 px-4 flex flex-col md:flex-row items-center justify-center gap-2 z-50 text-center font-semibold shadow-lg">
+        <span>Website Status: <span className="font-bold">Under Maintenance</span>. Join our Discord to apply and open a ticket.</span>
+        <a
+          href="https://discord.gg/qwcvpDKABe"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block mt-2 md:mt-0 md:ml-4 px-4 py-2 bg-indigo-700 text-white rounded shadow hover:bg-indigo-800 transition"
+        >
+          Join Discord
+        </a>
+      </div>
+      <div className="flex flex-1 min-h-0">
       {/* Sidebar */}
       <aside className="hidden md:flex flex-col w-64 bg-sidebar border-r border-border p-4 space-y-2">
         <div className="flex items-center gap-2 mb-6">
@@ -87,6 +100,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         </header>
         {/* Main content */}
         <main className="flex-1 p-6 md:p-10 max-w-6xl mx-auto w-full">{children}</main>
+      </div>
       </div>
     </div>
   );
