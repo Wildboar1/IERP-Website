@@ -1,4 +1,5 @@
 import React from "react";
+import { FileText, Home, ClipboardList, Settings, Palette, Sun, Moon, LayoutDashboard } from "lucide-react";
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   return (
@@ -12,13 +13,29 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             <p className="text-xs text-muted-foreground">Law Enforcement Roleplay</p>
           </div>
         </div>
-        {/* Navigation links go here */}
         <nav className="flex-1 space-y-1">
-          {/* Example: */}
           <a href="/" className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent">
-            <span className="material-icons">home</span> Home
+            <Home className="w-5 h-5" /> Home
           </a>
-          {/* ...other links... */}
+          <a href="/documents" className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent">
+            <FileText className="w-5 h-5" /> Legal Documents
+          </a>
+          <a href="/applications" className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent">
+            <ClipboardList className="w-5 h-5" /> Applications
+          </a>
+          <a href="/admin" className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent">
+            <LayoutDashboard className="w-5 h-5" /> Admin Dashboard
+          </a>
+          <div className="mt-4 mb-1 text-xs text-muted-foreground font-semibold px-3">Themes</div>
+          <a href="/theme-warm" className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent">
+            <Sun className="w-5 h-5" /> Warm Theme
+          </a>
+          <a href="/theme-mono" className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent">
+            <Palette className="w-5 h-5" /> Mono Theme
+          </a>
+          <a href="/theme-ocean" className="flex items-center gap-2 px-3 py-2 rounded hover:bg-accent">
+            <Moon className="w-5 h-5" /> Ocean Theme
+          </a>
         </nav>
         <div className="mt-auto text-xs text-muted-foreground">Made by ...</div>
       </aside>
